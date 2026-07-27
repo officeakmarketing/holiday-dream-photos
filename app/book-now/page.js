@@ -6,7 +6,7 @@ export const metadata = {
 export default function BookNowPage() {
   return (
     <div className="bg-[#F9F7F4] min-h-screen">
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 pb-32 pt-40 lg:pt-56">
+      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 pb-16 pt-32">
         
         {/* Editorial Header */}
         <div className="text-center mb-20">

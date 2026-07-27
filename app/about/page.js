@@ -7,10 +7,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#F9F7F4] min-h-screen pb-32">
+    <div className="bg-[#F9F7F4] min-h-screen">
       
       {/* Brand Story Hero */}
-      <section className="px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto pt-40 lg:pt-56 mb-24">
+      <section className="px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto pt-32 mb-16">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
           
           <div className="w-full lg:w-[45%]">
@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section (Placeholder) */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-24 border-t border-gray-200">
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="mb-20">
           <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
             The Team

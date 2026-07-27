@@ -11,7 +11,7 @@ export default function OurSantasPage() {
     <div className="bg-[#F9F7F4] min-h-screen pb-32">
       
       {/* Calm & Professional Header */}
-       <section className="relative pt-40 pb-20 px-4 max-w-7xl mx-auto flex flex-col items-center text-center">
+       <section className="relative pt-32 pb-10 px-4 max-w-7xl mx-auto flex flex-col items-center text-center">
         <p className="text-brand-red font-semibold uppercase tracking-[0.3em] text-xs md:text-sm mb-6">
           The Magic of Choice
         </p>
@@ -26,7 +26,7 @@ export default function OurSantasPage() {
       </section>
 
       {/* Traditional Santa Section - Editorial Layout */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-24 lg:py-40">
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-center">
           
           {/* Left Side: Unconstrained Photography */}
@@ -45,19 +45,19 @@ export default function OurSantasPage() {
             <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               The Classic Experience
             </span>
-            <h2 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+            <h2 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-6 leading-none tracking-tight">
               Traditional <br/>Santa
             </h2>
-            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-16 max-w-xl">
+            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-10 max-w-xl">
               Step into a beautifully decorated winter wonderland and create timeless memories. Enjoy a classic, heartwarming Christmas experience with rich reds and greens in a serene, unhurried environment.
             </p>
 
             {/* Pricing Details - No Boxes, Just Text & Lines */}
-            <div className="mb-16 max-w-xl">
+            <div className="mb-10 max-w-xl">
               <span className="text-brand-red uppercase tracking-[0.2em] text-xs font-bold mb-4 block">
                 Signature Package
               </span>
-              <div className="flex items-end gap-3 mb-10">
+              <div className="flex items-end gap-3 mb-6">
                 <span className="text-5xl font-bodoni text-[#113122]">[Package Price]</span>
                 <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">Client Provided</span>
               </div>
@@ -91,7 +91,7 @@ export default function OurSantasPage() {
       </section>
 
       {/* Black Santa Section - Editorial Layout (Inverted) */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pb-32 lg:pb-48">
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-16">
         <div className="flex flex-col lg:flex-row-reverse gap-16 lg:gap-32 items-center">
           
           {/* Right Side: Unconstrained Photography */}
@@ -110,19 +110,19 @@ export default function OurSantasPage() {
             <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               The Home of Representation
             </span>
-            <h2 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+            <h2 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-6 leading-none tracking-tight">
               Black <br/>Santa
             </h2>
-            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-16 max-w-xl">
+            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-10 max-w-xl">
               Celebrate the magic of representation. The Home of the Black Santa offers a joyful, premium holiday photo experience with our authentic, real-bearded Black Santa in a breathtaking set.
             </p>
 
             {/* Pricing Details - No Boxes, Just Text & Lines */}
-            <div className="mb-16 max-w-xl">
+            <div className="mb-10 max-w-xl">
               <span className="text-brand-red uppercase tracking-[0.2em] text-xs font-bold mb-4 block">
                 Heritage Package
               </span>
-              <div className="flex items-end gap-3 mb-10">
+              <div className="flex items-end gap-3 mb-6">
                 <span className="text-5xl font-bodoni text-[#113122]">[Package Price]</span>
                 <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">Client Provided</span>
               </div>

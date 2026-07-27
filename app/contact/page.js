@@ -10,7 +10,7 @@ export default function ContactPage() {
     <div className="bg-[#F9F7F4] min-h-screen">
       
       {/* Header spacing to account for fixed global Nav */}
-      <div className="pt-40 lg:pt-56 pb-32 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">
+      <div className="pt-32 pb-16 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">
         
         {/* Info Column */}
         <div className="flex-1 lg:sticky lg:top-40">

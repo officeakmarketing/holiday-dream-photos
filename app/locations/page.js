@@ -14,19 +14,19 @@ const getLocations = async () => {
       _id: "loc-1",
       name: "The Galleria",
       address: "Client Provided Location Details",
-      imageUrl: "/images/traditional-santa.jpg"
+      imageUrl: "/images/mall1.jpg"
     },
     {
       _id: "loc-2",
       name: "Westfield Plaza",
       address: "Client Provided Location Details",
-      imageUrl: "/images/black-santa.jpg"
+      imageUrl: "/images/mall2.jpg"
     },
     {
       _id: "loc-3",
       name: "Town Center",
       address: "Client Provided Location Details",
-      imageUrl: "/images/traditional-santa.jpg"
+      imageUrl: "/images/mall3.jpg"
     }
   ];
 };
@@ -35,9 +35,9 @@ export default async function LocationsPage() {
   const locations = await getLocations();
 
   return (
-    <div className="bg-[#F9F7F4] min-h-screen pb-32">
+    <div className="bg-[#F9F7F4] min-h-screen">
       {/* Editorial Header */}
-      <section className="pt-40 pb-20 px-4 max-w-4xl mx-auto flex flex-col items-center text-center">
+      <section className="pt-32 pb-10 px-4 max-w-4xl mx-auto flex flex-col items-center text-center">
         <p className="text-gray-400 font-semibold uppercase tracking-[0.3em] text-xs md:text-sm mb-6">
           Find Us
         </p>
@@ -50,7 +50,7 @@ export default async function LocationsPage() {
       </section>
 
       {/* Editorial Grid (Unboxed) */}
-      <section className="pb-32 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
+      <section className="pb-16 px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-20">
           {locations.map((loc) => (
             <div key={loc._id} className="flex flex-col group cursor-pointer">
