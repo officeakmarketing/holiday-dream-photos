@@ -25,7 +25,7 @@ export default function TrustIntro() {
         </h2>
         <div className="w-16 h-[2px] bg-brand-red mx-auto mb-10 rounded-full"></div>
         <p className="text-brand-light/90 leading-relaxed text-lg md:text-xl font-light max-w-3xl mx-auto">
-          At Holiday Dream Photos, we believe the magic of Christmas lies in the authentic details. That&apos;s why every single one of our Santas—whether you choose our Traditional or Black Santa experience—is a true professional with a real, glorious beard. Skip the fake suits and crowded lines, and step into a premium, magical holiday experience designed to create memories that will last a lifetime.
+          At Holiday Dream Photos, we believe the magic of Christmas lies in the authentic details. That&apos;s why every single one of our Santas whether you choose our Traditional or Black Santa experience is a true professional with a real, glorious beard. Skip the fake suits and crowded lines, and step into a premium, magical holiday experience designed to create memories that will last a lifetime.
         </p>
       </div>
     </section>

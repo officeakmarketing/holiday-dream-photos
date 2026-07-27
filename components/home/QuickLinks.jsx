@@ -12,13 +12,13 @@ export default function QuickLinks() {
       title: "Locations",
       description: "Find a premium Santa photo experience near you.",
       href: "/locations",
-      image: "https://images.pexels.com/photos/186613/pexels-photo-186613.jpeg" // Premium interior with Christmas tree
+      image: "/images/mall1.jpg" // Premium interior with Christmas tree
     },
     {
       title: "Private Events",
       description: "Book Santa for corporate events, parties, or home visits.",
       href: "/private-events",
-      image: "https://images.pexels.com/photos/6211090/pexels-photo-6211090.jpeg" // Christmas party setting (kept same)
+      image: "images/mall2.jpg" // Christmas party setting (kept same)
     },
     {
       title: "Join the Team",
@@ -30,7 +30,7 @@ export default function QuickLinks() {
       title: "Contact Us",
       description: "Have questions? Our magical support team is here.",
       href: "/contact",
-      image: "http://localhost:3000/_next/image?url=%2Fimages%2Fmall1.jpg&w=1920&q=75" // Writing a letter
+      image: "images/mall2.jpg" // Writing a letter
     }
   ];
 
