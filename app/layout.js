@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${bodoni.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${bodoni.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#F9F7F4] text-[#113122]">
+      <body className="flex flex-col font-sans bg-[#F9F7F4] text-[#113122]">
         <SmoothScroll>
           <Nav />
           <main className="flex-1">{children}</main>

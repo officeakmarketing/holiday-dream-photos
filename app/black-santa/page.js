@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: 'The Home of the Black Santa | Holiday Dream Photos',
@@ -16,7 +15,7 @@ const getBlackSantaData = async () => {
       tagline: "Representation Matters",
       headline: "The Home of the Black Santa",
       description: "A joyful, premium holiday photo experience built on the belief that every child deserves to see the magic of Christmas reflected in themselves. Create lasting memories with our authentic, real-bearded Black Santa in a breathtaking winter wonderland setting.",
-      imageUrl: "https://images.pexels.com/photos/6211090/pexels-photo-6211090.jpeg"
+      imageUrl: "/images/black-santa.jpg"
     },
     philosophy: {
       headline: "A Tradition of Joy",
@@ -33,10 +32,6 @@ const getBlackSantaData = async () => {
           "Digital Christmas Card Template"
         ]
       }
-    ],
-    gallery: [
-      "https://images.pexels.com/photos/3303615/pexels-photo-3303615.jpeg", // Placeholder
-      "https://images.pexels.com/photos/3224095/pexels-photo-3224095.jpeg"  // Placeholder
     ]
   };
 };
@@ -45,90 +40,86 @@ export default async function BlackSantaPage() {
   const data = await getBlackSantaData();
 
   return (
-    <div className="bg-[#fdfbf7] min-h-screen">
+    <div className="bg-[#F9F7F4] min-h-screen pb-32">
       
-      {/* Distinct Visual Identity: Rich warm tones, deep browns, soft creams */}
-      <section className="relative pt-32 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      {/* Editorial Hero Layout */}
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pt-32 lg:pt-48 pb-24">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-center">
           
-          <div className="flex-1 text-center lg:text-left z-10">
-            <p className="text-[#8c5a35] font-semibold uppercase tracking-[0.3em] text-xs md:text-sm mb-6">
+          {/* Right Side (visually left): Elegant Typography */}
+          <div className="w-full lg:w-[55%] flex flex-col justify-center order-2 lg:order-1">
+            <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               {data.hero.tagline}
-            </p>
-            <h1 className="font-bodoni text-5xl md:text-6xl lg:text-7xl font-bold text-[#3a2012] mb-6 leading-tight">
-              {data.hero.headline.split('Black Santa')[0]}
-              <span className="italic text-[#8c5a35]">Black Santa</span>
+            </span>
+            <h1 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+              The Home of the <br/><span className="italic text-brand-red">Black Santa</span>
             </h1>
-            <div className="w-16 h-[2px] bg-[#8c5a35] mx-auto lg:mx-0 mb-8 rounded-sm"></div>
-            <p className="text-gray-600 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10">
+            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-16 max-w-xl">
               {data.hero.description}
             </p>
-            <Link 
-              href="/book-now" 
-              className="group inline-flex items-center gap-4 px-10 py-4 bg-[#3a2012] text-white uppercase tracking-[0.2em] text-xs font-bold rounded-sm shadow-xl hover:bg-[#25140b] hover:shadow-2xl transition-all"
-            >
-              Book Your Session
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
 
-          <div className="flex-1 w-full relative">
-            <div className="absolute -inset-4 bg-[#8c5a35]/5 transform rotate-2 rounded-3xl"></div>
-            <div className="relative aspect-[4/5] lg:aspect-square w-full rounded-2xl overflow-hidden shadow-2xl">
-              <img
+            <div className="mb-16">
+              <h2 className="font-bodoni text-3xl text-[#113122] mb-6">{data.philosophy.headline}</h2>
+              <p className="text-gray-500 font-light leading-relaxed max-w-xl">
+                {data.philosophy.description}
+              </p>
+            </div>
+
+            <div>
+              <Link 
+                href="/book-now" 
+                className="inline-block bg-brand-red text-white px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-[#a30d25] transition-colors"
+              >
+                Reserve Black Santa
+              </Link>
+            </div>
+          </div>
+          
+          {/* Left Side (visually right): Unconstrained Photography */}
+          <div className="w-full lg:w-[45%] order-1 lg:order-2">
+            <div className="w-full aspect-[4/5] relative bg-white">
+              <img 
                 src={data.hero.imageUrl}
-                alt="Black Santa Experience"
-                className="w-full h-full object-cover object-top"
+                alt="Black Santa Experience" 
+                className="w-full h-full object-cover object-[50%_15%]"
               />
             </div>
           </div>
+          
         </div>
       </section>
 
-      {/* Package Section */}
-      <section className="py-24 bg-[#3a2012] relative overflow-hidden mt-12">
-         {/* Subtle texture overlay */}
-         <div className="absolute inset-0 opacity-5 bg-[url('/images/hero_wreath.png')] bg-center bg-cover mix-blend-overlay pointer-events-none" />
-         
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-            <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl font-medium text-[#F9F7F4] mb-8">
-              {data.philosophy.headline}
-            </h2>
-            <div className="w-12 h-[1px] bg-[#8c5a35] mx-auto mb-10"></div>
-            <p className="text-[#F9F7F4]/90 text-lg md:text-xl font-light leading-relaxed max-w-3xl mb-16">
-              {data.philosophy.description}
-            </p>
-
-            {/* Packages */}
-            <div className="grid grid-cols-1 max-w-md w-full mx-auto">
-              {data.packages.map((pkg, i) => (
-                <div key={i} className="bg-[#F9F7F4] p-10 rounded-sm shadow-2xl text-left relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-[#8c5a35]"></div>
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <h3 className="font-bodoni text-2xl text-[#3a2012]">{pkg.name}</h3>
-                      <p className="text-gray-400 text-xs mt-1 uppercase tracking-widest">{pkg.priceHint}</p>
-                    </div>
-                    <Star className="text-[#8c5a35] fill-[#8c5a35]/20 w-8 h-8" />
-                  </div>
-                  <ul className="space-y-4 text-gray-600 font-light mb-10">
-                    {pkg.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#8c5a35]"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link 
-                    href="/book-now" 
-                    className="block text-center w-full px-6 py-4 border border-[#3a2012] text-[#3a2012] uppercase tracking-[0.2em] text-xs font-bold rounded-sm hover:bg-[#3a2012] hover:text-white transition-all"
-                  >
-                    Reserve Now
-                  </Link>
+      {/* Package Section - Editorial Text Style */}
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-24 border-t border-gray-200">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+          
+          {/* Blank space for alignment */}
+          <div className="hidden lg:block lg:w-[55%]"></div>
+          
+          {/* Pricing Details - No Boxes, Just Text & Lines */}
+          <div className="w-full lg:w-[45%]">
+            {data.packages.map((pkg, i) => (
+              <div key={i} className="mb-16 max-w-xl">
+                <span className="text-brand-red uppercase tracking-[0.2em] text-xs font-bold mb-4 block">
+                  {pkg.name}
+                </span>
+                <div className="flex items-end gap-3 mb-10">
+                  <span className="text-5xl font-bodoni text-[#113122]">[Package Price]</span>
+                  <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">{pkg.priceHint}</span>
                 </div>
-              ))}
-            </div>
-         </div>
+                
+                <ul className="flex flex-col">
+                  {pkg.features.map((feature, j) => (
+                    <li key={j} className={`py-5 border-t border-gray-200 text-gray-500 font-light text-sm tracking-wide ${j === pkg.features.length - 1 ? 'border-b' : ''}`}>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </section>
 
     </div>

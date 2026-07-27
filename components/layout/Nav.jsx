@@ -17,6 +17,7 @@ export default function Nav() {
   }, []);
 
   const links = [
+    { name: "Home", href: "/" },
     { name: "Our Santas", href: "/our-santas" },
     { name: "Locations", href: "/locations" },
     { name: "Private Events", href: "/private-events" },
