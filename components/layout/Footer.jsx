@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="w-full bg-[#F9F7F4] pt-28 lg:pt-36 pb-12 relative overflow-hidden border-t border-[#113122]/10">
       
       {/* Background Snow Animation */}
-      <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-10 flex items-center justify-center filter brightness-0">
+      <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none z-10 flex items-center justify-center filter brightness-0">
         <Lottie 
           animationData={snowAnimation} 
           loop={true} 
@@ -68,11 +68,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#113122]/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#113122]/50 text-xs font-medium">
-            &copy; {new Date().getFullYear()} Holiday Dream Photos. All rights reserved.
-          </p>
-          <div className="flex gap-8">
+        <div className="pt-8 border-t border-[#113122]/10 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">
+            <p className="text-[#113122]/50 text-xs font-medium text-center md:text-left">
+              &copy; {new Date().getFullYear()} Holiday Dream Photos. All rights reserved.
+            </p>
+            <p className="text-[#113122]/50 text-xs font-medium text-center md:text-left">
+              Powered by <a href="https://akmarketing.agency/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors underline decoration-[#113122]/20 underline-offset-4 hover:decoration-brand-red font-semibold">AK Marketing</a>
+            </p>
+          </div>
+          <div className="flex gap-6 mt-2 md:mt-0">
             <Link href="/privacy" className="text-[#113122]/50 hover:text-[#113122] transition-colors text-xs font-medium">Privacy Policy</Link>
             <Link href="/terms" className="text-[#113122]/50 hover:text-[#113122] transition-colors text-xs font-medium">Terms of Service</Link>
           </div>
