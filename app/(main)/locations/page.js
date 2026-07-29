@@ -12,21 +12,51 @@ const getLocations = async () => {
   return [
     {
       _id: "loc-1",
-      name: "The Galleria",
-      address: "Client Provided Location Details",
+      name: "Edgewater Mall",
+      address: "Biloxi, MS",
       imageUrl: "/images/mall1.jpg"
     },
     {
       _id: "loc-2",
-      name: "Westfield Plaza",
-      address: "Client Provided Location Details",
+      name: "Almeda Mall",
+      address: "Houston, TX",
       imageUrl: "/images/mall2.jpg"
     },
     {
       _id: "loc-3",
-      name: "Town Center",
-      address: "Client Provided Location Details",
-      imageUrl: "/images/mall3.jpg"
+      name: "Central Mall",
+      address: "Texarkana, TX",
+      imageUrl: "/images/mall1.jpg"
+    },
+    {
+      _id: "loc-4",
+      name: "Outlets at Little Rock",
+      address: "Little Rock, AR",
+      imageUrl: "/images/mall2.jpg"
+    },
+    {
+      _id: "loc-5",
+      name: "Omaha Mall",
+      address: "Omaha, NB",
+      imageUrl: "/images/mall1.jpg"
+    },
+    {
+      _id: "loc-6",
+      name: "Northtown Mall",
+      address: "Blaine, MN",
+      imageUrl: "/images/mall2.jpg"
+    },
+    {
+      _id: "loc-7",
+      name: "Clearview Mall",
+      address: "Butler, PA",
+      imageUrl: "/images/mall1.jpg"
+    },
+    {
+      _id: "loc-8",
+      name: "The Shoppes at Bel Air",
+      address: "Mobile, AL",
+      imageUrl: "/images/mall2.jpg"
     }
   ];
 };

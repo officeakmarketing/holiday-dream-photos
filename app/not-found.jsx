@@ -12,7 +12,7 @@ export default function NotFound() {
         <Lottie 
           animationData={snowGlobeAnimation} 
           loop={true} 
-          className="w-full max-w-md mx-auto drop-shadow-xl mb-6 -mt-8"
+          className="w-full max-w-[280px] md:max-w-[420px] mx-auto drop-shadow-xl py-4 md:py-6"
         />
         
         <Link 

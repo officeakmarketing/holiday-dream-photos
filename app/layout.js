@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${montserrat.variable} ${bodoni.variable} antialiased`}
     >
-      <body className="flex flex-col font-sans bg-[#F9F7F4] text-[#113122]">
+      <body className="flex flex-col min-h-screen font-sans bg-[#F9F7F4] text-[#113122]">
         <SmoothScroll>
           <Nav />
           <main className="flex-1">{children}</main>

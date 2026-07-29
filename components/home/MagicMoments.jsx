@@ -3,23 +3,23 @@ import Image from "next/image";
 export default function MagicMoments() {
   const images = [
     { 
-      src: "https://images.pexels.com/photos/6212104/pexels-photo-6212104.jpeg", 
+      src: "images/black-santa.jpg", 
       alt: "Santa at mall", 
       span: "lg:col-span-2 lg:row-span-2",
       position: "object-top"
     },
     { 
-      src: "https://images.unsplash.com/photo-1543893419-fcc585654853?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FudGF8ZW58MHx8MHx8fDA%3D", 
+      src: "images/traditional-santa.jpg", 
       alt: "Santa adjusting his suit", 
       span: "lg:col-span-1 lg:row-span-1" 
     },
     { 
-      src: "https://images.pexels.com/photos/3303615/pexels-photo-3303615.jpeg", 
+      src: "images/gallery-1.jpg", 
       alt: "Magical Christmas tree", 
       span: "lg:col-span-1 lg:row-span-2" 
     },
     { 
-      src: "https://images.unsplash.com/photo-1765092274438-feca2cfa7623?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNhbnRhJTIwYXQlMjBtYWxsfGVufDB8fDB8fHww", 
+      src: "images/mall3.jpg", 
       alt: "Santa experience", 
       span: "lg:col-span-1 lg:row-span-1" 
     }
