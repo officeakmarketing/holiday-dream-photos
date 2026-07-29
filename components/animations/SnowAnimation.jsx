@@ -32,7 +32,8 @@ export default function SnowAnimation() {
           animationData={animationData} 
           loop={true} 
           autoplay={true}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+          rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+          style={{ width: "100%", height: "100%" }} 
         />
       </div>
       {/* Tile 2 - Tablet and up (Flipped for seamless organic look) */}
@@ -41,7 +42,8 @@ export default function SnowAnimation() {
           animationData={animationData} 
           loop={true} 
           autoplay={true}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+          rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+          style={{ width: "100%", height: "100%" }} 
         />
       </div>
       {/* Tile 3 - Desktop and up */}
@@ -50,7 +52,8 @@ export default function SnowAnimation() {
           animationData={animationData} 
           loop={true} 
           autoplay={true}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+          rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+          style={{ width: "100%", height: "100%" }} 
         />
       </div>
     </div>

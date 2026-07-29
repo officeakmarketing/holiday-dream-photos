@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-
+import Lottie from "lottie-react";
+import christmasLights from "../../public/animations/Coloured Christmas lights.json";
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,21 +46,27 @@ export default function Nav() {
 
   return (
     <>
-      <div className="fixed top-0 w-full z-50">
+      {/* Christmas Lights Decoration */}
+      <div className={`fixed top-0 left-0 w-full overflow-hidden pointer-events-none z-[60] h-32 sm:h-40 md:h-48 -mt-2 sm:-mt-6 flex items-start justify-center transition-all duration-700 ease-in-out ${scrolled ? 'opacity-0 invisible -translate-y-4' : 'opacity-90 visible translate-y-0'}`}>
+        <Lottie 
+          animationData={christmasLights} 
+          loop={true} 
+          className="w-full min-w-[1200px] md:min-w-[1600px] max-w-none"
+        />
+      </div>
+
+      <div className="fixed top-0 w-full z-40">
         <nav className={`w-full transition-all duration-700 ease-in-out border-b ${scrolled ? 'bg-white/90 backdrop-blur-lg border-gray-200/50 py-3 shadow-sm' : 'bg-transparent border-transparent py-6'}`}>
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
-            <div className="flex items-center justify-between transition-all duration-500">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative">
+            <div className="flex items-center justify-between transition-all duration-500 relative z-10">
               
               {/* Left: Logo */}
               <Link href="/" className="flex items-center gap-3 group z-50 relative">
-                <div className="flex flex-col justify-center">
-                  <span className={`font-bodoni font-medium transition-all duration-700 ${scrolled ? 'text-2xl' : 'text-3xl'} text-[#113122] leading-none tracking-tight`}>
-                    Holiday <span className="italic text-brand-red">Dream</span>
-                  </span>
-                  <span className="text-[0.55rem] font-bold uppercase tracking-[0.4em] text-gray-500 mt-1 leading-none pl-0.5">
-                    Photos
-                  </span>
-                </div>
+                <img 
+                  src="/images/logo.png" 
+                  alt="Holiday Dream Photos" 
+                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'}`} 
+                />
               </Link>
               
               {/* Right: Links & CTA (Desktop - Top State Only) */}
@@ -107,15 +114,19 @@ export default function Nav() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] bg-[#113122] flex flex-col"
           >
+            {/* Decorative Background */}
+            <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none mix-blend-screen">
+              <img src="/images/hero_wreath.png" className="w-full h-full object-cover" alt="" />
+            </div>
+
             {/* Overlay Header */}
-            <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-6 flex justify-between items-center">
-              <Link href="/" className="flex flex-col justify-center" onClick={() => setMobileMenuOpen(false)}>
-                <span className="font-bodoni font-medium text-2xl text-white leading-none tracking-tight">
-                  Holiday <span className="italic text-brand-red">Dream</span>
-                </span>
-                <span className="text-[0.55rem] font-bold uppercase tracking-[0.4em] text-white/50 mt-1 leading-none pl-0.5">
-                  Photos
-                </span>
+            <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-6 flex justify-between items-center relative z-10">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <img 
+                  src="/images/logo.png" 
+                  alt="Holiday Dream Photos" 
+                  className="h-10 md:h-12 object-contain filter brightness-0 invert" 
+                />
               </Link>
               
               <button 
@@ -164,7 +175,7 @@ export default function Nav() {
                     hidden: { opacity: 0, y: 40 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                   }}
-                  className="w-full flex justify-center lg:justify-start border-t border-white/20 pt-8 lg:pt-10"
+                  className="w-full flex flex-col lg:flex-row items-center justify-between border-t border-white/20 pt-8 lg:pt-10 gap-8"
                 >
                   <Link 
                     href="/book-now"
@@ -172,6 +183,15 @@ export default function Nav() {
                   >
                     Book Your Session
                   </Link>
+
+                  <div className="flex gap-4">
+                    <a href="https://www.instagram.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-brand-red hover:bg-brand-red transition-all duration-300">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-brand-red hover:bg-brand-red transition-all duration-300">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                  </div>
                 </motion.div>
 
               </motion.div>

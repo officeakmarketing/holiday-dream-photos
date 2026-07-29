@@ -4,6 +4,8 @@ import SmoothScroll from "../components/SmoothScroll";
 import Nav from "../components/layout/Nav";
 import Footer from "../components/layout/Footer";
 
+
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
