@@ -29,14 +29,18 @@ export default function SantaCard({
       </div>
       
       {/* Gradient: Smooth bottom-up fade */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-700 z-10"></div>
+      
+      {/* Mobile-only light black overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-10"></div>
       
       {/* Lottie Snow Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen hidden lg:block">
         <Lottie 
           animationData={letItSnow} 
           loop={true} 
-          className="w-full h-full object-cover scale-110" 
+          className="w-full h-full scale-110" 
+          rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
         />
       </div>
 
@@ -49,7 +53,7 @@ export default function SantaCard({
           <h3 className="font-bodoni text-5xl md:text-6xl lg:text-7xl mb-6 text-[#F9F7F4] drop-shadow-lg">
             {titlePart1} <br className="lg:hidden" /> {titlePart2}
           </h3>
-          <p className="text-[#F9F7F4]/90 font-light text-sm md:text-base lg:text-lg leading-relaxed mb-10 hidden lg:block">
+          <p className="text-[#F9F7F4]/90 font-light text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-10">
             {description}
           </p>
           
