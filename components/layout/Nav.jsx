@@ -37,10 +37,11 @@ export default function Nav() {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Our Santas", href: "/our-santas" },
+    { name: "Pick Your Santa", href: "/our-santas" },
     { name: "Locations", href: "/locations" },
     { name: "Private Events", href: "/private-events" },
     { name: "About", href: "/about" },
+    { name: "Hiring", href: "/hiring" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -82,7 +83,7 @@ export default function Nav() {
                 ))}
                 <Link 
                   href="/book-now"
-                  className="px-8 py-3.5 bg-[#113122] text-white text-[0.65rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-red transition-colors duration-300"
+                  className="px-8 py-3.5 bg-brand-red text-white text-[0.65rem] font-bold uppercase tracking-[0.2em] hover:bg-[#113122] transition-colors duration-300 rounded-sm"
                 >
                   Book Now
                 </Link>

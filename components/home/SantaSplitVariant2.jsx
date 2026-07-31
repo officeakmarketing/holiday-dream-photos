@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export default function SantaSplit() {
+export default function SantaSplitVariant2() {
   return (
     <section className="bg-[#F9F7F4] relative overflow-hidden py-24 md:py-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">

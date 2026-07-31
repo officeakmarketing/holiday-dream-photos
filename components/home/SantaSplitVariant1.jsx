@@ -17,15 +17,10 @@ export default function SantaSplitVariant1() {
             </span>
             <Sparkles className="text-brand-red w-5 h-5" />
           </div>
-          <h2 className="font-bodoni text-6xl md:text-[7rem] text-[#113122] tracking-tighter leading-none mb-8">
-            Our <span className="italic text-brand-red relative inline-block">Magic
-              {/* Suggestion: You can place a Lottie 'Sparkle' animation here to loop continuously! */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-yellow-200/20 blur-xl rounded-full"></div>
-            </span>
+          <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl text-[#113122] tracking-tight leading-tight mb-2">
+            Two magical experiences. <br className="hidden md:block" />
+            <span className="italic text-brand-red">One unforgettable standard.</span>
           </h2>
-          <p className="text-[#113122]/60 max-w-2xl text-lg font-light leading-relaxed">
-            We are proud to offer two distinct, breathtaking Santa experiences. Select the one that perfectly fits your family's most cherished holiday traditions.
-          </p>
         </div>
 
         {/* Gateway Split Panels */}
@@ -64,12 +59,12 @@ export default function SantaSplitVariant1() {
               
                 <div className="mb-4 md:mb-8">
                     <p className="text-white/90 font-light text-xs sm:text-sm lg:text-base leading-relaxed max-w-sm drop-shadow-md">
-                      The heartwarming Christmas experience featuring our authentic, real-bearded Traditional Santa Claus in a beautifully decorated premium setting.
+                      The classic Christmas magic your family knows and loves — delivered at the highest standard. Warm, festive, and filled with the kind of wonder that makes children's eyes light up.
                     </p>
                 </div>
                 
                 <div className="inline-flex items-center gap-3 md:gap-4 bg-brand-red text-white px-5 md:px-8 py-3 md:py-4 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] group-hover:bg-white group-hover:text-brand-red transition-all duration-500 shadow-lg group-hover:shadow-xl w-fit">
-                  Explore Traditional 
+                  Book Traditional Santa
                   <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500 md:w-4 md:h-4" />
                 </div>
               </div>
@@ -100,12 +95,12 @@ export default function SantaSplitVariant1() {
               
                 <div className="mb-4 md:mb-8">
                     <p className="text-white/90 font-light text-xs sm:text-sm lg:text-base leading-relaxed max-w-sm drop-shadow-md">
-                      Celebrate the magic of representation. A joyful, premium holiday photo experience with our authentic, real-bearded Black Santa.
+                      Representation matters. Christmas magic belongs to every family. The same premium photography and enchanting atmosphere — with a Santa who looks like your family and makes the magic feel truly personal. Families travel from across the country for this experience.
                     </p>
                 </div>
                 
                 <div className="inline-flex items-center gap-3 md:gap-4 bg-brand-red text-white px-5 md:px-8 py-3 md:py-4 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] group-hover:bg-white group-hover:text-brand-red transition-all duration-500 shadow-lg group-hover:shadow-xl w-fit">
-                  Explore Black Santa 
+                  Book Black Santa
                   <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform duration-500 md:w-4 md:h-4" />
                 </div>
               </div>

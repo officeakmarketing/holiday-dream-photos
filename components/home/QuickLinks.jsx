@@ -152,12 +152,13 @@ export default function QuickLinks() {
       </div>
 
       {/* Horizontal Drag Gallery */}
-      <div 
-        className="pl-4 sm:pl-6 lg:pl-12 w-full overflow-hidden"
-        ref={carouselRef}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => { setIsHovering(false); setIsDragging(false); }}
-      >
+      <div className="w-full max-w-[1600px] mx-auto overflow-hidden">
+        <div 
+          className="pl-4 sm:pl-6 lg:pl-12 w-full"
+          ref={carouselRef}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => { setIsHovering(false); setIsDragging(false); }}
+        >
         <motion.div 
           drag="x"
           dragConstraints={carouselRef}
@@ -169,7 +170,7 @@ export default function QuickLinks() {
           {links.map((item, idx) => (
             <motion.div 
               key={idx} 
-              className="relative flex-none w-[75vw] sm:w-[320px] md:w-[350px] lg:w-[380px] h-[400px] md:h-[500px] overflow-hidden bg-[#F9F7F4] select-none group pointer-events-none"
+              className="relative flex-none w-[75vw] sm:w-[280px] md:w-[300px] lg:w-[340px] xl:w-[360px] h-[380px] md:h-[420px] lg:h-[480px] overflow-hidden bg-[#F9F7F4] select-none group pointer-events-none rounded-sm"
             >
               <Link 
                 href={item.href} 
@@ -220,6 +221,7 @@ export default function QuickLinks() {
             </motion.div>
           ))}
         </motion.div>
+        </div>
       </div>
     </section>
   );

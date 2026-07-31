@@ -22,8 +22,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-[100vh] bg-[#f5f9fa] overflow-hidden flex items-center pt-24 lg:pt-32 pb-20">
-      
+    <section className="relative w-full min-h-[100vh] bg-white overflow-hidden flex items-center pt-24 lg:pt-32 pb-20">
+
       {/* Right Image (Large Santa) */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export default function Hero() {
           src="/images/hero_santa.png"
           alt="Premium Santa Claus"
           fill
-          className="object-contain object-right-bottom"
+          className="object-contain object-right-bottom mix-blend-multiply brightness-[1.05]"
           priority
         />
       </motion.div>
@@ -49,20 +49,18 @@ export default function Hero() {
         >
           <motion.h1
             variants={itemVariants}
-            className="font-bodoni text-5xl lg:text-6xl font-medium text-[#113122] leading-tight mb-6"
+            className="font-bodoni text-4xl sm:text-5xl lg:text-6xl font-medium text-[#113122] leading-tight mb-6 tracking-tight"
           >
-            Capture the <span className="text-brand-red italic">Magic</span>
-            <br />
-            of the Holidays
+            The Santa Experience <br />
+            <span className="text-brand-red italic font-light">Your Family Will Never Forget</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-base text-gray-600 max-w-md mb-8 leading-relaxed"
           >
-            Skip the crowded mall lines. Step into our beautifully crafted
-            winter wonderland for a magical, unhurried photo session with our
-            authentic, real-bearded Santas.
+            Professional photography. Two magical experiences. Now at 8 locations across the USA this
+            Christmas season.
           </motion.p>
 
           <motion.div
@@ -72,9 +70,7 @@ export default function Hero() {
             <button className="w-full sm:w-auto px-8 py-3.5 bg-brand-red text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-brand-red-dark transition-colors rounded-sm shadow-sm">
               Book Your Session
             </button>
-            <button className="w-full sm:w-auto px-8 py-3.5 border border-[#113122] bg-transparent text-[#113122] font-semibold text-xs tracking-[0.2em] uppercase hover:bg-[#113122] hover:text-white transition-colors rounded-sm">
-              Explore Sets
-            </button>
+
           </motion.div>
 
           {/* Trust Elements */}
