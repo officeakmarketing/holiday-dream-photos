@@ -48,7 +48,7 @@ export default function Nav() {
   return (
     <>
       {/* Christmas Lights Decoration */}
-      <div className={`fixed top-0 left-0 w-full overflow-hidden pointer-events-none z-[60] h-32 sm:h-40 md:h-48 -mt-2 sm:-mt-6 flex items-start justify-center transition-all duration-700 ease-in-out ${scrolled ? 'opacity-0 invisible -translate-y-4' : 'opacity-90 visible translate-y-0'}`}>
+      <div className={`fixed top-0 md:top-2 left-0 w-full overflow-hidden pointer-events-none z-[60] h-32 sm:h-40 md:h-48 -mt-2 sm:-mt-6 flex items-start justify-center transition-all duration-700 ease-in-out ${scrolled ? 'opacity-0 invisible -translate-y-4' : 'opacity-90 visible translate-y-0'}`}>
         <Lottie 
           animationData={christmasLights} 
           loop={true} 
@@ -66,7 +66,7 @@ export default function Nav() {
                 <img 
                   src="/images/logo.png" 
                   alt="Holiday Dream Photos" 
-                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'}`} 
+                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-16'}`} 
                 />
               </Link>
               
@@ -92,11 +92,13 @@ export default function Nav() {
               {/* Right: Menu Button (Shows on Mobile ALWAYS, and Desktop when Scrolled) */}
               <div className={`flex items-center transition-all duration-700 ${!scrolled ? 'lg:opacity-0 lg:invisible lg:-translate-y-4 lg:pointer-events-none' : 'lg:opacity-100 lg:visible lg:translate-y-0'}`}>
                 <button 
-                  className="flex items-center gap-3 group text-[#113122] hover:text-brand-red transition-colors"
+                  className="flex items-center gap-3 group text-[#113122] transition-colors"
                   onClick={() => setMobileMenuOpen(true)}
                 >
-                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] hidden sm:block">Menu</span>
-                  <Menu size={28} strokeWidth={1.5} />
+                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] hidden sm:block group-hover:text-brand-red transition-colors mt-0.5">Menu</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center group-hover:border-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 shadow-sm">
+                    <Menu size={20} strokeWidth={1.5} className="md:w-5 md:h-5" />
+                  </div>
                 </button>
               </div>
 
@@ -126,16 +128,18 @@ export default function Nav() {
                 <img 
                   src="/images/logo.png" 
                   alt="Holiday Dream Photos" 
-                  className="h-10 md:h-12 object-contain filter brightness-0 invert" 
+                  className="h-14 md:h-16 object-contain filter brightness-0 invert" 
                 />
               </Link>
               
               <button 
-                className="flex items-center gap-3 group text-white hover:text-brand-red transition-colors"
+                className="flex items-center gap-3 group text-white transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] hidden sm:block">Close</span>
-                <X size={32} strokeWidth={1} />
+                <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] hidden sm:block group-hover:text-brand-red transition-colors mt-0.5">Close</span>
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                  <X size={20} strokeWidth={1.5} className="md:w-5 md:h-5" />
+                </div>
               </button>
             </div>
 

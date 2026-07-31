@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import TrustBar from "./TrustBar";
 
 export default function Hero() {
   const containerVariants = {
@@ -22,8 +23,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-[100vh] bg-white overflow-hidden flex items-center pt-24 lg:pt-32 pb-20">
-
+    <section className="relative w-full min-h-[100svh] bg-white overflow-hidden flex items-center pt-24 lg:pt-32 pb-32">
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
       {/* Right Image (Large Santa) */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -68,28 +77,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto"
           >
             <button className="w-full sm:w-auto px-8 py-3.5 bg-brand-red text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-brand-red-dark transition-colors rounded-sm shadow-sm">
-              Book Your Session
+              Book Your Session Now
             </button>
 
           </motion.div>
 
-          {/* Trust Elements */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-8 flex items-center justify-center lg:justify-start gap-4 text-xs text-gray-500 font-medium tracking-wide uppercase"
-          >
-            <div className="flex items-center gap-1.5">
-              <span className="text-brand-red font-bold">✓</span> Authentic
-              Beards
-            </div>
-            <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-brand-red font-bold">✓</span> Private
-              Sessions
-            </div>
-          </motion.div>
+      
         </motion.div>
       </div>
+
+      {/* Trust Bar (Static Marquee) */}
+      <TrustBar />
+
     </section>
   );
 }

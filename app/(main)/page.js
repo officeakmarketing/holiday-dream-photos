@@ -9,8 +9,6 @@ import LocationsStrip from "@/components/home/LocationsStrip";
 import FinalCTA from "@/components/home/FinalCTA";
 import MagicMoments from "@/components/home/MagicMoments";
 import QuickLinks from "@/components/home/QuickLinks";
-import SantaSplitVariant2 from "@/components/home/SantaSplitVariant2";
-import SantaSplitVariant3 from "@/components/home/SantaSplitVariant3";
 export const metadata = {
   title: 'Holiday Dream Photos | Premium Santa Experiences',
   description: 'Book a premium, unhurried holiday photo experience with our authentic Traditional and Black Santas. Serving families and corporate events.',
@@ -23,7 +21,7 @@ export default function Home() {
 
       <ProblemIntro />
       <SolutionIntro />
-      <SantaSplitVariant2 />
+      <SantaSplit />
       <Testimonials />
       <HowItWorks />
       <Urgency />
