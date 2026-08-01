@@ -49,6 +49,14 @@ export default function Nav() {
     <>
 
       <div className="fixed top-0 w-full z-40">
+        {/* Christmas Lights Decoration */}
+        <div className={`absolute sm:top-[-10px] left-0 w-full overflow-hidden pointer-events-none z-50 h-24 md:h-32 flex items-start justify-center transition-all duration-700 ease-in-out ${scrolled ? 'opacity-0 -translate-y-10 invisible' : 'opacity-90 -translate-y-0 visible -mt-2 md:-mt-4'}`}>
+          <Lottie 
+            animationData={christmasLights} 
+            loop={true} 
+            className="w-full min-w-[1200px] md:min-w-[2000px] max-w-none drop-shadow-md"
+          />
+        </div>
         <nav className={`w-full transition-all duration-700 ease-in-out border-b ${scrolled ? 'bg-white/90 backdrop-blur-lg border-gray-200/50 py-3 shadow-sm' : 'bg-transparent border-transparent py-6'}`}>
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative">
             <div className="flex items-center justify-between transition-all duration-500 relative z-10">

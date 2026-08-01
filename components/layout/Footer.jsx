@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="w-full bg-[#F9F7F4] pt-28 lg:pt-36 pb-12 relative overflow-hidden border-t border-[#113122]/10">
       
       {/* Background Snow Animation */}
-      <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none z-10 flex items-center justify-center filter brightness-0">
+      <div className="hidden md:flex absolute inset-0 w-full h-full opacity-10 pointer-events-none z-10 items-center justify-center filter brightness-0">
         <Lottie 
           animationData={snowAnimation} 
           loop={true} 

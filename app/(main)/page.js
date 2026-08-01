@@ -3,7 +3,6 @@ import CountdownBanner from "@/components/home/CountdownBanner";
 import ProblemIntro from "@/components/home/ProblemIntro";
 import SolutionIntro from "@/components/home/SolutionIntro";
 import SantaSplit from "@/components/home/SantaSplit";
-import TestimonialsMasonry from "@/components/home/TestimonialsMasonry";
 import Testimonials from "@/components/home/Testimonials";
 
 import HowItWorks from "@/components/home/HowItWorks";
@@ -26,7 +25,7 @@ export default function Home() {
       <SolutionIntro />
       <SantaSplit />
       
-      <TestimonialsMasonry />
+      <Testimonials/>
       
       <HowItWorks />
       <Urgency />

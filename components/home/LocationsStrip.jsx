@@ -5,14 +5,62 @@ import { MapPin, CalendarDays } from "lucide-react";
 
 export default function LocationsStrip() {
   const locations = [
-    { name: "Edgewater Mall", city: "Biloxi, MS" },
-    { name: "Almeda Mall", city: "Houston, TX" },
-    { name: "Central Mall", city: "Texarkana, TX" },
-    { name: "Outlets at Little Rock", city: "Little Rock, AR" },
-    { name: "Omaha Mall", city: "Omaha, NE" },
-    { name: "Northtown Mall", city: "Blaine, MN" },
-    { name: "Clearview Mall", city: "Butler, PA" },
-    { name: "The Shoppes at Bel Air", city: "Mobile, AL" },
+    { 
+      name: "Edgewater Mall", 
+      city: "Biloxi, MS",
+      address: "2600 Beach Blvd, Biloxi, MS 39531",
+      dates: "Nov 24 - Dec 24",
+      experiences: ["Traditional", "Black Santa"]
+    },
+    { 
+      name: "Almeda Mall", 
+      city: "Houston, TX",
+      address: "12200 Gulf Fwy, Houston, TX 77034",
+      dates: "Nov 17 - Dec 24",
+      experiences: ["Black Santa"]
+    },
+    { 
+      name: "Central Mall", 
+      city: "Texarkana, TX",
+      address: "2400 Richmond Rd, Texarkana, TX 75503",
+      dates: "Nov 24 - Dec 24",
+      experiences: ["Traditional"]
+    },
+    { 
+      name: "Outlets at Little Rock", 
+      city: "Little Rock, AR",
+      address: "11201 Bass Pro Pkwy, Little Rock, AR 72210",
+      dates: "Nov 24 - Dec 24",
+      experiences: ["Traditional", "Black Santa"]
+    },
+    { 
+      name: "Omaha Mall", 
+      city: "Omaha, NE",
+      address: "10000 California St, Omaha, NE 68114",
+      dates: "Nov 17 - Dec 24",
+      experiences: ["Traditional"]
+    },
+    { 
+      name: "Northtown Mall", 
+      city: "Blaine, MN",
+      address: "398 Northtown Dr, Blaine, MN 55434",
+      dates: "Nov 24 - Dec 24",
+      experiences: ["Traditional", "Black Santa"]
+    },
+    { 
+      name: "Clearview Mall", 
+      city: "Butler, PA",
+      address: "101 Clearview Cir, Butler, PA 16001",
+      dates: "Nov 24 - Dec 24",
+      experiences: ["Traditional"]
+    },
+    { 
+      name: "The Shoppes at Bel Air", 
+      city: "Mobile, AL",
+      address: "3299 Bel Air Mall, Mobile, AL 36606",
+      dates: "Nov 17 - Dec 24",
+      experiences: ["Traditional", "Black Santa"]
+    },
   ];
 
   const containerVariants = {
@@ -94,6 +142,25 @@ export default function LocationsStrip() {
                 </h3>
                 
                 <div className="w-8 h-[1px] bg-[#D4AF37]/50 mb-6 transition-all duration-500 group-hover:w-16"></div>
+
+                <div className="flex flex-col gap-3 mb-6">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin size={14} className="mt-0.5 text-brand-red shrink-0" />
+                    <span className="text-[#113122]/70 text-[11px] leading-snug">{loc.address}</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CalendarDays size={14} className="mt-0.5 text-brand-red shrink-0" />
+                    <span className="text-[#113122]/70 text-[11px] font-bold">{loc.dates}</span>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {loc.experiences.map((exp, i) => (
+                      <span key={i} className="px-2.5 py-1 bg-[#113122]/5 rounded-sm text-[9px] font-bold uppercase tracking-wider text-[#113122] border border-[#113122]/10">
+                        {exp}
+                      </span>
+                    ))}
+                  </div>
+                </div>
                 
                 {/* Flexible spacer to push button to bottom */}
                 <div className="flex-1"></div>
@@ -104,7 +171,7 @@ export default function LocationsStrip() {
                   confirmed by the client from 15 August. Do not show a booking button for any 
                   location without a confirmed schedule.
                 */}
-                <div className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-sm text-[10px] font-bold uppercase tracking-[0.1em] border border-gray-200 bg-white text-gray-400 mt-6 transition-colors duration-300 group-hover:border-[#113122]/20 group-hover:text-[#113122]">
+                <div className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-sm text-[10px] font-bold uppercase tracking-[0.1em] border border-gray-200 bg-white text-gray-400 mt-auto transition-colors duration-300 group-hover:border-[#113122]/20 group-hover:text-[#113122]">
                   <CalendarDays size={14} />
                   Schedule Coming Soon
                 </div>
