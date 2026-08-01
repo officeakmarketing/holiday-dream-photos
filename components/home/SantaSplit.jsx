@@ -15,7 +15,7 @@ export default function SantaSplit() {
           badgeText="The Classic"
           titlePart1="Traditional"
           titlePart2="Santa"
-          description="The classic Christmas magic your family knows and loves — delivered at the highest standard. Warm, festive, and filled with the kind of wonder that makes children's eyes light up."
+          description="The classic Christmas magic your family knows and loves, delivered at the highest standard. Warm, festive, and filled with the kind of wonder that makes children's eyes light up."
           buttonText="Book Traditional Santa"
         />
         
@@ -26,7 +26,7 @@ export default function SantaSplit() {
           badgeText="The Culture"
           titlePart1="Black"
           titlePart2="Santa"
-          description="Representation matters. Christmas magic belongs to every family. The same premium photography and enchanting atmosphere — with a Santa who looks like your family."
+          description="Representation matters. Christmas magic belongs to every family. The same premium photography and enchanting atmosphere with a Santa who looks like your family."
           buttonText="Book Black Santa"
           imagePosition="object-[50%_15%]"
         />

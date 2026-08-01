@@ -29,7 +29,7 @@ export default function AboutPage() {
               We grew tired of rushed mall lines, synthetic suits, and inauthentic interactions. 
             </p>
             <p className="text-gray-500 text-lg font-light leading-[1.8]">
-              That is why we guarantee every single one of our Santas—both Traditional and Black—features a real beard, a real belly, and a genuine love for bringing joy to children. 
+              That is why we guarantee every single one of our Santas, both Traditional and Black, features a real beard, a real belly, and a genuine love for bringing joy to children. 
               From our meticulously designed sets to our unhurried booking system, every detail is crafted to give your family a premium, unforgettable holiday memory.
             </p>
           </div>

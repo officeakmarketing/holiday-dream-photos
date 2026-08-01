@@ -26,7 +26,7 @@ export default function SolutionIntro() {
     {
       icon: Sparkles,
       title: "The Magic",
-      text: "From the moment your family arrives to the moment you leave, every detail is designed to feel like Christmas morning. The atmosphere, the setting, the experience — all of it built to make your child believe.",
+      text: "From the moment your family arrives to the moment you leave, every detail is designed to feel like Christmas morning. The atmosphere, the setting, the experience, all of it built to make your child believe.",
       bgColor: "bg-brand-red",
       textColor: "text-white",
       iconColor: "text-brand-red",
@@ -50,7 +50,7 @@ export default function SolutionIntro() {
   ];
 
   return (
-    <section className="py-16 md:py-28 bg-[#F9F7F4] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-[#F9F7F4] relative overflow-hidden">
       
       {/* Decorative Wreath Background */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-[0.05] md:opacity-[0.20] pointer-events-none z-0">
@@ -87,8 +87,8 @@ export default function SolutionIntro() {
             <div className="w-8 h-[1px] bg-brand-red"></div>
           </div>
           
-          <h2 className="font-bodoni text-3xl md:text-5xl lg:text-6xl font-medium text-[#113122] leading-tight drop-shadow-sm">
-            A Santa experience designed around one thing — <br className="hidden md:block" /><span className="italic text-brand-red">your family's perfect moment.</span>
+          <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl font-medium text-[#113122] leading-tight drop-shadow-sm">
+            A Santa experience designed around one thing: <br className="hidden md:block" /><span className="italic text-brand-red">your family's perfect moment.</span>
           </h2>
         </motion.div>
 
@@ -103,20 +103,20 @@ export default function SolutionIntro() {
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className={`flex flex-col items-center text-center px-5 py-8 md:px-6 md:py-12 lg:px-10 lg:py-16 ${col.bgColor} rounded-sm shadow-xl hover:-translate-y-2 transition-transform duration-500`}
+              className={`flex flex-col items-center text-center px-4 py-6 sm:px-5 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${col.bgColor} rounded-sm shadow-xl hover:-translate-y-2 transition-transform duration-500`}
             >
               {/* Icon in a white circle */}
-              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md flex items-center justify-center mb-6 md:mb-8 ${col.iconColor}`}>
-                <col.icon strokeWidth={1.5} size={24} className="md:w-7 md:h-7" />
+              <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md flex items-center justify-center mb-4 sm:mb-6 md:mb-8 ${col.iconColor}`}>
+                <col.icon strokeWidth={1.5} size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
               </div>
               
-              <h3 className={`font-bodoni text-2xl md:text-3xl mb-3 md:mb-4 ${col.textColor}`}>
+              <h3 className={`font-bodoni text-xl md:text-2xl lg:text-3xl mb-2 sm:mb-3 md:mb-4 ${col.textColor}`}>
                 {col.title}
               </h3>
               
-              <div className="w-10 md:w-12 h-[2px] bg-white/30 mb-4 md:mb-6 rounded-full"></div>
+              <div className="w-8 sm:w-10 md:w-12 h-[2px] bg-white/30 mb-3 sm:mb-4 md:mb-6 rounded-full"></div>
               
-              <p className={`${col.textColor} font-light text-base leading-relaxed opacity-90`}>
+              <p className={`${col.textColor} font-light text-sm sm:text-base leading-relaxed opacity-90`}>
                 {col.text}
               </p>
             </motion.div>

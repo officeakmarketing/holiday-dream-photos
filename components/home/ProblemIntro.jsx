@@ -26,7 +26,7 @@ export default function ProblemIntro() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-bodoni text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.1] mb-8"
+          className="font-bodoni text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] mb-8"
         >
           Most Santa experiences leave families disappointed. <br className="hidden md:block" />
           <span className="italic text-brand-red font-light">Yours does not have to be one of them.</span>

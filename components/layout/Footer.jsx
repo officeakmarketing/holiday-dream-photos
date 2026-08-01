@@ -35,10 +35,12 @@ export default function Footer() {
             <h4 className="uppercase tracking-[0.2em] text-xs font-bold mb-6 text-brand-red">Quick Links</h4>
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Home</Link>
-              <Link href="/our-santas" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Traditional Santa</Link>
-              <Link href="/black-santa" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Black Santa</Link>
+              <Link href="/our-santas" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Pick Your Santa</Link>
+              <Link href="/locations" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Locations</Link>
               <Link href="/private-events" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Private Events</Link>
-              <Link href="/locations" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Locations & Booking</Link>
+              <Link href="/about" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">About</Link>
+              <Link href="/hiring" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Hiring</Link>
+              <Link href="/contact" className="text-[#113122]/70 hover:text-[#113122] transition-colors text-sm font-medium">Contact</Link>
             </div>
           </div>
 

@@ -58,7 +58,7 @@ export default function Nav() {
                 <img
                   src="/images/logo.png"
                   alt="Holiday Dream Photos"
-                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-16'}`}
+                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-14'}`}
                 />
               </Link>
 

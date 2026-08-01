@@ -28,7 +28,7 @@ const testimonials = [
   }
 ];
 
-export default function Testimonials() {
+export default function TestimonialsMasonry() {
   return (
     <section className="py-16 md:py-20 bg-[#F9F7F4] relative overflow-hidden">
       
