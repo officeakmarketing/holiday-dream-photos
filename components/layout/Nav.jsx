@@ -115,11 +115,15 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] bg-[#113122] flex flex-col"
+            className="fixed inset-0 z-[100] bg-[#F9F7F4] flex flex-col"
           >
-            {/* Decorative Background */}
-            <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none mix-blend-screen">
-              <img src="/images/hero_wreath.png" className="w-full h-full object-cover" alt="" />
+            {/* Christmas Lights Decoration inside Overlay */}
+            <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none z-0 h-48 md:h-64 flex items-start justify-center opacity-100">
+              <Lottie 
+                animationData={christmasLights} 
+                loop={true} 
+                className="w-full min-w-[2000px] md:min-w-[2800px] max-w-none drop-shadow-md"
+              />
             </div>
 
             {/* Overlay Header */}
@@ -128,16 +132,16 @@ export default function Nav() {
                 <img
                   src="/images/logo.png"
                   alt="Holiday Dream Photos"
-                  className="h-14 md:h-16 object-contain filter brightness-0 invert"
+                  className="h-14 md:h-16 object-contain"
                 />
               </Link>
 
               <button
-                className="flex items-center gap-3 group text-white transition-colors"
+                className="flex items-center gap-3 group text-[#113122] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] hidden sm:block group-hover:text-brand-red transition-colors mt-0.5">Close</span>
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#113122]/20 flex items-center justify-center group-hover:border-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
                   <X size={20} strokeWidth={1.5} className="md:w-5 md:h-5" />
                 </div>
               </button>
@@ -155,24 +159,50 @@ export default function Nav() {
                 className="flex flex-col items-center w-full max-w-5xl"
               >
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-y-8 gap-x-12 lg:gap-x-24 w-full text-center lg:text-left mb-8 lg:mb-12">
-                  {links.map((link) => (
-                    <motion.div
-                      key={link.name}
-                      variants={{
-                        hidden: { opacity: 0, y: 40 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
-                      }}
-                      className="flex lg:justify-start justify-center"
-                    >
-                      <Link
-                        href={link.href}
-                        className="font-bodoni text-4xl lg:text-6xl text-white hover:text-brand-red transition-colors tracking-tighter leading-none block"
+                <div className="flex flex-col lg:flex-row gap-y-4 gap-x-12 lg:gap-x-24 w-full text-center lg:text-left mb-8 lg:mb-12">
+                  
+                  {/* Left Column */}
+                  <div className="flex flex-col gap-4 lg:gap-8 flex-1">
+                    {links.filter((_, i) => i % 2 === 0).map((link) => (
+                      <motion.div
+                        key={link.name}
+                        variants={{
+                          hidden: { opacity: 0, y: 40 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                        }}
+                        className="flex lg:justify-start justify-center relative w-full group/link border-b border-[#113122]/10 pb-4 lg:pb-6"
                       >
-                        {link.name}
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <Link
+                          href={link.href}
+                          className="font-bodoni text-4xl md:text-5xl lg:text-6xl transition-colors duration-300 tracking-tighter leading-none block w-full text-[#113122] hover:text-brand-red"
+                        >
+                          {link.name}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Right Column */}
+                  <div className="flex flex-col gap-4 lg:gap-8 flex-1">
+                    {links.filter((_, i) => i % 2 !== 0).map((link) => (
+                      <motion.div
+                        key={link.name}
+                        variants={{
+                          hidden: { opacity: 0, y: 40 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                        }}
+                        className="flex lg:justify-start justify-center relative w-full group/link border-b border-[#113122]/10 pb-4 lg:pb-6"
+                      >
+                        <Link
+                          href={link.href}
+                          className="font-bodoni text-4xl md:text-5xl lg:text-6xl transition-colors duration-300 tracking-tighter leading-none block w-full text-[#113122] hover:text-brand-red"
+                        >
+                          {link.name}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+
                 </div>
 
                 <motion.div
@@ -180,20 +210,20 @@ export default function Nav() {
                     hidden: { opacity: 0, y: 40 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                   }}
-                  className="w-full flex flex-col lg:flex-row items-center justify-between border-t border-white/20 pt-8 lg:pt-10 gap-8"
+                  className="w-full flex flex-col lg:flex-row items-center justify-between border-t border-[#113122]/10 pt-8 lg:pt-10 gap-8 relative z-10"
                 >
                   <Link
                     href="/book-now"
-                    className="inline-block border border-white/30 text-white text-xs font-bold uppercase tracking-[0.3em] px-10 py-4 hover:bg-white hover:text-[#113122] transition-colors"
+                    className="inline-block border border-[#113122]/20 text-[#113122] text-xs font-bold uppercase tracking-[0.3em] px-10 py-4 hover:bg-[#113122] hover:text-[#F9F7F4] transition-colors"
                   >
                     Book Your Session
                   </Link>
 
                   <div className="flex gap-4">
-                    <a href="https://www.instagram.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-brand-red hover:bg-brand-red transition-all duration-300">
+                    <a href="https://www.instagram.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-[#113122]/20 flex items-center justify-center text-[#113122] hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
-                    <a href="https://www.facebook.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-brand-red hover:bg-brand-red transition-all duration-300">
+                    <a href="https://www.facebook.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-[#113122]/20 flex items-center justify-center text-[#113122] hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
                   </div>
