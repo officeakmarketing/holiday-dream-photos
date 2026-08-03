@@ -77,7 +77,7 @@ export default function LocationsStrip() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#F9F7F4] relative border-t border-[#113122]/5">
+    <section className="py-20 md:py-28 bg-brand-light relative border-t border-brand-dark/5">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Header */}
@@ -85,10 +85,10 @@ export default function LocationsStrip() {
           <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
             Our Locations
           </span>
-          <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl text-[#113122] mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6">
             Find Your Nearest Santa
           </h2>
-          <p className="text-[#113122]/70 font-light text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+          <p className="text-brand-dark/70 font-light text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             We are bringing the magic of Holiday Dream Photos to 8 premium locations across the country this Christmas.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function LocationsStrip() {
                   <span className="text-brand-red font-bold uppercase tracking-[0.15em] text-[10px] block mb-2">
                     {loc.city}
                   </span>
-                  <h3 className="font-bodoni text-2xl text-[#113122] leading-tight">
+                  <h3 className="font-heading text-2xl text-brand-dark leading-tight">
                     {loc.name}
                   </h3>
                 </div>
@@ -131,13 +131,13 @@ export default function LocationsStrip() {
                 <div className="flex flex-col gap-4 mb-8 flex-1">
                   <div className="flex items-start gap-3">
                     <MapPin size={16} className="text-brand-red shrink-0 mt-0.5" />
-                    <span className="text-[#113122]/70 text-sm leading-snug">
+                    <span className="text-brand-dark/70 text-sm leading-snug">
                       {loc.address}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CalendarDays size={16} className="text-brand-red shrink-0" />
-                    <span className="text-[#113122] text-sm font-semibold">
+                    <span className="text-brand-dark text-sm font-semibold">
                       {loc.dates}
                     </span>
                   </div>
@@ -146,7 +146,7 @@ export default function LocationsStrip() {
                     <span className="text-xs text-gray-500 uppercase tracking-widest block mb-2 font-semibold">
                       Featuring
                     </span>
-                    <p className="text-[#113122] text-sm font-medium">
+                    <p className="text-brand-dark text-sm font-medium">
                       {loc.experiences.join(" & ")}
                     </p>
                   </div>
@@ -159,7 +159,7 @@ export default function LocationsStrip() {
                   location without a confirmed schedule.
                 */}
                 <div className="mt-auto">
-                  <button className="w-full flex items-center justify-between bg-[#113122]/5 text-[#113122]/50 px-5 py-4 rounded-sm text-xs font-bold uppercase tracking-widest cursor-not-allowed border border-transparent transition-colors group-hover:bg-[#113122]/10">
+                  <button className="w-full flex items-center justify-between bg-brand-dark/5 text-brand-dark/50 px-5 py-4 rounded-sm text-xs font-bold uppercase tracking-widest cursor-not-allowed border border-transparent transition-colors group-hover:bg-brand-dark/10">
                     <span>Schedule Coming Soon</span>
                   </button>
                 </div>

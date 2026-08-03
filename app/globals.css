@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfbf7;
-  --foreground: #0f172a;
+  --background: #F9F7F4;
+  --foreground: #113122;
   
   --brand-red: #c8102e;
   --brand-red-dark: #990a22;
-  --brand-dark: #0f172a;
-  --brand-light: #fdfbf7;
+  --brand-dark: #113122;
+  --brand-light: #F9F7F4;
 }
 
 @theme inline {
@@ -20,7 +20,7 @@
   --color-brand-light: var(--brand-light);
   
   --font-sans: var(--font-sans), "Montserrat", sans-serif;
-  --font-bodoni: var(--font-bodoni), "Bodoni Moda", serif;
+  --font-heading: var(--font-heading), "Fraunces", serif;
 }
 
 @layer base {

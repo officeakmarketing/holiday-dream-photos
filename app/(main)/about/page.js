@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#F9F7F4] min-h-screen">
+    <div className="bg-brand-light min-h-screen">
       
       {/* Brand Story Hero */}
       <section className="px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto pt-32 mb-16">
@@ -17,7 +17,7 @@ export default function AboutPage() {
             <p className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               Our Story
             </p>
-            <h1 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] leading-none tracking-tight mb-8 lg:mb-0">
+            <h1 className="font-heading text-6xl lg:text-[6rem] text-brand-dark leading-none tracking-tight mb-8 lg:mb-0">
               The Magic of an <br/>
               <span className="italic text-brand-red">Authentic</span> Experience
             </h1>
@@ -54,7 +54,7 @@ export default function AboutPage() {
           <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
             The Team
           </span>
-          <h2 className="font-bodoni text-5xl lg:text-[5rem] text-[#113122] tracking-tight">
+          <h2 className="font-heading text-5xl lg:text-[5rem] text-brand-dark tracking-tight">
             Magic Makers
           </h2>
         </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                   <span className="text-xs uppercase tracking-widest">Team Photo</span>
                 </div>
               </div>
-              <h3 className="font-bodoni text-3xl text-[#113122] mb-2">Name Placeholder</h3>
+              <h3 className="font-heading text-3xl text-brand-dark mb-2">Name Placeholder</h3>
               <p className="text-brand-red uppercase tracking-[0.2em] text-[10px] font-bold mb-6">Title Placeholder</p>
               <p className="text-gray-500 font-light text-base leading-[1.8]">
                 Short bio placeholder describing their role in making the holiday magic happen.

@@ -12,7 +12,7 @@ export default function BrandIntro() {
             <p className="text-brand-red font-semibold uppercase tracking-[0.2em] text-xs md:text-sm mb-4">
               Welcome to the Magic
             </p>
-            <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl font-medium text-[#113122] mb-6 leading-tight">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-brand-dark mb-6 leading-tight">
               Creating <span className="italic text-brand-red">Lifelong</span> Holiday Memories
             </h2>
             <div className="w-16 h-[2px] bg-brand-red mx-auto lg:mx-0 mb-8 rounded-sm"></div>
@@ -24,7 +24,7 @@ export default function BrandIntro() {
             </p>
             <Link 
               href="/about"
-              className="inline-flex items-center justify-center px-10 py-4 border border-[#113122] text-[#113122] font-semibold text-xs tracking-[0.2em] hover:bg-[#113122] hover:text-white transition-colors uppercase rounded-sm"
+              className="inline-flex items-center justify-center px-10 py-4 border border-brand-dark text-brand-dark font-semibold text-xs tracking-[0.2em] hover:bg-brand-dark hover:text-white transition-colors uppercase rounded-sm"
             >
               Our Story
             </Link>

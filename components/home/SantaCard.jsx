@@ -8,7 +8,6 @@ import letItSnow from "@/public/animations/Let it snow.json";
 export default function SantaCard({
   imageSrc,
   altText,
-  badgeText,
   titlePart1,
   titlePart2,
   description,
@@ -47,13 +46,10 @@ export default function SantaCard({
       {/* Content */}
       <div className="relative z-10 w-full h-full max-w-[1400px] mx-auto px-4 sm:px-8 flex flex-col justify-end pb-8 sm:pb-12 lg:pb-20 items-center text-center">
         <div className="max-w-xl transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
-          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3 md:mb-4 block drop-shadow-md">
-            {badgeText}
-          </span>
-          <h3 className="font-bodoni text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-[#F9F7F4] drop-shadow-lg">
+          <h3 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-brand-light drop-shadow-lg">
             {titlePart1} <br className="lg:hidden" /> {titlePart2}
           </h3>
-          <p className="text-[#F9F7F4]/90 font-light text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-10 line-clamp-3 sm:line-clamp-none">
+          <p className="text-brand-light/90 font-light text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-10 line-clamp-3 sm:line-clamp-none">
             {description}
           </p>
 

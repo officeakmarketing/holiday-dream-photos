@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function SantaOnWheelsPage() {
   return (
-    <div className="bg-[#F9F7F4] min-h-screen pb-32">
+    <div className="bg-brand-light min-h-screen pb-32">
       
       {/* Editorial Hero Layout */}
       <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pt-32 lg:pt-48 pb-24 border-b border-gray-200">
@@ -22,7 +22,7 @@ export default function SantaOnWheelsPage() {
             <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               Magic Delivered
             </span>
-            <h1 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+            <h1 className="font-heading text-6xl lg:text-[6rem] text-brand-dark mb-10 leading-none tracking-tight">
               Santa <br/><span className="italic text-brand-red">on Wheels</span>
             </h1>
             <p className="text-gray-500 text-lg font-light leading-[1.8] mb-12 max-w-xl">
@@ -32,7 +32,7 @@ export default function SantaOnWheelsPage() {
             <div>
               <Link 
                 href="/contact" 
-                className="inline-block bg-[#113122] text-white px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-black transition-colors"
+                className="inline-block bg-brand-dark text-white px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-black transition-colors"
               >
                 Enquire Now
               </Link>
@@ -56,7 +56,7 @@ export default function SantaOnWheelsPage() {
       {/* Info Banner */}
       <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-24">
         <div className="max-w-2xl">
-          <h2 className="font-bodoni text-3xl text-[#113122] mb-6">Currently in Development</h2>
+          <h2 className="font-heading text-3xl text-brand-dark mb-6">Currently in Development</h2>
           <p className="text-gray-500 font-light leading-relaxed">
             Our team is meticulously building this custom mobile experience. Please contact us if you would like to be notified when Santa on Wheels is ready to roll for the holiday season.
           </p>

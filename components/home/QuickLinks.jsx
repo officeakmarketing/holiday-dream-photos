@@ -138,7 +138,7 @@ export default function QuickLinks() {
             <span className="text-gray-400 font-semibold uppercase tracking-[0.4em] text-[10px] mb-6 block">
               Directory
             </span>
-            <h2 className="font-bodoni text-5xl md:text-6xl lg:text-[7rem] text-[#113122] leading-[0.9] tracking-tight">
+            <h2 className="font-heading text-5xl md:text-6xl lg:text-[7rem] text-brand-dark leading-[0.9] tracking-tight">
               Explore <span className="italic text-brand-red">More</span>
             </h2>
           </div>
@@ -170,7 +170,7 @@ export default function QuickLinks() {
           {links.map((item, idx) => (
             <motion.div 
               key={idx} 
-              className="relative flex-none w-[75vw] sm:w-[280px] md:w-[300px] lg:w-[340px] xl:w-[360px] h-[380px] md:h-[420px] lg:h-[480px] overflow-hidden bg-[#F9F7F4] select-none group pointer-events-none rounded-sm"
+              className="relative flex-none w-[75vw] sm:w-[280px] md:w-[300px] lg:w-[340px] xl:w-[360px] h-[380px] md:h-[420px] lg:h-[480px] overflow-hidden bg-brand-light select-none group pointer-events-none rounded-sm"
             >
               <Link 
                 href={item.href} 
@@ -193,12 +193,12 @@ export default function QuickLinks() {
                 </div>
                 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#113122]/90 via-[#113122]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                 {/* Content */}
                 <div className="absolute inset-0 p-8 flex flex-col justify-between text-white pointer-events-none">
                   <div className="flex justify-between items-start">
-                    <span className="font-bodoni text-xl italic text-white/70 group-hover:text-brand-red transition-colors duration-500">
+                    <span className="font-heading text-xl italic text-white/70 group-hover:text-brand-red transition-colors duration-500">
                       {item.number}
                     </span>
                     <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-red group-hover:border-brand-red transition-all duration-500 group-hover:scale-110 group-hover:-rotate-45">
@@ -207,7 +207,7 @@ export default function QuickLinks() {
                   </div>
 
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                    <h3 className="font-bodoni text-3xl md:text-4xl mb-3">
+                    <h3 className="font-heading text-3xl md:text-4xl mb-3">
                       {item.title}
                     </h3>
                     <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-700 ease-out overflow-hidden">

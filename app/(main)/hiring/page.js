@@ -7,14 +7,14 @@ export const metadata = {
 
 export default function HiringPage() {
   return (
-    <div className="bg-[#F9F7F4] min-h-screen flex items-center justify-center">
+    <div className="bg-brand-light min-h-screen flex items-center justify-center">
       
       <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full py-32 lg:py-48 text-center">
         
         <p className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
           Careers
         </p>
-        <h1 className="font-bodoni text-5xl md:text-7xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+        <h1 className="font-heading text-5xl md:text-7xl lg:text-[6rem] text-brand-dark mb-10 leading-none tracking-tight">
           Join the <br/><span className="italic text-brand-red">Team</span>
         </h1>
         
@@ -27,7 +27,7 @@ export default function HiringPage() {
           href="#" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block border border-[#113122] text-[#113122] px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-[#113122] hover:text-white transition-colors"
+          className="inline-block border border-brand-dark text-brand-dark px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-colors"
         >
           View Open Positions
         </a>

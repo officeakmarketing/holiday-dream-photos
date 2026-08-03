@@ -33,7 +33,7 @@ export default function MagicMoments() {
           <p className="text-brand-red font-semibold uppercase tracking-[0.2em] text-xs md:text-sm mb-4">
             Gallery
           </p>
-          <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl font-medium text-[#113122] mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-brand-dark mb-6">
             Magical Moments
           </h2>
           <div className="w-12 h-[1px] bg-brand-red mx-auto mb-8"></div>
@@ -51,7 +51,7 @@ export default function MagicMoments() {
                 alt={img.alt} 
                 className={`w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105 ${img.position || 'object-center'}`}
               />
-              <div className="absolute inset-0 bg-[#113122]/0 group-hover:bg-[#113122]/10 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/10 transition-colors duration-500" />
             </div>
           ))}
         </div>

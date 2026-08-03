@@ -1,6 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const AnimatedNumber = ({ value }) => (
+  <div className="relative inline-flex items-center justify-center overflow-hidden">
+    <AnimatePresence mode="popLayout" initial={false}>
+      <motion.span
+        key={value}
+        initial={{ y: "100%", opacity: 0, filter: "blur(2px)" }}
+        animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+        exit={{ y: "-100%", opacity: 0, filter: "blur(2px)" }}
+        transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        {String(value).padStart(2, '0')}
+      </motion.span>
+    </AnimatePresence>
+    <span className="invisible">{String(value).padStart(2, '0')}</span>
+  </div>
+);
 
 export default function CountdownBanner() {
   const [timeLeft, setTimeLeft] = useState({
@@ -58,7 +77,7 @@ export default function CountdownBanner() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-around gap-10 md:gap-4">
         
         {/* Title */}
-        <h2 className="font-bodoni text-4xl sm:text-5xl lg:text-6xl text-white font-medium text-center md:text-left leading-tight drop-shadow-md">
+        <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white font-medium text-center md:text-left leading-tight drop-shadow-md">
           Countdown to <br className="hidden md:block" />
           <span className="italic">Christmas</span>
         </h2>
@@ -68,40 +87,40 @@ export default function CountdownBanner() {
           
           {/* Days */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#F9F7F4] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
-              <span className=" text-3xl sm:text-5xl  font-bold text-brand-red ">{String(timeLeft.days).padStart(2, '0')}</span>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.days} /></span>
             </div>
-            <span className="text-white font-bodoni italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Days</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Days</span>
           </div>
 
-          <span className="text-white font-bodoni text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Hours */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#F9F7F4] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
-              <span className=" text-3xl sm:text-5xl  font-bold text-brand-red ">{String(timeLeft.hours).padStart(2, '0')}</span>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.hours} /></span>
             </div>
-            <span className="text-white font-bodoni italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Hours</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Hours</span>
           </div>
 
-          <span className="text-white font-bodoni text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Minutes */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#F9F7F4] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-3xl sm:text-5xl  font-bold text-brand-red ">{String(timeLeft.minutes).padStart(2, '0')}</span>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className="text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.minutes} /></span>
             </div>
-            <span className="text-white font-bodoni italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Minutes</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Minutes</span>
           </div>
 
-          <span className="text-white font-bodoni text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Seconds */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#F9F7F4] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
-              <span className=" text-3xl sm:text-5xl font-bold text-brand-red ">{String(timeLeft.seconds).padStart(2, '0')}</span>
+            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.seconds} /></span>
             </div>
-            <span className="text-white font-bodoni italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Seconds</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Seconds</span>
           </div>
 
         </div>

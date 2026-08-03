@@ -40,7 +40,7 @@ export default async function BlackSantaPage() {
   const data = await getBlackSantaData();
 
   return (
-    <div className="bg-[#F9F7F4] min-h-screen pb-32">
+    <div className="bg-brand-light min-h-screen pb-32">
       
       {/* Editorial Hero Layout */}
       <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pt-32 lg:pt-48 pb-24">
@@ -51,7 +51,7 @@ export default async function BlackSantaPage() {
             <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
               {data.hero.tagline}
             </span>
-            <h1 className="font-bodoni text-6xl lg:text-[6rem] text-[#113122] mb-10 leading-none tracking-tight">
+            <h1 className="font-heading text-6xl lg:text-[6rem] text-brand-dark mb-10 leading-none tracking-tight">
               The Home of the <br/><span className="italic text-brand-red">Black Santa</span>
             </h1>
             <p className="text-gray-500 text-lg font-light leading-[1.8] mb-16 max-w-xl">
@@ -59,7 +59,7 @@ export default async function BlackSantaPage() {
             </p>
 
             <div className="mb-16">
-              <h2 className="font-bodoni text-3xl text-[#113122] mb-6">{data.philosophy.headline}</h2>
+              <h2 className="font-heading text-3xl text-brand-dark mb-6">{data.philosophy.headline}</h2>
               <p className="text-gray-500 font-light leading-relaxed max-w-xl">
                 {data.philosophy.description}
               </p>
@@ -104,7 +104,7 @@ export default async function BlackSantaPage() {
                   {pkg.name}
                 </span>
                 <div className="flex items-end gap-3 mb-10">
-                  <span className="text-5xl font-bodoni text-[#113122]">[Package Price]</span>
+                  <span className="text-5xl font-heading text-brand-dark">[Package Price]</span>
                   <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">{pkg.priceHint}</span>
                 </div>
                 

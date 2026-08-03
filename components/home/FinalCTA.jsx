@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-export default function FinalCTA() {
+export default function FinalCTA({
+  headline = <>Give your family a <span className="italic text-brand-red">Christmas memory</span> that lasts forever.</>,
+  body = "Premium Santa photography. Two magical experiences. 8 locations nationwide. This is not a standard mall Santa. This is Holiday Dream Photos.",
+  ctaText = "Book Your Session",
+  ctaLink = "/book-now"
+}) {
   return (
     <section className="py-12 md:py-16 relative overflow-hidden flex items-center justify-center text-center md:text-left">
       {/* High-End CSS Gradient Background */}
@@ -28,9 +33,9 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="font-bodoni text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-[#F9F7F4] tracking-tight leading-[1.2] md:leading-[1.1] mb-4 drop-shadow-xl"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-brand-light tracking-tight leading-[1.2] md:leading-[1.1] mb-4 drop-shadow-xl"
           >
-            Give your family a <span className="italic text-brand-red">Christmas memory</span> that lasts forever.
+            {headline}
           </motion.h2>
 
           <motion.p
@@ -38,9 +43,9 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-[#F9F7F4]/80 font-light text-base sm:text-lg leading-relaxed drop-shadow-md"
+            className="text-brand-light/80 font-light text-base sm:text-lg leading-relaxed drop-shadow-md"
           >
-            Premium Santa photography. Two magical experiences. 8 locations nationwide. This is not a standard mall Santa. This is Holiday Dream Photos.
+            {body}
           </motion.p>
         </div>
 
@@ -52,11 +57,11 @@ export default function FinalCTA() {
           className="w-full md:w-auto shrink-0 flex flex-col items-center md:items-end gap-3"
         >
           <Link 
-            href="/book-now"
-            className="inline-flex items-center justify-center gap-4 bg-brand-red text-white px-8 py-5 md:px-12 md:py-6 rounded-sm text-sm font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] group w-full sm:w-auto"
+            href={ctaLink}
+            className="inline-flex items-center justify-center gap-2 md:gap-4 bg-brand-red text-white px-6 py-4 md:px-12 md:py-6 rounded-sm text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] group w-full sm:w-auto text-center"
           >
-            Book Your Session
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            {ctaText}
+            <ArrowRight size={18} className="w-4 h-4 md:w-[18px] md:h-[18px] group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" />
           </Link>
           <p className="text-white/50 text-[10px] sm:text-xs font-light italic tracking-wide uppercase text-center md:text-right px-4">
             Slots fill up fast. Reserve yours before it is too late.

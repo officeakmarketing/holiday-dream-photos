@@ -24,10 +24,10 @@ export default function Urgency() {
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-          className="w-full max-w-4xl bg-[#F9F7F4] sm:rounded-sm p-6 md:p-16 lg:p-20 shadow-2xl relative"
+          className="w-full max-w-4xl bg-brand-light sm:rounded-sm p-6 md:p-16 lg:p-20 shadow-2xl relative"
         >
           {/* Inner Gold Border (for that premium invitation feel) */}
-          <div className="absolute inset-4 border border-[#D4AF37]/30 pointer-events-none rounded-sm" />
+          <div className="absolute inset-4 border border-brand-gold/30 pointer-events-none rounded-sm" />
           
           <div className="text-center relative z-10">
             
@@ -39,22 +39,22 @@ export default function Urgency() {
               <div className="w-12 h-[1px] bg-brand-red"></div>
             </div>
             
-            <h2 className="font-bodoni text-2xl md:text-3xl lg:text-4xl text-[#113122] tracking-tight leading-[1.1] mb-4 md:mb-6 drop-shadow-sm">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-brand-dark tracking-tight leading-[1.1] mb-4 md:mb-6 drop-shadow-sm">
               The calendar <br className="hidden md:block"/>fills up fast.
             </h2>
-            <h3 className="font-bodoni text-xl md:text-2xl lg:text-3xl italic text-brand-red mb-8">
+            <h3 className="font-heading text-xl md:text-2xl lg:text-3xl italic text-brand-red mb-8">
               Every year families miss out.
             </h3>
-            <p className="text-[#113122]/80 font-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-6 px-4 md:px-0">
+            <p className="text-brand-dark/80 font-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-6 px-4 md:px-0">
               We operate across 8 locations with a limited number of sessions available each day. Once a slot is gone, it is gone.
             </p>
             
-            <p className="font-bold text-[#113122] text-lg md:text-xl mb-10 tracking-wide uppercase px-4 md:px-0">
+            <p className="font-bold text-brand-dark text-lg md:text-xl mb-10 tracking-wide uppercase px-4 md:px-0">
               Do not let your family miss out this Christmas.
             </p>
             <Link 
               href="/book-now"
-              className="inline-flex items-center justify-center gap-3 bg-[#113122] text-white px-8 py-4 md:px-10 md:py-5 rounded-sm text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-red transition-colors duration-300 shadow-xl group w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-3 bg-brand-dark text-white px-8 py-4 md:px-10 md:py-5 rounded-sm text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-red transition-colors duration-300 shadow-xl group w-full sm:w-auto"
             >
               Check Available Slots Now
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />

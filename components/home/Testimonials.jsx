@@ -30,7 +30,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-16 md:py-20 bg-[#F9F7F4] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-brand-light relative overflow-hidden">
       
       {/* Decorative Wreath Backgrounds */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] opacity-[0.03] pointer-events-none z-0">
@@ -42,10 +42,10 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12 relative">
           <div className="relative inline-block w-full">
-            <span className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bodoni text-[5rem] md:text-[7rem] lg:text-[10rem] text-[#113122]/5 italic whitespace-nowrap pointer-events-none select-none">
+            <span className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading text-[5rem] md:text-[7rem] lg:text-[10rem] text-brand-dark/5 italic whitespace-nowrap pointer-events-none select-none">
               Testimonials
             </span>
-            <h2 className="relative z-10 font-bodoni text-3xl sm:text-4xl md:text-5xl text-[#113122] tracking-tight leading-tight px-4">
+            <h2 className="relative z-10 font-heading text-3xl sm:text-4xl md:text-5xl text-brand-dark tracking-tight leading-tight px-4">
               What people <br className="sm:hidden" />
               <span className="italic text-brand-red drop-shadow-sm">are saying</span>
             </h2>
@@ -66,21 +66,21 @@ export default function Testimonials() {
             className="flex flex-col relative px-5 py-8 sm:p-12 lg:p-16 text-center rounded-[2rem] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100/60 transition-all duration-500 w-full"
           >
             {/* Massive Elegant Quote Mark */}
-            <Quote className="hidden sm:block absolute top-8 left-8 lg:top-12 lg:left-12 w-12 h-12 lg:w-16 lg:h-16 text-[#113122]/5 fill-current rotate-180" />
-            <Quote className="hidden sm:block absolute bottom-8 right-8 lg:bottom-12 lg:right-12 w-12 h-12 lg:w-16 lg:h-16 text-[#113122]/5 fill-current" />
+            <Quote className="hidden sm:block absolute top-8 left-8 lg:top-12 lg:left-12 w-12 h-12 lg:w-16 lg:h-16 text-brand-dark/5 fill-current rotate-180" />
+            <Quote className="hidden sm:block absolute bottom-8 right-8 lg:bottom-12 lg:right-12 w-12 h-12 lg:w-16 lg:h-16 text-brand-dark/5 fill-current" />
 
             <div className="flex justify-center gap-2 mb-6 sm:mb-8 relative z-10 pt-2 sm:pt-4">
               {[...Array(testimonials[0].stars)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#D4AF37] fill-[#D4AF37]" />
+                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-brand-dark fill-brand-dark" />
               ))}
             </div>
 
-            <p className="text-gray-800 font-bodoni text-lg sm:text-2xl lg:text-3xl leading-[1.6] italic mb-8 sm:mb-10 relative z-10 max-w-3xl mx-auto px-2 sm:px-0">
+            <p className="text-gray-800 font-heading text-lg sm:text-2xl lg:text-3xl leading-[1.6] italic mb-8 sm:mb-10 relative z-10 max-w-3xl mx-auto px-2 sm:px-0">
               "{testimonials[0].quote}"
             </p>
 
             <div className="flex flex-col items-center justify-center relative z-10 mt-6">
-              <span className="font-bold text-[#113122] uppercase tracking-[0.25em] text-xs md:text-sm mb-2.5">
+              <span className="font-bold text-brand-dark uppercase tracking-[0.25em] text-xs md:text-sm mb-2.5">
                 {testimonials[0].name}
               </span>
               <span className="text-brand-red text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">

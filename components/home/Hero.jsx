@@ -58,7 +58,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={itemVariants}
-            className="font-bodoni text-4xl sm:text-5xl lg:text-6xl font-medium text-[#113122] leading-tight mb-6 tracking-tight"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-brand-dark leading-tight mb-6 tracking-tight"
           >
             The Santa Experience <br />
             <span className="text-brand-red italic font-light">Your Family Will Never Forget</span>

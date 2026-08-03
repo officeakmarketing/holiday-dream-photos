@@ -23,7 +23,6 @@ export default function SantaSplit() {
         <SantaCard 
           imageSrc="/images/black-santa.jpg"
           altText="Black Santa"
-          badgeText="The Culture"
           titlePart1="Black"
           titlePart2="Santa"
           description="Representation matters. Christmas magic belongs to every family. The same premium photography and enchanting atmosphere with a Santa who looks like your family."

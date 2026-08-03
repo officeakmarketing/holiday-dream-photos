@@ -12,7 +12,7 @@ export default function TrustIntro() {
           className="object-cover"
         />
         {/* Heavy rich overlay for text legibility */}
-        <div className="absolute inset-0 bg-[#113122]/20 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-brand-dark/20 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
@@ -20,7 +20,7 @@ export default function TrustIntro() {
         <p className="text-brand-red font-semibold uppercase tracking-[0.2em] text-xs md:text-sm mb-4">
           The Holiday Dream Promise
         </p>
-        <h2 className="font-bodoni text-4xl md:text-5xl lg:text-6xl font-medium text-brand-light mb-8">
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-brand-light mb-8">
           We Only Use <span className="italic text-brand-red">Real</span> Bearded Santas
         </h2>
         <div className="w-16 h-[2px] bg-brand-red mx-auto mb-10 rounded-full"></div>

@@ -35,9 +35,9 @@ export default function SolutionIntro() {
       icon: Camera,
       title: "The Photography",
       text: "Every session is captured with professional lighting and equipment. These are not snapshots. These are the photos you frame, display, and share for the rest of your life.",
-      bgColor: "bg-[#113122]",
+      bgColor: "bg-brand-dark",
       textColor: "text-white",
-      iconColor: "text-[#113122]",
+      iconColor: "text-brand-dark",
     },
     {
       icon: CalendarCheck,
@@ -50,7 +50,7 @@ export default function SolutionIntro() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-[#F9F7F4] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-brand-light relative overflow-hidden">
       
       {/* Decorative Wreath Background */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-[0.05] md:opacity-[0.20] pointer-events-none z-0">
@@ -87,7 +87,7 @@ export default function SolutionIntro() {
             <div className="w-8 h-[1px] bg-brand-red"></div>
           </div>
           
-          <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl font-medium text-[#113122] leading-tight drop-shadow-sm">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-brand-dark leading-tight drop-shadow-sm">
             A Santa experience designed around one thing: <br className="hidden md:block" /><span className="italic text-brand-red">your family's perfect moment.</span>
           </h2>
         </motion.div>
@@ -110,7 +110,7 @@ export default function SolutionIntro() {
                 <col.icon strokeWidth={1.5} size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
               </div>
               
-              <h3 className={`font-bodoni text-xl md:text-2xl lg:text-3xl mb-2 sm:mb-3 md:mb-4 ${col.textColor}`}>
+              <h3 className={`font-heading text-xl md:text-2xl lg:text-3xl mb-2 sm:mb-3 md:mb-4 ${col.textColor}`}>
                 {col.title}
               </h3>
               
