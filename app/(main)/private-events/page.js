@@ -1,59 +1,162 @@
-import Image from "next/image";
 import EnquireForm from "@/components/forms/EnquireForm";
+import { Building, Users, School, Home, Store } from "lucide-react";
 
 export const metadata = {
   title: 'Private Events | Holiday Dream Photos',
   description: 'Book Santa for corporate events, private parties, or community gatherings.',
 };
 
-// ----------------------------------------------------------------------
-// DATA FETCH LAYER (Simulating Sanity CMS)
-// ----------------------------------------------------------------------
-const getPrivateEventsData = async () => {
-  return {
-    title: "Private Events & Corporate Bookings",
-    description: "Bring the magic of Holiday Dream Photos to your next private party, corporate event, or community gathering. Our authentic, real-bearded Santas provide a premium, unforgettable experience tailored perfectly for your guests.",
-    imageUrl: "/images/black-santa.jpg"
-  };
-};
-
-export default async function PrivateEventsPage() {
-  const data = await getPrivateEventsData();
+export default function PrivateEventsPage() {
+  const eventTypes = [
+    { title: "Corporate holiday parties & team celebrations", icon: Building },
+    { title: "Community events & neighbourhood gatherings", icon: Users },
+    { title: "School and church Christmas events", icon: School },
+    { title: "Private family parties", icon: Home },
+    { title: "Brand activations & retail experiences", icon: Store },
+  ];
 
   return (
-    <div className="bg-brand-light min-h-screen">
-      {/* Header spacing to account for fixed global Nav */}
-      <div className="pt-32 pb-16 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">
-
-        {/* Info Column */}
-        <div className="flex-1 lg:sticky lg:top-40">
-          <p className="text-gray-400 font-semibold uppercase tracking-[0.3em] text-xs mb-6">
+    <div className="flex flex-col min-h-screen bg-brand-light">
+      
+      {/* SECTION 1: HERO */}
+      <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
+        {/* Cinematic Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/images/background3.jpg" 
+            alt="Private Events" 
+            className="w-full h-full object-cover scale-105"
+          />
+          {/* Clean Transparent Black Overlay */}
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 md:mb-6 block drop-shadow-md">
             Exclusive Experiences
-          </p>
-          <h1 className="font-heading text-5xl md:text-7xl text-brand-dark mb-8 leading-[1.1] tracking-tight">
-            {data.title.split('&').map((text, i, arr) => (
-              <span key={i}>
-                {text.trim()} {i < arr.length - 1 && <span className="italic text-brand-red font-light mx-2">&amp;</span>}
-              </span>
-            ))}
+          </span>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-brand-dark mb-6 md:mb-8 leading-tight drop-shadow-xl text-white">
+            Bring the Christmas Magic to Your Event
           </h1>
-          <p className="text-gray-500 text-lg lg:text-xl font-light leading-[1.8] mb-12 max-w-xl">
-            {data.description}
+          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
+            Corporate parties. Private gatherings. Community celebrations. We bring a premium Santa experience directly to you.
           </p>
+        </div>
+      </section>
 
-
+      {/* SECTION 2: WHO THIS IS FOR (CINEMATIC BENTO GRID) */}
+      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20">
+        
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 block">
+            Exclusive Experiences
+          </span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6">
+            Perfect For
+          </h2>
+          <div className="w-16 h-[1px] bg-brand-red mx-auto"></div>
         </div>
 
-        {/* Form Column - True Editorial */}
-        <div className="flex-1 w-full relative pt-12 lg:pt-0">
-          <div className="w-16 h-[1px] bg-brand-dark mb-12"></div>
-          <h3 className="font-heading text-4xl text-brand-dark mb-12">Enquire Now</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6">
+          {[
+            { 
+              title: "Corporate holiday parties & team celebrations", 
+              tag: "Corporate", 
+              image: "/images/background.jpg",
+              span: "lg:col-span-7",
+              height: "h-80 lg:h-[400px]"
+            },
+            { 
+              title: "Community events & neighbourhood gatherings", 
+              tag: "Community", 
+              image: "/images/mall1.jpg",
+              span: "lg:col-span-5",
+              height: "h-80 lg:h-[400px]"
+            },
+            { 
+              title: "School and church Christmas events", 
+              tag: "Education", 
+              image: "/images/background2.jpg",
+              span: "lg:col-span-4",
+              height: "h-80 lg:h-[450px]"
+            },
+            { 
+              title: "Private family parties", 
+              tag: "Private", 
+              image: "/images/background3.jpg",
+              span: "lg:col-span-4",
+              height: "h-80 lg:h-[450px]"
+            },
+            { 
+              title: "Brand activations & retail experiences", 
+              tag: "Commercial", 
+              image: "/images/mall2.jpg",
+              span: "lg:col-span-4",
+              height: "h-80 lg:h-[450px]"
+            }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className={`relative group overflow-hidden rounded-2xl ${item.height} ${item.span} border border-brand-dark/10 shadow-xl`}
+            >
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+              />
+              {/* Complex gradient for premium depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black group-hover:via-black/60 transition-colors duration-700"></div>
+              
+              <div className="absolute inset-0 p-6 md:p-8 lg:p-10 flex flex-col justify-end text-left z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">
+                    0{index + 1}
+                  </span>
+                  <div className="w-6 h-[1px] bg-brand-red/50"></div>
+                  <span className="text-white/70 font-light uppercase tracking-[0.1em] text-[10px] md:text-xs">
+                    {item.tag}
+                  </span>
+                </div>
+                <h3 className="text-white font-heading text-2xl md:text-3xl lg:text-4xl leading-tight drop-shadow-md">
+                  {item.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          {/* Client Component for the form to handle state */}
-          <EnquireForm />
+      {/* SECTION 3: ENQUIRY FORM */}
+      <section className="py-16 md:py-24 bg-white border-t border-brand-dark/10 relative">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-full max-w-xl h-full opacity-5 pointer-events-none hidden lg:block overflow-hidden">
+           <img src="/images/hero_wreath.png" alt="" className="w-full h-full object-cover -translate-y-1/4 translate-x-1/4 scale-150" />
         </div>
 
-      </div>
+        <div className="px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-10">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-4 block">
+              Book Your Event
+            </span>
+            <h2 className="font-heading text-4xl md:text-5xl text-brand-dark mb-4 md:mb-6">Tell us about your event</h2>
+            <p className="text-brand-dark/70 text-base md:text-lg font-light max-w-2xl mx-auto">
+              Fill in the form below and we will get back to you within 24 hours with availability and pricing.
+            </p>
+          </div>
+
+          <div className="w-full">
+            <EnquireForm />
+            
+            {/* BELOW FORM TEXT */}
+            <div className="mt-8 text-center pt-8">
+              <p className="text-brand-red font-bold text-lg md:text-xl italic drop-shadow-sm">
+                We respond to every enquiry within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

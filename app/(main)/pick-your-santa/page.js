@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Quote } from "lucide-react";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import FinalCTA from "@/components/home/FinalCTA";
-
 export const metadata = {
   title: 'Pick Your Santa | Holiday Dream Photos',
   description: 'Two premium experiences. One unforgettable standard. Choose between our Traditional and Black Santa experiences.',
@@ -12,7 +11,7 @@ export default function OurSantasPage() {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* ABOVE THE FOLD FULL-SCREEN CONTAINER */}
-      <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-4 lg:pb-0">
+      <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-16 lg:pb-24">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
         <section className="pt-28 md:pt-32 pb-4 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
@@ -28,7 +27,7 @@ export default function OurSantasPage() {
       </section>
 
       {/* SECTION 2: THE TWO CARDS */}
-      <section className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-12 flex-1 flex flex-col pb-4 lg:pb-0">
+      <section className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-12 flex-1 flex flex-col pb-8 lg:pb-12">
         
         {/* Unified Responsive Grid (Cinematic Split Screen on Mobile, Side-by-Side on Desktop) */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 flex-1 h-full">
@@ -169,25 +168,11 @@ export default function OurSantasPage() {
       </section>
 
       {/* SECTION 4: FAQ */}
-      <section className="py-24 bg-brand-light border-t border-brand-dark/10 relative overflow-hidden">
+      <div className="relative border-t border-brand-dark/10 overflow-hidden bg-brand-light">
         {/* Subtle decorative background */}
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          
-          <div className="text-center mb-12 md:mb-20">
-            <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
-              Got Questions?
-            </span>
-            <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark">
-              Frequently Asked Questions
-            </h3>
-          </div>
-          
-          <FaqAccordion />
-
-        </div>
-      </section>
+        <FaqAccordion />
+      </div>
 
       {/* SECTION 5: FINAL CTA */}
       <FinalCTA 

@@ -23,15 +23,23 @@ export default function LocationsPage() {
     <div className="flex flex-col min-h-screen bg-brand-light">
       
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-4 bg-brand-dark text-center relative overflow-hidden">
-        {/* Subtle abstract background element */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] lg:w-[1200px] aspect-square bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.12)_0%,_transparent_70%)] pointer-events-none blur-3xl"></div>
+      <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
+        {/* Cinematic Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/images/background2.jpg" 
+            alt="Christmas Atmosphere" 
+            className="w-full h-full object-cover scale-105"
+          />
+          {/* Clean Transparent Black Overlay */}
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
         
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-6 block drop-shadow-md">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-md">
             Nationwide Magic
           </span>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-white mb-6 md:mb-8 leading-tight drop-shadow-lg">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-brand-dark mb-6 md:mb-8 leading-tight drop-shadow-xl text-white">
             Find Your Nearest Location
           </h1>
           <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
@@ -41,20 +49,28 @@ export default function LocationsPage() {
       </section>
 
       {/* SECTION 2: LOCATION CARDS GRID */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20 -mt-16 md:-mt-24">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto relative z-20">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
           {locations.map((loc) => (
             <div 
               key={loc.id}
               className="bg-white rounded-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(17,49,34,0.15)] transition-all duration-500 group flex flex-col h-full border border-brand-dark/5 hover:-translate-y-2"
             >
-              {/* Card Header (Premium Dark Header) */}
-              <div className="h-32 sm:h-40 bg-brand-dark relative overflow-hidden flex items-center justify-center">
-                {/* Subtle map pattern or gradient */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.2)_0%,_transparent_70%)] transition-opacity duration-500 group-hover:opacity-60"></div>
+              {/* Card Header (Cinematic Image Area) */}
+              <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
+                <img 
+                  src={`/images/mall${loc.id % 2 === 0 ? '2' : '1'}.jpg`}
+                  alt={`${loc.mall} location`}
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                />
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 
-                <MapPin className="w-10 h-10 text-brand-gold/80 relative z-10 transform group-hover:scale-110 transition-transform duration-500 drop-shadow-md" />
+                {/* Floating Map Pin Badge */}
+                <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-md border border-white/30 text-white p-2.5 rounded-full shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 drop-shadow-md" />
+                </div>
               </div>
               
               {/* Card Content */}
@@ -63,14 +79,17 @@ export default function LocationsPage() {
                   <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] block mb-2">
                     {loc.city}, {loc.state}
                   </span>
-                  <h2 className="font-heading text-2xl md:text-3xl text-brand-dark mb-2 leading-tight">
+                  <h2 className="font-heading text-2xl md:text-3xl text-brand-dark mb-3 leading-tight">
                     {loc.mall}
                   </h2>
+                  <p className="text-[11px] md:text-xs text-brand-dark/70 leading-relaxed font-light">
+                    Experience the magic of Holiday Dream Photos this Christmas. A premium, unforgettable Santa photo event for the whole family right here in {loc.city}.
+                  </p>
                 </div>
                 
                 {/* Status / Button Area */}
                 <div className="mt-8 pt-6 border-t border-brand-dark/10">
-                  <div className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 border border-brand-dark/10 text-brand-dark/50 py-3.5 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] rounded cursor-not-allowed select-none transition-colors duration-300 group-hover:bg-gray-200">
+                  <div className="w-full inline-flex items-center justify-center gap-2 bg-brand-light border border-brand-dark/20 text-brand-dark/60 py-3.5 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] rounded-md cursor-not-allowed select-none transition-colors duration-300 shadow-sm">
                     <CalendarClock size={16} className="opacity-70" />
                     <span>Schedule Coming Soon</span>
                   </div>
@@ -82,7 +101,7 @@ export default function LocationsPage() {
       </section>
 
       {/* SECTION 3: FINAL CTA */}
-      <div className="mt-0">
+      <div className="mt-8 md:mt-16">
         <FinalCTA 
           headline={<>The most <span className="italic text-brand-red">magical</span> time of the year is approaching.</>}
           body="Schedules for all 8 nationwide locations will be officially confirmed starting 15 August. Check back soon to secure your family's spot."

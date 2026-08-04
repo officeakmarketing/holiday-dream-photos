@@ -2,65 +2,44 @@ import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata = {
   title: 'Contact Us | Holiday Dream Photos',
-  description: 'Get in touch with the Holiday Dream Photos team for general enquiries, support, or location details.',
+  description: 'Questions about booking, locations, private events, or anything else — get in touch.',
 };
 
 export default function ContactPage() {
   return (
-    <div className="bg-brand-light min-h-screen">
+    <div className="bg-[#fcfaf9] min-h-screen font-sans">
       
-      {/* Header spacing to account for fixed global Nav */}
-      <div className="pt-32 pb-16 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start">
-        
-        {/* Info Column */}
-        <div className="flex-1 lg:sticky lg:top-40">
-          <p className="text-gray-400 font-semibold uppercase tracking-[0.3em] text-xs mb-6">
-            Get in Touch
-          </p>
-          <h1 className="font-heading text-6xl md:text-[5.5rem] text-brand-dark mb-10 leading-none tracking-tight">
-            Contact Our <br/>
-            <span className="italic text-brand-red">Team</span>
+      {/* SECTION 1: HERO */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-black text-center relative overflow-hidden mb-12 lg:mb-16">
+        {/* Cinematic Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/images/traditional-santa.jpg" 
+            alt="Contact Holiday Dream Photos" 
+            className="w-full h-full object-cover scale-105 object-center opacity-70"
+          />
+          {/* Clean Transparent Black Overlay */}
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-md">
+            Contact Us
+          </span>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-white mb-4 md:mb-6 leading-tight drop-shadow-xl">
+            We are here to help
           </h1>
-          <p className="text-gray-500 text-lg lg:text-xl font-light leading-[1.8] mb-16 max-w-xl">
-            Have a question about your booking, our locations, or looking to join our magical team? Send us a message and we will respond as soon as possible.
+          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
+            Questions about booking, locations, private events, or anything else get in touch and we will get back to you within 24 hours.
           </p>
-          
-          <div className="space-y-12">
-            <div>
-              <p className="font-heading text-brand-dark text-2xl mb-2">Headquarters</p>
-              <p className="text-gray-500 font-light text-base leading-relaxed">
-                123 North Pole Way<br/>
-                Suite 400<br/>
-                Winterville, ST 12345
-              </p>
-            </div>
-
-            <div>
-              <p className="font-heading text-brand-dark text-2xl mb-2">Email</p>
-              <p className="text-gray-500 font-light text-base">
-                support@holidaydreamphotos.com
-              </p>
-            </div>
-
-            <div>
-              <p className="font-heading text-brand-dark text-2xl mb-2">Phone</p>
-              <p className="text-gray-500 font-light text-base">
-                1-800-555-0199
-              </p>
-            </div>
-          </div>
         </div>
+      </section>
 
-        {/* Form Column - True Editorial, no box */}
-        <div className="flex-1 w-full relative">
-          <div className="w-16 h-[1px] bg-brand-dark mb-12"></div>
-          <h3 className="font-heading text-4xl text-brand-dark mb-12">Send a Message</h3>
-          
-          {/* Client Component for the form to handle state */}
-          <ContactForm />
-        </div>
+      {/* SECTION 2: FORM */}
+      <section className="px-4 sm:px-6 lg:px-12 w-full max-w-[1500px] mx-auto mb-16 lg:mb-20 relative z-20">
+        <ContactForm />
+      </section>
 
-      </div>
     </div>
   );
 }

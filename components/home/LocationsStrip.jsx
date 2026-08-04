@@ -78,11 +78,11 @@ export default function LocationsStrip() {
 
   return (
     <section className="py-20 md:py-28 bg-brand-light relative border-t border-brand-dark/5">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 block">
             Our Locations
           </span>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6">
@@ -99,38 +99,44 @@ export default function LocationsStrip() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
         >
           {locations.map((loc, idx) => (
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-200 overflow-hidden flex flex-col group h-full"
+              className="bg-white rounded-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(17,49,34,0.15)] transition-all duration-500 group flex flex-col h-full border border-brand-dark/5 hover:-translate-y-2"
             >
-              {/* Clean Image Header */}
-              <div className="relative w-full aspect-[16/9] bg-gray-100 overflow-hidden">
+              {/* Cinematic Image Area */}
+              <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
                 <img 
-                  src="/images/placeholder-mall.png" 
-                  alt={loc.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={`/images/mall${(idx % 2) === 0 ? '2' : '1'}.jpg`}
+                  alt={`${loc.name} location`}
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                
+                {/* Floating Map Pin Badge */}
+                <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-md border border-white/30 text-white p-2.5 rounded-full shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 drop-shadow-md" />
+                </div>
               </div>
 
-              {/* Card Body - High Utility */}
-              <div className="p-6 md:p-8 flex flex-col flex-1">
+              {/* Card Body */}
+              <div className="p-6 md:p-8 flex flex-col flex-1 bg-white relative">
                 
-                <div className="mb-6 border-b border-gray-100 pb-6">
-                  <span className="text-brand-red font-bold uppercase tracking-[0.15em] text-[10px] block mb-2">
+                <div className="mb-6">
+                  <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] block mb-2">
                     {loc.city}
                   </span>
-                  <h3 className="font-heading text-2xl text-brand-dark leading-tight">
+                  <h3 className="font-heading text-2xl md:text-3xl text-brand-dark leading-tight">
                     {loc.name}
                   </h3>
                 </div>
                 
                 <div className="flex flex-col gap-4 mb-8 flex-1">
                   <div className="flex items-start gap-3">
-                    <MapPin size={16} className="text-brand-red shrink-0 mt-0.5" />
                     <span className="text-brand-dark/70 text-sm leading-snug">
                       {loc.address}
                     </span>
@@ -142,8 +148,8 @@ export default function LocationsStrip() {
                     </span>
                   </div>
                   
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <span className="text-xs text-gray-500 uppercase tracking-widest block mb-2 font-semibold">
+                  <div className="mt-2 pt-4 border-t border-brand-dark/5">
+                    <span className="text-[10px] text-brand-dark/50 uppercase tracking-[0.2em] block mb-1 font-semibold">
                       Featuring
                     </span>
                     <p className="text-brand-dark text-sm font-medium">
@@ -159,7 +165,7 @@ export default function LocationsStrip() {
                   location without a confirmed schedule.
                 */}
                 <div className="mt-auto">
-                  <button className="w-full flex items-center justify-between bg-brand-dark/5 text-brand-dark/50 px-5 py-4 rounded-sm text-xs font-bold uppercase tracking-widest cursor-not-allowed border border-transparent transition-colors group-hover:bg-brand-dark/10">
+                  <button className="w-full flex items-center justify-center bg-brand-dark/5 text-brand-dark/50 px-5 py-4 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] cursor-not-allowed border border-transparent transition-colors group-hover:bg-brand-dark/10">
                     <span>Schedule Coming Soon</span>
                   </button>
                 </div>

@@ -1,83 +1,51 @@
-import Image from "next/image";
+import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata = {
   title: 'Our Story | Holiday Dream Photos',
-  description: 'Learn about the magic behind Holiday Dream Photos and our commitment to authentic, real-bearded Santa experiences.',
+  description: 'We started Holiday Dream Photos because families deserve better.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="bg-brand-light min-h-screen">
-      
-      {/* Brand Story Hero */}
-      <section className="px-4 sm:px-6 lg:px-12 max-w-[1600px] mx-auto pt-32 mb-16">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
-          
-          <div className="w-full lg:w-[45%]">
-            <p className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
-              Our Story
+    <div className="bg-[#fcfaf9] min-h-screen font-sans">
+      <section className="px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto pt-32 lg:pt-40 mb-20 lg:mb-24">
+        
+        <div className="mb-12">
+          <p className="text-brand-red uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold mb-6 text-center">
+            Our Story
+          </p>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.2] tracking-tight max-w-5xl text-center mx-auto mb-10">
+            We started Holiday Dream Photos because families deserve <span className="text-brand-red italic">better.</span>
+          </h1>
+        </div>
+
+        <div className="w-full border-t border-brand-dark/10 pt-10">
+          <div className="columns-1 md:columns-2 gap-12 text-brand-dark/80 text-lg font-light leading-[1.9]">
+            <p className="mb-6">
+              <span className="float-left text-6xl font-heading text-brand-red pr-3 leading-[0.8] mt-2">T</span>
+              he Santa experience most families were getting was not good enough. Rushed sessions. Generic setups. Photos that belonged in the bin. And for families who wanted to see themselves reflected in the magic, the options were almost zero. We built Holiday Dream Photos to fix both of those things.
             </p>
-            <h1 className="font-heading text-6xl lg:text-[6rem] text-brand-dark leading-none tracking-tight mb-8 lg:mb-0">
-              The Magic of an <br/>
-              <span className="italic text-brand-red">Authentic</span> Experience
-            </h1>
+            <p className="mb-6">
+              We created a team of exceptional Santas who understand that this moment matters deeply. We invested in professional photography that does justice to what families actually feel. We built a warm, festive atmosphere that makes children genuinely believe.
+            </p>
+            <p className="mb-6">
+              And we created the premium Black Santa experience that families across America had been waiting for. Today we operate across 8 locations and have served [PLACEHOLDER].
+            </p>
+            <p className="font-bold text-brand-dark mb-6 break-inside-avoid">
+              The standard we hold every part of this experience to has never changed because families deserve the real thing. Every single time.
+            </p>
           </div>
-
-          <div className="w-full lg:w-[55%] flex flex-col justify-end">
-            <p className="text-gray-500 text-xl font-light leading-[1.8] mb-8">
-              Holiday Dream Photos was founded on a simple premise: the magic of Christmas should feel real. 
-              We grew tired of rushed mall lines, synthetic suits, and inauthentic interactions. 
-            </p>
-            <p className="text-gray-500 text-lg font-light leading-[1.8]">
-              That is why we guarantee every single one of our Santas, both Traditional and Black, features a real beard, a real belly, and a genuine love for bringing joy to children. 
-              From our meticulously designed sets to our unhurried booking system, every detail is crafted to give your family a premium, unforgettable holiday memory.
-            </p>
-          </div>
-
         </div>
+
       </section>
 
-      {/* Hero Image Break */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 mb-32">
-        <div className="w-full relative aspect-[21/9] bg-white">
-          <img
-            src="/images/traditional-santa.jpg"
-            alt="The Holiday Dream Photos Magic"
-            className="w-full h-full object-cover object-[50%_20%]"
-          />
-        </div>
-      </section>
-
-      {/* Team Section (Placeholder) */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-16 border-t border-gray-200">
-        <div className="mb-20">
-          <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">
-            The Team
-          </span>
-          <h2 className="font-heading text-5xl lg:text-[5rem] text-brand-dark tracking-tight">
-            Magic Makers
-          </h2>
-        </div>
-          
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-20">
-          {[1, 2, 3].map((member) => (
-            <div key={member} className="flex flex-col group">
-              <div className="relative aspect-[3/4] w-full mb-8 bg-[#EAE8E3]">
-                {/* Client will provide photos */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                  <span className="text-xs uppercase tracking-widest">Team Photo</span>
-                </div>
-              </div>
-              <h3 className="font-heading text-3xl text-brand-dark mb-2">Name Placeholder</h3>
-              <p className="text-brand-red uppercase tracking-[0.2em] text-[10px] font-bold mb-6">Title Placeholder</p>
-              <p className="text-gray-500 font-light text-base leading-[1.8]">
-                Short bio placeholder describing their role in making the holiday magic happen.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      {/* SECTION 3: FINAL CTA */}
+      <FinalCTA 
+        headline="Come and experience the magic for yourself."
+        body="Reserve your spot today. Sessions fill up quickly."
+        ctaText="Book Your Session Now"
+      />
     </div>
   );
 }
+

@@ -55,7 +55,7 @@ export default function SantaCard({
 
           <Link
             href={buttonHref}
-            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-brand-red text-white px-6 sm:px-10 py-3 sm:py-5 rounded-sm text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-[0_0_20px_rgba(200,16,46,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-brand-red text-white px-6 sm:px-10 py-3 sm:py-5 rounded-none text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-red transition-colors duration-300 shadow-none"
           >
             {buttonText}
             <ArrowRight size={12} className="sm:w-[14px] sm:h-[14px]" />

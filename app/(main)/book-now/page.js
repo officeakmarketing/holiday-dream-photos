@@ -1,62 +1,54 @@
+import BookingWidget from "@/components/booking/BookingWidget";
+
 export const metadata = {
   title: 'Book Now | Holiday Dream Photos',
-  description: 'Book your premium Santa photography session. Select your preferred mall location and choose between our Traditional or Black Santa experiences.',
+  description: 'Pick your location, choose your time, and pay securely online.',
 };
 
 export default function BookNowPage() {
   return (
-    <div className="bg-brand-light min-h-screen">
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 pb-16 pt-32">
+    <div className="flex flex-col min-h-screen bg-brand-light">
+      
+      {/* SECTION 1: HERO */}
+      <section className="pt-32 pb-32 md:pt-48 md:pb-56 px-4 bg-black text-center relative overflow-hidden">
+        {/* Cinematic Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/images/background.jpg" 
+            alt="Book Your Session" 
+            className="w-full h-full object-cover scale-105"
+          />
+          {/* Clean Transparent Black Overlay */}
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
         
-        {/* Editorial Header */}
-        <div className="text-center mb-20">
-          <p className="text-gray-400 font-semibold uppercase tracking-[0.3em] text-xs mb-6">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 md:mb-6 block drop-shadow-md">
             Reservation System
-          </p>
-          <h1 className="font-heading text-6xl md:text-[5.5rem] text-brand-dark mb-8 leading-none tracking-tight">
-            Reserve Your <span className="italic text-brand-red">Magic</span>
+          </span>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 md:mb-8 leading-tight drop-shadow-xl px-2">
+            Book Your Holiday Dream Photos Session
           </h1>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto font-light leading-[1.8]">
-            Follow the steps below to secure your unhurried, premium holiday experience. Select your location, choose your Santa, and reserve your time.
+          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
+            Pick your location, choose your time, and pay securely online. Your session is confirmed instantly and a confirmation lands straight in your inbox.
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 2: ACUITY WIDGET */}
+      <section className="px-4 sm:px-6 max-w-[1000px] mx-auto w-full relative z-20 -mt-24 md:-mt-40 pb-24">
+        
+        <BookingWidget />
+
+        {/* Below Widget Text */}
+        <div className="text-center bg-white p-6 md:p-8 rounded-xl border border-brand-dark/5 shadow-md max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-brand-dark/80 font-light">
+            Questions about your booking? Contact us at <a href="mailto:[email]" className="text-brand-red font-bold hover:underline transition-all">[email]</a> and we will get back to you within 24 hours.
           </p>
         </div>
 
-        {/* Steps Guide - Minimalist Text Only */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-24 border-y border-gray-200 py-12">
-          <div className="text-center px-4">
-            <span className="text-brand-red font-heading text-2xl italic mb-3 block">01.</span>
-            <p className="font-heading text-brand-dark text-xl mb-2">Location</p>
-            <p className="text-sm text-gray-500 font-light leading-relaxed">Select your preferred mall from the dropdown below.</p>
-          </div>
-          <div className="text-center px-4 border-t md:border-t-0 md:border-l md:border-r border-gray-200 pt-12 md:pt-0">
-            <span className="text-brand-red font-heading text-2xl italic mb-3 block">02.</span>
-            <p className="font-heading text-brand-dark text-xl mb-2">Experience</p>
-            <p className="text-sm text-gray-500 font-light leading-relaxed">Choose Traditional or Black Santa, then pick a package.</p>
-          </div>
-          <div className="text-center px-4 border-t md:border-t-0 border-gray-200 pt-12 md:pt-0">
-            <span className="text-brand-red font-heading text-2xl italic mb-3 block">03.</span>
-            <p className="font-heading text-brand-dark text-xl mb-2">Confirm</p>
-            <p className="text-sm text-gray-500 font-light leading-relaxed">Pick a time slot and complete your booking seamlessly.</p>
-          </div>
-        </div>
+      </section>
 
-        {/* Acuity Embed Container */}
-        <div className="bg-white border border-gray-200 min-h-[700px] flex flex-col relative w-full">
-          
-          <div className="absolute top-0 left-0 w-full h-1 bg-brand-dark"></div>
-
-          {/* Acuity Widget Placeholder */}
-          <div className="flex-1 flex flex-col items-center justify-center p-12 text-center w-full">
-            <div className="w-16 h-16 border border-gray-200 rounded-full animate-pulse mx-auto mb-8 bg-gray-50"></div>
-            <p className="font-heading text-3xl text-brand-dark mb-4">Scheduling Loading...</p>
-            <p className="text-xs text-gray-400 uppercase tracking-[0.2em]">
-              (Client will provide Acuity embed code here)
-            </p>
-          </div>
-          
-        </div>
-
-      </div>
     </div>
   );
 }
