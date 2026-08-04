@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+import FadeIn from "../animations/FadeIn";
 
 export default function FinalCTA({
   headline = <>Give your family a <span className="italic text-brand-red">Christmas memory</span> that lasts forever.</>,
@@ -28,32 +26,32 @@ export default function FinalCTA({
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
         
         <div className="flex-1 max-w-2xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          <FadeIn
+            y={30}
+            duration={0.8}
+            delay={0.1}
             className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-brand-light tracking-tight leading-[1.2] md:leading-[1.1] mb-4 drop-shadow-xl"
+            as="h2"
           >
             {headline}
-          </motion.h2>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          <FadeIn
+            y={30}
+            duration={0.8}
+            delay={0.2}
             className="text-brand-light/80 font-light text-base sm:text-lg leading-relaxed drop-shadow-md"
+            as="p"
           >
             {body}
-          </motion.p>
+          </FadeIn>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+        <FadeIn
+          y={0}
+          duration={0.6}
+          delay={0.3}
+          style={{ scale: 0.9 }}
           className="w-full md:w-auto shrink-0 flex flex-col items-center md:items-end gap-3"
         >
           <Link 
@@ -66,7 +64,7 @@ export default function FinalCTA({
           <p className="text-white/50 text-[10px] sm:text-xs font-light italic tracking-wide uppercase text-center md:text-right px-4">
             Slots fill up fast. Reserve yours before it is too late.
           </p>
-        </motion.div>
+        </FadeIn>
 
       </div>
     </section>

@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
+import FadeIn from "../animations/FadeIn";
 
 export default function Urgency() {
   return (
@@ -19,11 +17,9 @@ export default function Urgency() {
       <div className="max-w-[1200px] mx-auto px-0 sm:px-6 lg:px-12 relative z-10 flex items-center justify-center">
         
         {/* The "Golden Ticket" / Invitation Card */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50, rotate: -2 }}
-          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+        <FadeIn 
+          y={50}
+          duration={1}
           className="w-full max-w-4xl bg-brand-light sm:rounded-sm p-6 md:p-16 lg:p-20 shadow-2xl relative"
         >
           {/* Inner Gold Border (for that premium invitation feel) */}
@@ -61,7 +57,7 @@ export default function Urgency() {
             </Link>
 
           </div>
-        </motion.div>
+        </FadeIn>
 
       </div>
     </section>

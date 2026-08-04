@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const AnimatedNumber = ({ value }) => (
@@ -21,7 +21,7 @@ const AnimatedNumber = ({ value }) => (
   </div>
 );
 
-export default function CountdownBanner() {
+const CountdownBanner = React.memo(function CountdownBanner() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -128,4 +128,6 @@ export default function CountdownBanner() {
       </div>
     </section>
   );
-}
+});
+
+export default CountdownBanner;

@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
+import FadeIn from "../animations/FadeIn";
 
 export default function ProblemIntro() {
   return (
@@ -21,24 +19,18 @@ export default function ProblemIntro() {
 
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative z-10">
         
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <FadeIn 
+          as="h2"
           className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] mb-8"
         >
           Most Santa experiences leave families disappointed. <br className="hidden md:block" />
           <span className="italic text-brand-red font-light">Yours does not have to be one of them.</span>
-        </motion.h2>
+        </FadeIn>
         
         <div className="w-16 h-[1px] bg-brand-red/50 mx-auto mb-8"></div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        <FadeIn
+          delay={0.2}
           className="flex flex-col gap-4 text-base md:text-xl font-light text-white/90 leading-relaxed max-w-3xl mx-auto"
         >
           <p>
@@ -53,7 +45,7 @@ export default function ProblemIntro() {
           <p className="text-brand-red font-semibold uppercase tracking-widest text-sm mt-2">
             That is why Holiday Dream Photos exists.
           </p>
-        </motion.div>
+        </FadeIn>
         
       </div>
     </section>

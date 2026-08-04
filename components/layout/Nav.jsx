@@ -2,12 +2,13 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Lottie from "lottie-react";
 import christmasLights from "../../public/animations/Coloured Christmas lights.json";
-export default function Nav() {
+
+const Nav = React.memo(function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -279,4 +280,6 @@ export default function Nav() {
       </AnimatePresence>
     </>
   );
-}
+});
+
+export default Nav;

@@ -1,7 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { MapPin, CalendarDays, ChevronRight } from "lucide-react";
+import { MapPin, CalendarDays } from "lucide-react";
+import Image from "next/image";
+import StaggerContainer from "../animations/StaggerContainer";
+import FadeInItem from "../animations/FadeInItem";
 
 export default function LocationsStrip() {
   const locations = [
@@ -63,19 +63,6 @@ export default function LocationsStrip() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
     <section className="py-20 md:py-28 bg-brand-light relative border-t border-brand-dark/5">
       <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -94,25 +81,25 @@ export default function LocationsStrip() {
         </div>
 
         {/* Full Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+        <StaggerContainer 
+          staggerChildren={0.1}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
         >
           {locations.map((loc, idx) => (
-            <motion.div 
+            <FadeInItem 
               key={idx}
-              variants={itemVariants}
+              duration={0.5}
+              y={20}
               className="bg-white rounded-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(17,49,34,0.15)] transition-all duration-500 group flex flex-col h-full border border-brand-dark/5 hover:-translate-y-2"
             >
               {/* Cinematic Image Area */}
               <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
-                <img 
+                <Image 
                   src={`/images/mall${(idx % 2) === 0 ? '2' : '1'}.jpg`}
                   alt={`${loc.name} location`}
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -170,9 +157,9 @@ export default function LocationsStrip() {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </FadeInItem>
           ))}
-        </motion.div>
+        </StaggerContainer>
 
       </div>
     </section>

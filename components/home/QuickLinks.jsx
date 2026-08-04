@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function QuickLinks() {
+const QuickLinks = React.memo(function QuickLinks() {
   const carouselRef = useRef(null);
   const cursorRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
@@ -31,7 +31,7 @@ export default function QuickLinks() {
     
     return () => {
       window.removeEventListener('mousemove', handleGlobalMouseMove);
-    };
+    }
   }, [isHovering]);
 
   const handleDragStart = () => {
@@ -225,4 +225,6 @@ export default function QuickLinks() {
       </div>
     </section>
   );
-}
+});
+
+export default QuickLinks;

@@ -1,25 +1,27 @@
 import Image from "next/image";
+import StaggerContainer from "../animations/StaggerContainer";
+import FadeInItem from "../animations/FadeInItem";
 
 export default function MagicMoments() {
   const images = [
     { 
-      src: "images/black-santa.jpg", 
+      src: "/images/black-santa.jpg", 
       alt: "Santa at mall", 
       span: "lg:col-span-2 lg:row-span-2",
       position: "object-top"
     },
     { 
-      src: "images/traditional-santa.jpg", 
+      src: "/images/traditional-santa.jpg", 
       alt: "Santa adjusting his suit", 
       span: "lg:col-span-1 lg:row-span-1" 
     },
     { 
-      src: "images/gallery-1.jpg", 
+      src: "/images/gallery-1.jpg", 
       alt: "Magical Christmas tree", 
       span: "lg:col-span-1 lg:row-span-2" 
     },
     { 
-      src: "images/mall3.jpg", 
+      src: "/images/mall3.jpg", 
       alt: "Santa experience", 
       span: "lg:col-span-1 lg:row-span-1" 
     }
@@ -43,18 +45,20 @@ export default function MagicMoments() {
         </div>
 
         {/* Sophisticated 4-Column Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[300px] lg:auto-rows-[250px] gap-4 lg:gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[300px] lg:auto-rows-[250px] gap-4 lg:gap-6">
           {images.map((img, idx) => (
-            <div key={idx} className={`relative overflow-hidden group rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${img.span}`}>
-              <img 
+            <FadeInItem key={idx} y={20} className={`relative overflow-hidden group rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${img.span}`}>
+              <Image 
                 src={img.src} 
-                alt={img.alt} 
-                className={`w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105 ${img.position || 'object-center'}`}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={`object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105 ${img.position || 'object-center'}`}
               />
               <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/10 transition-colors duration-500" />
-            </div>
+            </FadeInItem>
           ))}
-        </div>
+        </StaggerContainer>
 
       </div>
     </section>

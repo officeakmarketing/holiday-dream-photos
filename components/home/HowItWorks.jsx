@@ -1,27 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import FadeIn from "../animations/FadeIn";
+import StaggerContainer from "../animations/StaggerContainer";
+import FadeInItem from "../animations/FadeInItem";
 
 export default function HowItWorks() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
-  };
-
   const steps = [
     {
       number: "1",
@@ -70,17 +53,12 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+        <StaggerContainer 
           className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24"
         >
           {steps.map((step, idx) => (
-            <motion.div 
+            <FadeInItem 
               key={idx}
-              variants={itemVariants}
               className={`flex flex-col items-center text-center px-4 py-6 sm:px-5 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${step.bgColor} rounded-sm shadow-xl hover:-translate-y-2 transition-transform duration-500`}
             >
               {/* Unique Step Number Badge (Clean Outlined Soft Square) */}
@@ -97,16 +75,13 @@ export default function HowItWorks() {
               <p className={`${step.textColor} font-light text-sm sm:text-base leading-relaxed opacity-90`}>
                 {step.text}
               </p>
-            </motion.div>
+            </FadeInItem>
           ))}
-        </motion.div>
+        </StaggerContainer>
 
         {/* Call to Action */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+        <FadeIn 
+          delay={0.4}
           className="flex justify-center"
         >
           <Link 
@@ -119,7 +94,7 @@ export default function HowItWorks() {
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
             </span>
           </Link>
-        </motion.div>
+        </FadeIn>
 
       </div>
     </section>

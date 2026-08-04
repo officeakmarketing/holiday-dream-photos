@@ -1,11 +1,12 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import christmasLights from "../../public/animations/Coloured Christmas lights.json";
 import snowAnimation from "../../public/animations/Let it snow.json";
 
-export default function Footer() {
+const Footer = React.memo(function Footer() {
   return (
     <footer className="w-full bg-brand-light pt-28 lg:pt-36 pb-12 relative overflow-hidden border-t border-brand-dark/10">
       
@@ -87,4 +88,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+export default Footer;

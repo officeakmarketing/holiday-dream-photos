@@ -1,9 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Lottie from "lottie-react";
-import letItSnow from "@/public/animations/Let it snow.json";
+import LottieSnow from "../animations/LottieSnow";
+import Image from "next/image";
 
 export default function SantaCard({
   imageSrc,
@@ -20,10 +18,12 @@ export default function SantaCard({
 
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={imageSrc}
           alt={altText}
-          className={`w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105 ${imagePosition}`}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className={`object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105 ${imagePosition}`}
         />
       </div>
 
@@ -35,12 +35,7 @@ export default function SantaCard({
 
       {/* Lottie Snow Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen hidden lg:block">
-        <Lottie
-          animationData={letItSnow}
-          loop={true}
-          className="w-full h-full scale-110"
-          rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-        />
+        <LottieSnow />
       </div>
 
       {/* Content */}

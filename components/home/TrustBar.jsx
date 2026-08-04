@@ -1,4 +1,4 @@
-"use client";
+
 
 import { Star, MapPin, Sparkles, CheckCircle, Heart } from "lucide-react";
 

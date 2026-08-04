@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Lottie from "lottie-react";
 import santaSleigh from "../../public/animations/santa sleigh.json";
 import { Sparkles, Check } from "lucide-react";
 
-export default function EnquireForm() {
+const EnquireForm = React.memo(function EnquireForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -148,4 +148,6 @@ export default function EnquireForm() {
       </div>
     </div>
   );
-}
+});
+
+export default EnquireForm;

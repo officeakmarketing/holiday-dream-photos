@@ -1,4 +1,4 @@
-"use client";
+
 
 import SantaCard from "./SantaCard";
 

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Lottie from "lottie-react";
 import santaSleigh from "../../public/animations/santa sleigh.json";
 import { Check, Sparkles, MapPin, Phone, Mail } from "lucide-react";
 
-export default function ContactForm() {
+const ContactForm = React.memo(function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -139,4 +139,6 @@ export default function ContactForm() {
       </div>
     </div>
   );
-}
+});
+
+export default ContactForm;
