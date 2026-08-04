@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import LottieSnow from "../animations/LottieSnow";
+
 import Image from "next/image";
 
 export default function SantaCard({
@@ -33,10 +33,7 @@ export default function SantaCard({
       {/* Mobile-only light black overlay for text readability */}
       <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-10"></div>
 
-      {/* Lottie Snow Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen hidden lg:block">
-        <LottieSnow />
-      </div>
+
 
       {/* Content */}
       <div className="relative z-10 w-full h-full max-w-[1400px] mx-auto px-4 sm:px-8 flex flex-col justify-end pb-8 sm:pb-12 lg:pb-20 items-center text-center">
