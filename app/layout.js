@@ -1,8 +1,23 @@
+import { Fraunces, Montserrat } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 import Nav from "../components/layout/Nav";
 import Footer from "../components/layout/Footer";
 import { brand } from "../brand";
+
+const fraunces = Fraunces({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-heading',
+  weight: ['400', '500', '600', '700']
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+  weight: ['400', '500', '600', '700']
+});
 
 export const metadata = {
   title: {
@@ -20,14 +35,13 @@ export const metadata = {
   },
 };
 
+import AnimationProvider from "../components/animations/AnimationProvider";
+
 export default function RootLayout({ children }) {
-  const headingFontFamily = brand.fonts.heading.replace(/ /g, '+');
-  const bodyFontFamily = brand.fonts.body.replace(/ /g, '+');
-  
   return (
     <html
       lang="en"
-      className="antialiased"
+      className={`antialiased ${montserrat.variable} ${fraunces.variable}`}
     >
       <head>
         <style dangerouslySetInnerHTML={{__html: `
@@ -36,20 +50,17 @@ export default function RootLayout({ children }) {
             --brand-light: ${brand.colors.light};
             --brand-red: ${brand.colors.red};
             --brand-red-dark: ${brand.colors.redDark};
-            --font-sans: "${brand.fonts.body}", sans-serif;
-            --font-heading: "${brand.fonts.heading}", serif;
           }
         `}} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href={`https://fonts.googleapis.com/css2?family=${headingFontFamily}:wght@400;500;600;700&family=${bodyFontFamily}:wght@400;500;600;700&display=swap`} rel="stylesheet" />
       </head>
       <body className="flex flex-col min-h-screen font-sans bg-brand-light text-brand-dark">
-        <SmoothScroll>
+        <AnimationProvider>
+          <SmoothScroll>
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
         </SmoothScroll>
+        </AnimationProvider>
       </body>
     </html>
   );

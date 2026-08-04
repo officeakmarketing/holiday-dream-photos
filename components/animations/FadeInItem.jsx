@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function FadeInItem({ children, className = "", y = 20, as = "div", duration = 0.8 }) {
-  const Component = motion[as] || motion.div;
+  const Component = m[as] || m.div;
 
   const itemVariants = {
     hidden: { opacity: 0, y },

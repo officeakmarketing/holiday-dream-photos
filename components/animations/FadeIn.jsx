@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function FadeIn({ children, className = "", delay = 0, duration = 0.8, y = 20, as = "div", style = {} }) {
-  const Component = motion[as] || motion.div;
+  const Component = m[as] || m.div;
   
   return (
     <Component

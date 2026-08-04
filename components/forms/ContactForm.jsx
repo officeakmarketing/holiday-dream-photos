@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import santaSleigh from "../../public/animations/santa sleigh.json";
 import { Check, Sparkles, MapPin, Phone, Mail } from "lucide-react";
 

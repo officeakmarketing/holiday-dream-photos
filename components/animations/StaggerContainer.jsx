@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function StaggerContainer({ children, className = "", delay = 0, staggerChildren = 0.15, delayChildren = 0.1, as = "div" }) {
-  const Component = motion[as] || motion.div;
+  const Component = m[as] || m.div;
   
   const containerVariants = {
     hidden: { opacity: 0 },
