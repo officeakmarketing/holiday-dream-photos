@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import Lottie from "lottie-react";
 import christmasLights from "../../public/animations/Coloured Christmas lights.json";
 
@@ -67,10 +68,13 @@ const Nav = React.memo(function Nav() {
 
               {/* Left: Logo */}
               <Link href="/" className="flex items-center gap-3 group z-50 relative">
-                <img
+                <Image
                   src="/images/logo.png"
                   alt="Holiday Dream Photos"
-                  className={`transition-all duration-700 object-contain ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-14'} ${!scrolled && isDarkHeader ? 'brightness-0 invert' : ''}`}
+                  width={150}
+                  height={56}
+                  priority
+                  className={`transition-all duration-700 object-contain w-auto ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-14'} ${!scrolled && isDarkHeader ? 'brightness-0 invert' : ''}`}
                 />
               </Link>
 
@@ -107,6 +111,7 @@ const Nav = React.memo(function Nav() {
               <div className={`flex items-center gap-4 transition-all duration-700 ${!scrolled ? 'lg:opacity-0 lg:invisible lg:-translate-y-4 lg:pointer-events-none' : 'lg:opacity-100 lg:visible lg:translate-y-0'}`}>
                 
                 <button
+                  aria-label="Toggle Menu"
                   className="flex items-center gap-3 group transition-colors"
                   onClick={() => setMobileMenuOpen(true)}
                 >
@@ -147,7 +152,7 @@ const Nav = React.memo(function Nav() {
                {/* Logo moved to Left Top (Desktop Only) */}
                <div className="relative z-10 hidden lg:block">
                  <Link href="/" onClick={() => setTimeout(() => setMobileMenuOpen(false), 200)}>
-                   <img src="/images/logo.png" alt="Holiday Dream Photos" className="h-10 sm:h-12 lg:h-14 object-contain brightness-0 invert" />
+                   <Image src="/images/logo.png" alt="Holiday Dream Photos" width={150} height={56} className="w-auto h-10 sm:h-12 lg:h-14 object-contain brightness-0 invert" />
                  </Link>
                </div>
                
@@ -172,7 +177,7 @@ const Nav = React.memo(function Nav() {
                 {/* Mobile Logo (Hidden on Desktop) */}
                 <div className="lg:hidden">
                   <Link href="/" onClick={() => setTimeout(() => setMobileMenuOpen(false), 200)}>
-                    <img src="/images/logo.png" alt="Holiday Dream Photos" className="h-10 sm:h-12 object-contain" />
+                    <Image src="/images/logo.png" alt="Holiday Dream Photos" width={150} height={56} className="w-auto h-10 sm:h-12 object-contain" />
                   </Link>
                 </div>
 
@@ -186,10 +191,10 @@ const Nav = React.memo(function Nav() {
                     Book Your Session
                   </Link>
                   <div className="flex gap-4">
-                    <a href="https://www.instagram.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
+                    <a href="https://www.instagram.com/holidaydreamphotos" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
-                    <a href="https://www.facebook.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
+                    <a href="https://www.facebook.com/holidaydreamphotos" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
                   </div>
@@ -266,10 +271,10 @@ const Nav = React.memo(function Nav() {
                 </Link>
 
                 <div className="flex gap-4">
-                  <a href="https://www.instagram.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
+                  <a href="https://www.instagram.com/holidaydreamphotos" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </a>
-                  <a href="https://www.facebook.com/holidaydreamphotos" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
+                  <a href="https://www.facebook.com/holidaydreamphotos" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                   </a>
                 </div>

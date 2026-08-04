@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: 'Join Our Team | Holiday Dream Photos',
@@ -14,10 +15,12 @@ export default function HiringPage() {
       <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden mb-24 lg:mb-32">
         {/* Cinematic Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
+          <Image 
             src="/images/traditional-santa.jpg" 
             alt="Holiday Dream Photos Team" 
-            className="w-full h-full object-cover scale-105 object-top"
+            fill
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            className="object-cover scale-105 object-top"
           />
           {/* Clean Transparent Black Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>

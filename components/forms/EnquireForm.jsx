@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Lottie from "lottie-react";
+import Image from "next/image";
 import santaSleigh from "../../public/animations/santa sleigh.json";
 import { Sparkles, Check } from "lucide-react";
 
@@ -29,10 +30,12 @@ const EnquireForm = React.memo(function EnquireForm() {
         
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/images/background3.jpg" 
             alt="Private Event Magic" 
-            className="w-full h-full object-cover scale-105"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover scale-105"
           />
           {/* Gradients to blend and darken */}
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/40 mix-blend-multiply"></div>
@@ -42,9 +45,9 @@ const EnquireForm = React.memo(function EnquireForm() {
 
         {/* Content */}
         <div className="relative z-20 mt-auto">
-          <h3 className="font-heading text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-lg">
+          <h2 className="font-heading text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-lg">
             Let's create something unforgettable.
-          </h3>
+          </h2>
           <p className="text-white/70 font-light text-base md:text-lg leading-relaxed max-w-sm">
             Fill in the details for your event, and our concierge team will reach out within 24 hours to secure your date.
           </p>
@@ -94,8 +97,8 @@ const EnquireForm = React.memo(function EnquireForm() {
                 <input type="tel" id="phone" className={inputClass} placeholder="(555) 123-4567" />
               </div>
               <div>
-                <label className={labelClass}>Event Type</label>
-                <select required defaultValue="" className={inputClass}>
+                <label htmlFor="event_type" className={labelClass}>Event Type</label>
+                <select id="event_type" required defaultValue="" className={inputClass}>
                   <option value="" disabled>Select an option</option>
                   <option>Corporate Holiday Party</option>
                   <option>Private Family Gathering</option>
@@ -109,8 +112,8 @@ const EnquireForm = React.memo(function EnquireForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div>
-                <label className={labelClass}>Event Date</label>
-                <input required type="date" className={inputClass} />
+                <label htmlFor="event_date" className={labelClass}>Event Date</label>
+                <input id="event_date" required type="date" className={inputClass} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>

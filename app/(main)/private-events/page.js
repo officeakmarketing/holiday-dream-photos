@@ -1,5 +1,6 @@
 import EnquireForm from "@/components/forms/EnquireForm";
 import { Building, Users, School, Home, Store } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: 'Private Events | Holiday Dream Photos',
@@ -22,10 +23,12 @@ export default function PrivateEventsPage() {
       <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
         {/* Cinematic Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
+          <Image 
             src="/images/background3.jpg" 
             alt="Private Events" 
-            className="w-full h-full object-cover scale-105"
+            fill
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            className="object-cover scale-105"
           />
           {/* Clean Transparent Black Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
@@ -99,10 +102,12 @@ export default function PrivateEventsPage() {
               key={index} 
               className={`relative group overflow-hidden rounded-2xl ${item.height} ${item.span} border border-brand-dark/10 shadow-xl`}
             >
-              <img 
+              <Image 
                 src={item.image} 
                 alt={item.title} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-[2000ms] group-hover:scale-110" 
               />
               {/* Complex gradient for premium depth */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black group-hover:via-black/60 transition-colors duration-700"></div>
@@ -130,7 +135,7 @@ export default function PrivateEventsPage() {
       <section className="py-16 md:py-24 bg-white border-t border-brand-dark/10 relative">
         {/* Subtle background decoration */}
         <div className="absolute top-0 right-0 w-full max-w-xl h-full opacity-5 pointer-events-none hidden lg:block overflow-hidden">
-           <img src="/images/hero_wreath.png" alt="" className="w-full h-full object-cover -translate-y-1/4 translate-x-1/4 scale-150" />
+           <Image src="/images/hero_wreath.png" alt="" fill sizes="(max-width: 1024px) 0vw, 33vw" className="object-cover -translate-y-1/4 translate-x-1/4 scale-150" />
         </div>
 
         <div className="px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-10">

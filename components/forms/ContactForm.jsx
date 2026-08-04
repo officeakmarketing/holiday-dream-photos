@@ -39,7 +39,7 @@ const ContactForm = React.memo(function ContactForm() {
           </div>
 
           <div className="space-y-6 lg:space-y-8 mt-auto">
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 hidden">
               <Mail className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Email Us</p>
@@ -47,7 +47,7 @@ const ContactForm = React.memo(function ContactForm() {
               </div>
             </div>
             
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 hidden">
               <Phone className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Call Us</p>

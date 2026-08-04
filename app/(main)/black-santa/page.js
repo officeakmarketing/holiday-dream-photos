@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: 'The Home of the Black Santa | Holiday Dream Photos',
@@ -78,10 +79,12 @@ export default async function BlackSantaPage() {
           {/* Left Side (visually right): Unconstrained Photography */}
           <div className="w-full lg:w-[45%] order-1 lg:order-2">
             <div className="w-full aspect-[4/5] relative bg-white">
-              <img 
+              <Image 
                 src={data.hero.imageUrl}
                 alt="Black Santa Experience" 
-                className="w-full h-full object-cover object-[50%_15%]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-[50%_15%]"
               />
             </div>
           </div>

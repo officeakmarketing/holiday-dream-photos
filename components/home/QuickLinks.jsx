@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const QuickLinks = React.memo(function QuickLinks() {
   const carouselRef = useRef(null);
@@ -184,11 +185,13 @@ const QuickLinks = React.memo(function QuickLinks() {
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
-                  <img 
+                  <Image 
                     src={item.image} 
                     alt={item.title} 
                     draggable={false}
-                    className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110 pointer-events-none"
+                    fill
+                    sizes="(max-width: 640px) 75vw, (max-width: 768px) 280px, (max-width: 1024px) 300px, 360px"
+                    className="object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110 pointer-events-none"
                   />
                 </div>
                 

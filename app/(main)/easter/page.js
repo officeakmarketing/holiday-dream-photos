@@ -38,7 +38,7 @@ export default function EasterPage() {
             The same premium photography and magical atmosphere that makes our Christmas experience unforgettable now for Easter.
           </p>
           
-          <div className="p-12 md:p-16 bg-white border border-brand-dark/10 rounded-none mt-12">
+          <div className="p-12 md:p-16 bg-white border border-brand-dark/10 rounded-none mt-12 hidden">
             <p className="font-heading text-2xl md:text-3xl text-brand-dark mb-4">Easter Packages</p>
             <p className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs">
               [PLACEHOLDER: Easter specific copy and packages to be provided by client]

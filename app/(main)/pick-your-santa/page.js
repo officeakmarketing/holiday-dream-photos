@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import FinalCTA from "@/components/home/FinalCTA";
 export const metadata = {
@@ -37,10 +38,12 @@ export default function OurSantasPage() {
             
             {/* Cinematic Image Background */}
             <div className="absolute inset-0 w-full h-full bg-brand-dark z-0">
-              <img 
+              <Image 
                 src="/images/traditional-santa.jpg" 
                 alt="Traditional Santa" 
-                className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
               />
               {/* Rich Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>
@@ -89,10 +92,12 @@ export default function OurSantasPage() {
             
             {/* Cinematic Image Background */}
             <div className="absolute inset-0 w-full h-full bg-brand-dark z-0">
-              <img 
+              <Image 
                 src="/images/black-santa.jpg" 
                 alt="Black Santa" 
-                className="w-full h-full object-cover object-[50%_15%] transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-[50%_15%] transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
               />
               {/* Rich Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>

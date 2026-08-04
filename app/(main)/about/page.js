@@ -29,7 +29,7 @@ export default function AboutPage() {
               We created a team of exceptional Santas who understand that this moment matters deeply. We invested in professional photography that does justice to what families actually feel. We built a warm, festive atmosphere that makes children genuinely believe.
             </p>
             <p className="mb-6">
-              And we created the premium Black Santa experience that families across America had been waiting for. Today we operate across 8 locations and have served [PLACEHOLDER].
+              And we created the premium Black Santa experience that families across America had been waiting for. Today we operate across 8 locations<span className="hidden"> and have served [PLACEHOLDER]</span>.
             </p>
             <p className="font-bold text-brand-dark mb-6 break-inside-avoid">
               The standard we hold every part of this experience to has never changed because families deserve the real thing. Every single time.

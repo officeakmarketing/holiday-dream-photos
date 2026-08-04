@@ -1,4 +1,5 @@
 import ContactForm from "@/components/forms/ContactForm";
+import Image from "next/image";
 
 export const metadata = {
   title: 'Contact Us | Holiday Dream Photos',
@@ -13,10 +14,12 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-black text-center relative overflow-hidden mb-12 lg:mb-16">
         {/* Cinematic Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
+          <Image 
             src="/images/traditional-santa.jpg" 
             alt="Contact Holiday Dream Photos" 
-            className="w-full h-full object-cover scale-105 object-center opacity-70"
+            fill
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            className="object-cover scale-105 object-center opacity-70"
           />
           {/* Clean Transparent Black Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>

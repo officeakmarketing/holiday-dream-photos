@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, CalendarClock } from "lucide-react";
+import Image from "next/image";
 import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata = {
@@ -26,10 +27,12 @@ export default function LocationsPage() {
       <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
         {/* Cinematic Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
+          <Image 
             src="/images/background2.jpg" 
             alt="Christmas Atmosphere" 
-            className="w-full h-full object-cover scale-105"
+            fill
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            className="object-cover scale-105"
           />
           {/* Clean Transparent Black Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
@@ -59,10 +62,12 @@ export default function LocationsPage() {
             >
               {/* Card Header (Cinematic Image Area) */}
               <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
-                <img 
+                <Image 
                   src={`/images/mall${loc.id % 2 === 0 ? '2' : '1'}.jpg`}
                   alt={`${loc.mall} location`}
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-[1500ms] group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: 'Santa on Wheels | Holiday Dream Photos',
@@ -42,10 +43,12 @@ export default function SantaOnWheelsPage() {
           {/* Photography Side */}
           <div className="w-full lg:w-[45%]">
             <div className="w-full aspect-[4/5] relative bg-white">
-              <img 
+              <Image 
                 src="/images/traditional-santa.jpg"
                 alt="Santa on Wheels Experience" 
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </div>
