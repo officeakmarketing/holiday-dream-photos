@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 
 const QuickLinks = React.memo(function QuickLinks() {
@@ -160,7 +160,7 @@ const QuickLinks = React.memo(function QuickLinks() {
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => { setIsHovering(false); setIsDragging(false); }}
         >
-        <motion.div 
+        <m.div 
           drag="x"
           dragConstraints={carouselRef}
           whileTap={{ cursor: "grabbing" }}
@@ -169,7 +169,7 @@ const QuickLinks = React.memo(function QuickLinks() {
           className="flex gap-6 md:gap-8 pr-4 sm:pr-6 lg:pr-12 w-max cursor-grab pb-12"
         >
           {links.map((item, idx) => (
-            <motion.div 
+            <m.div 
               key={idx} 
               className="relative flex-none w-[75vw] sm:w-[280px] md:w-[300px] lg:w-[340px] xl:w-[360px] h-[380px] md:h-[420px] lg:h-[480px] overflow-hidden bg-brand-light select-none group pointer-events-none rounded-sm"
             >
@@ -221,9 +221,9 @@ const QuickLinks = React.memo(function QuickLinks() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
         </div>
       </div>
     </section>

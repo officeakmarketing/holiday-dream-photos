@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const AnimatedNumber = ({ value }) => (
   <div className="relative inline-flex items-center justify-center overflow-hidden">
     <AnimatePresence mode="popLayout" initial={false}>
-      <motion.span
+      <m.span
         key={value}
         initial={{ y: "100%", opacity: 0, filter: "blur(2px)" }}
         animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
@@ -15,7 +15,7 @@ const AnimatedNumber = ({ value }) => (
         className="absolute inset-0 flex items-center justify-center"
       >
         {String(value).padStart(2, '0')}
-      </motion.span>
+      </m.span>
     </AnimatePresence>
     <span className="invisible">{String(value).padStart(2, '0')}</span>
   </div>

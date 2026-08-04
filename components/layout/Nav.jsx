@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Lottie from "lottie-react";
@@ -130,7 +130,7 @@ const Nav = React.memo(function Nav() {
       {/* Full Screen Overlay Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -214,7 +214,7 @@ const Nav = React.memo(function Nav() {
 
               {/* Links Container */}
               <div className="flex-1 flex flex-col justify-center py-4 lg:pl-4">
-                <motion.div
+                <m.div
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
@@ -226,7 +226,7 @@ const Nav = React.memo(function Nav() {
                   {links.map((link) => {
                     const isActive = pathname === link.href;
                     return (
-                      <motion.div
+                      <m.div
                         key={link.name}
                         variants={{
                           hidden: { opacity: 0, x: -20 },
@@ -248,14 +248,14 @@ const Nav = React.memo(function Nav() {
                         
                         {/* Active indicator line */}
                         <div className={`absolute left-0 top-0 bottom-3 sm:bottom-4 w-1.5 bg-brand-red transition-transform duration-500 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover/link:scale-x-100'}`}></div>
-                      </motion.div>
+                      </m.div>
                     );
                   })}
-                </motion.div>
+                </m.div>
               </div>
 
               {/* Footer CTA & Socials (Mobile & 2xl screens) */}
-              <motion.div
+              <m.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] } }
@@ -278,9 +278,9 @@ const Nav = React.memo(function Nav() {
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                   </a>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>
