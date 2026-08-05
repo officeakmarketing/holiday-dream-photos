@@ -68,11 +68,11 @@ const CountdownBanner = React.memo(function CountdownBanner() {
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
-        style={{ backgroundImage: "url('/images/countdown-banner.jpg')" }}
+        style={{ backgroundImage: "url('/images/background3.jpg')" }}
       ></div>
       
-      {/* Subtle vignette for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+      {/* Heavy black overlay to match ProblemIntro */}
+      <div className="absolute inset-0 bg-black/80"></div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-around gap-10 md:gap-4">
         

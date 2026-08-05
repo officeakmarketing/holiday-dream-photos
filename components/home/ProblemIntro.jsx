@@ -8,7 +8,7 @@ export default function ProblemIntro() {
       {/* Background Image with Dark Red Overlay */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/images/background3.jpg"
+          src="/images/countdown-banner.jpg"
           alt="Magical Holiday Background"
           fill
           className="object-cover"

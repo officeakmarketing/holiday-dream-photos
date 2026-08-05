@@ -21,7 +21,7 @@ export default function SantaSplit() {
         
         {/* Black Santa */}
         <SantaCard 
-          imageSrc="/images/black-santa.jpg"
+          imageSrc="/images/nick-cannon-clean.png"
           altText="Black Santa"
           titlePart1="Black"
           titlePart2="Santa"

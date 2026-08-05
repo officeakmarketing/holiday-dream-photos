@@ -16,7 +16,7 @@ const getBlackSantaData = async () => {
       tagline: "Representation Matters",
       headline: "The Home of the Black Santa",
       description: "A joyful, premium holiday photo experience built on the belief that every child deserves to see the magic of Christmas reflected in themselves. Create lasting memories with our authentic, real-bearded Black Santa in a breathtaking winter wonderland setting.",
-      imageUrl: "/images/black-santa.jpg"
+      imageUrl: "/images/nick-cannon-polaroid.png"
     },
     philosophy: {
       headline: "A Tradition of Joy",

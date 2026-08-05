@@ -3,12 +3,13 @@ import CountdownBanner from "@/components/home/CountdownBanner";
 import ProblemIntro from "@/components/home/ProblemIntro";
 import SolutionIntro from "@/components/home/SolutionIntro";
 import SantaSplit from "@/components/home/SantaSplit";
-import Testimonials from "@/components/home/Testimonials";
-
+import NickCannonSection from "@/components/home/NickCannonSection";
 import HowItWorks from "@/components/home/HowItWorks";
 import Urgency from "@/components/home/Urgency";
 import LocationsStrip from "@/components/home/LocationsStrip";
 import FinalCTA from "@/components/home/FinalCTA";
+import FaqAccordion from "@/components/home/FaqAccordion";
+import Testimonials from "@/components/home/Testimonials";
 
 export const metadata = {
   title: 'Holiday Dream Photos | Premium Santa Experiences',
@@ -24,12 +25,22 @@ export default function Home() {
       <ProblemIntro />
       <SolutionIntro />
       <SantaSplit />
+      <NickCannonSection />
       
-      <Testimonials/>
-      
+      {/* Middle Block: Logistics, Trust, and Scarcity */}
       <HowItWorks />
-      <Urgency />
       <LocationsStrip />
+      <Urgency />
+      
+      {/* Ending Block: The Requested Sequence */}
+      <FinalCTA />
+      
+      <Testimonials />
+      
+      <div className="py-16 md:py-20 bg-brand-light">
+        <FaqAccordion />
+      </div>
+      
       <FinalCTA />
     </>
   );

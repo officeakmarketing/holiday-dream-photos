@@ -120,10 +120,22 @@ export default function OurSantasPage() {
                 </h2>
                 
                 {/* Description (Always Visible) */}
-                <div className="mb-4 lg:mb-8">
+                <div className="mb-4 lg:mb-6">
                   <p className="text-white/80 lg:text-white/90 text-[10px] lg:text-sm leading-[1.5] lg:leading-relaxed line-clamp-2 lg:line-clamp-none font-light">
                     Representation matters. The same premium photography and enchanting atmosphere with a Santa who looks like your family.
                   </p>
+                </div>
+                
+                {/* Social Proof: Nick Cannon Polaroid */}
+                <div className="w-full mb-6">
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                    <Image 
+                      src="/images/nick-cannon-polaroid.png"
+                      alt="Nick Cannon with Black Santa"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               
               {/* ENGINEER NOTE: Hidden until client confirms pricing */}
