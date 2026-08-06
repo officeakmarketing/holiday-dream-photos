@@ -34,7 +34,7 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 lg:flex-1 lg:h-full">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[200px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[220px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -74,7 +74,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full inline-flex items-center justify-center bg-[#c71e32] text-white py-2 sm:py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
+                className="w-full inline-flex items-center justify-center bg-[#c71e32] text-white py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
               >
                 Book Traditional
               </Link>
@@ -82,7 +82,7 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[200px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[220px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -122,7 +122,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full mt-auto inline-flex items-center justify-center bg-[#c71e32] text-white py-2 sm:py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
+                className="w-full mt-auto inline-flex items-center justify-center bg-[#c71e32] text-white py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
               >
                 Book Black Santa
               </Link>
