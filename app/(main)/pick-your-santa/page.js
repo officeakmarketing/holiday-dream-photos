@@ -45,12 +45,12 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-[2000ms] group-hover:scale-105" 
               />
-              {/* Subtle gradient behind the panel */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60"></div>
+              {/* Subtle bottom gradient just to ensure the panel has a base */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-50"></div>
             </div>
 
             {/* Inner Floating Panel */}
-            <div className="relative z-10 m-3 sm:m-4 lg:m-6 p-5 sm:p-6 lg:p-8 rounded-[1.2rem] lg:rounded-[1.5rem] bg-gradient-to-br from-[#1a1111]/95 to-[#0a0505]/95 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-[#1a1111] group-hover:border-white/20">
+            <div className="relative z-10 m-2 sm:m-4 lg:m-6 p-4 sm:p-6 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-black/50 group-hover:border-white/20">
               
               <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block">
                 The Classic Choice
@@ -96,12 +96,12 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[50%_15%] transition-transform duration-[2000ms] group-hover:scale-105" 
               />
-              {/* Subtle gradient behind the panel */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60"></div>
+              {/* Subtle bottom gradient just to ensure the panel has a base */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-50"></div>
             </div>
 
             {/* Inner Floating Panel */}
-            <div className="relative z-10 m-3 sm:m-4 lg:m-6 p-5 sm:p-6 lg:p-8 rounded-[1.2rem] lg:rounded-[1.5rem] bg-gradient-to-br from-[#1a1111]/95 to-[#0a0505]/95 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-[#1a1111] group-hover:border-white/20 flex flex-col">
+            <div className="relative z-10 m-2 sm:m-4 lg:m-6 p-4 sm:p-6 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-black/50 group-hover:border-white/20 flex flex-col">
               
               <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block">
                 The Inclusive Choice
