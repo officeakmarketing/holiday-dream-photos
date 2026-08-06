@@ -132,51 +132,7 @@ export default function OurSantasPage() {
       </section>
       </div>
 
-      {/* SECTION 2.5: NICK CANNON SPOTLIGHT */}
-      <section className="bg-brand-dark py-20 lg:py-32 relative overflow-hidden">
-        {/* Rich Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark to-black pointer-events-none z-0"></div>
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] opacity-[0.04] pointer-events-none z-0">
-          <Image src="/images/hero_wreath.png" alt="Wreath" fill className="object-contain" />
-        </div>
 
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-20">
-          
-          {/* Image Graphic */}
-          <div className="w-full md:w-1/2 flex justify-center perspective-1000">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 transition-all duration-700 ease-out drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] z-10 group rounded-xl">
-              <Image 
-                src="/images/nick-cannon-polaroid.png"
-                alt="Nick Cannon with Black Santa"
-                fill
-                className="object-contain transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          </div>
-
-          {/* Typography/Copy */}
-          <div className="w-full md:w-1/2 text-center md:text-left relative">
-            <Quote className="absolute -top-10 -left-6 md:-left-12 w-16 h-16 md:w-24 md:h-24 text-white/5 rotate-180 z-0" />
-            
-            <div className="relative z-10">
-              <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-4 block drop-shadow-md">
-                Celebrity Endorsed
-              </span>
-              <h3 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-brand-light mb-6 leading-[1.1] drop-shadow-lg">
-                Even <span className="italic text-brand-red">Nick</span> came to experience the magic.
-              </h3>
-              <p className="text-brand-light/70 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-lg mx-auto md:mx-0 mb-8">
-                Families travel from all over to experience the premium quality and authentic joy of our Black Santa sessions. Join the countless families and a few familiar faces who have made Holiday Dream Photos their holiday tradition.
-              </p>
-
-              {/* Decorative Line */}
-              <div className="w-16 h-[1px] bg-gradient-to-r from-brand-red to-transparent mx-auto md:mx-0"></div>
-            </div>
-          </div>
-
-        </div>
-      </section>
 
       {/* SECTION 3: SHARED SOCIAL PROOF */}
       <section className="bg-white pt-8 pb-16 lg:pt-10 lg:pb-20 border-t border-brand-dark/10 relative overflow-hidden">
