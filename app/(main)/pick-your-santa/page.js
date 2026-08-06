@@ -16,7 +16,7 @@ export default function OurSantasPage() {
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
         <section className="pt-36 md:pt-40 pb-4 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
-        <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-xs md:text-sm mt-2 mb-2 md:mb-4">
+        <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-xs md:text-sm mt-2 mb-6 md:mb-8">
           Families travel from across the country.
         </p>
         <h1 className="font-heading text-4xl md:text-6xl font-medium text-brand-dark leading-none mb-3 md:mb-4">
