@@ -79,7 +79,7 @@ const QuickLinks = React.memo(function QuickLinks() {
       title: "Omaha Mall",
       description: "Omaha, NB",
       href: "/locations/omaha-mall",
-      image: "/images/mall1.jpg",
+      image: "/images/omahamall.png",
       number: "05"
     },
     {

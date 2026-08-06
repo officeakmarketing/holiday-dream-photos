@@ -10,56 +10,64 @@ export default function LocationsStrip() {
       city: "Biloxi, MS",
       address: "2600 Beach Blvd, Biloxi, MS 39531",
       dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"]
+      experiences: ["Traditional", "Black Santa"],
+      image: "/images/edgewatermall.png"
     },
     { 
       name: "Almeda Mall", 
       city: "Houston, TX",
       address: "12200 Gulf Fwy, Houston, TX 77034",
       dates: "Nov 17 - Dec 24",
-      experiences: ["Black Santa"]
+      experiences: ["Black Santa"],
+      image: "/images/almedamall.png"
     },
     { 
       name: "Central Mall", 
       city: "Texarkana, TX",
       address: "2400 Richmond Rd, Texarkana, TX 75503",
       dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"]
+      experiences: ["Traditional"],
+      image: "/images/centralmall.png"
     },
     { 
       name: "Outlets at Little Rock", 
       city: "Little Rock, AR",
       address: "11201 Bass Pro Pkwy, Little Rock, AR 72210",
       dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"]
+      experiences: ["Traditional", "Black Santa"],
+      image: "/images/outletsmall.png"
     },
     { 
       name: "Omaha Mall", 
       city: "Omaha, NE",
       address: "10000 California St, Omaha, NE 68114",
       dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional"]
+      experiences: ["Traditional"],
+      image: "/images/omahamall.png"
     },
     { 
       name: "Northtown Mall", 
       city: "Blaine, MN",
       address: "398 Northtown Dr, Blaine, MN 55434",
       dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"]
+      experiences: ["Traditional", "Black Santa"],
+      image: "/images/northmall.png"
     },
     { 
       name: "Clearview Mall", 
       city: "Butler, PA",
       address: "101 Clearview Cir, Butler, PA 16001",
       dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"]
+      experiences: ["Traditional"],
+      image: "/images/clearviewmall.png"
     },
     { 
       name: "The Shoppes at Bel Air", 
       city: "Mobile, AL",
       address: "3299 Bel Air Mall, Mobile, AL 36606",
       dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional", "Black Santa"]
+      experiences: ["Traditional", "Black Santa"],
+      image: "/images/belairmall.png"
     },
   ];
 
@@ -95,7 +103,7 @@ export default function LocationsStrip() {
               {/* Cinematic Image Area */}
               <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
                 <Image 
-                  src={`/images/mall${(idx % 2) === 0 ? '2' : '1'}.jpg`}
+                  src={loc.image}
                   alt={`${loc.name} location`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

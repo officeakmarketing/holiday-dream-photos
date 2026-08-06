@@ -13,7 +13,7 @@ const locations = [
   { id: 2, mall: "Almeda Mall", city: "Houston", state: "TX", image: "/images/almedamall.png" },
   { id: 3, mall: "Central Mall", city: "Texarkana", state: "TX", image: "/images/centralmall.png" },
   { id: 4, mall: "Outlets at Little Rock", city: "Little Rock", state: "AR", image: "/images/outletsmall.png" },
-  { id: 5, mall: "Omaha Mall", city: "Omaha", state: "NE", image: "/images/mall1.jpg" },
+  { id: 5, mall: "Omaha Mall", city: "Omaha", state: "NE", image: "/images/omahamall.png" },
   { id: 6, mall: "Northtown Mall", city: "Blaine", state: "MN", image: "/images/northmall.png" },
   { id: 7, mall: "Clearview Mall", city: "Butler", state: "PA", image: "/images/clearviewmall.png" },
   { id: 8, mall: "The Shoppes at Bel Air", city: "Mobile", state: "AL", image: "/images/belairmall.png" },
