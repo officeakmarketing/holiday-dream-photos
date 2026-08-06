@@ -93,7 +93,7 @@ export default function PrivateEventsPage() {
             { 
               title: "Brand activations & retail experiences", 
               tag: "Commercial", 
-              image: "/images/almeda.png",
+              image: "/images/almedamall.png",
               span: "lg:col-span-4",
               height: "h-80 lg:h-[450px]"
             }

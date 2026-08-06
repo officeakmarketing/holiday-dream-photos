@@ -45,7 +45,7 @@ export default function BrandIntro() {
             {/* Main Image 1 (Mall 1) */}
             <div className="absolute top-[10%] left-0 w-[60%] h-[60%] rounded-sm overflow-hidden shadow-2xl z-10 border-4 border-white">
               <Image
-                src="/images/edgewater.png"
+                src="/images/edgewatermall.png"
                 alt="Premium Mall Setup"
                 fill
                 className="object-cover"
