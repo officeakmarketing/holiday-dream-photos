@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-import santaSleigh from "../../public/animations/santa sleigh.json";
-import { Check, Sparkles, MapPin, Phone, Mail } from "lucide-react";
+import { Check, MapPin, Phone, Mail } from "lucide-react";
 
 const ContactForm = React.memo(function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -26,56 +23,72 @@ const ContactForm = React.memo(function ContactForm() {
     <div className="relative w-full max-w-6xl 2xl:max-w-[1400px] mx-auto flex flex-col md:flex-row bg-white shadow-2xl rounded-none overflow-hidden group">
       
       {/* LEFT SIDE - CONTACT INFO */}
-      <div className="w-full md:w-2/5 bg-brand-dark md:bg-brand-red p-8 lg:p-10 2xl:p-14 text-white flex flex-col relative overflow-hidden">
+      <div className="w-full md:w-[45%] lg:w-[40%] bg-brand-dark p-8 lg:p-12 2xl:p-16 text-white flex flex-col relative overflow-hidden">
         {/* Subtle background pattern/glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
         <div className="absolute bottom-0 left-0 w-40 h-40 bg-black/10 rounded-full blur-2xl -ml-10 -mb-10"></div>
         
         <div className="relative z-10 flex-1 flex flex-col">
           <div className="mb-8 lg:mb-10">
-            <h2 className="font-heading text-3xl lg:text-4xl mb-3 leading-tight">Get in <br/> Touch</h2>
+            <h2 className="font-heading text-3xl lg:text-4xl mb-3 leading-tight whitespace-nowrap">Get in Touch</h2>
             <p className="text-white/80 font-light text-sm leading-relaxed max-w-xs">
               Whether you have a question about booking, our locations, or private events, our concierge team is ready to help.
             </p>
           </div>
 
-          <div className="space-y-6 lg:space-y-8 mt-auto">
-            <div className="flex items-start gap-4 hidden">
-              <Mail className="w-5 h-5 text-white/50 mt-1" />
+          <div className="space-y-8 mt-auto">
+            
+            <div className="flex items-center gap-5">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+                <Mail className="w-5 h-5 text-white" />
+              </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Email Us</p>
-                <p className="text-sm font-light">[PLACEHOLDER: Client Email]</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Email Us</p>
+                <p className="text-sm font-medium">hello@holidaydreamphotos.com</p>
               </div>
             </div>
             
-            <div className="flex items-start gap-4 hidden">
-              <Phone className="w-5 h-5 text-white/50 mt-1" />
+            <div className="flex items-center gap-5">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+                <Phone className="w-5 h-5 text-white" />
+              </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Call Us</p>
-                <p className="text-sm font-light">[PLACEHOLDER: Client Phone]</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Call Us</p>
+                <p className="text-sm font-medium">1-800-555-0199</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-white/50 mt-1" />
+            <div className="flex items-center gap-5">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+                <MapPin className="w-5 h-5 text-white" />
+              </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Locations</p>
-                <p className="text-sm font-light">Operating across 8 premium venues nationwide.</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Locations</p>
+                <p className="text-sm font-medium">8 premium venues nationwide</p>
               </div>
             </div>
+
+            <div className="pt-6 mt-6 border-t border-white/20">
+              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-4 block">Follow Us</p>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-red transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-red transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
-      {/* RIGHT SIDE - THE FORM */}
-      <div className="w-full md:w-3/5 p-8 lg:p-10 2xl:p-14 relative z-10 bg-white">
+      {/* RIGHT SIDE - FORM */}
+      <div className="w-full md:w-[55%] lg:w-[60%] p-8 lg:p-12 2xl:p-16 flex flex-col justify-center relative bg-[#fcfaf9]">
         {submitted ? (
           <div className="flex flex-col items-center justify-center w-full h-full min-h-[350px] animate-in fade-in duration-1000 relative">
-            <div className="w-80 h-40 mb-2 pointer-events-none absolute -top-8">
-              <Lottie animationData={santaSleigh} loop={false} />
-            </div>
-            
-            <div className="mt-12 flex flex-col items-center text-center relative z-10">
+            <div className="mt-8 flex flex-col items-center text-center relative z-10">
               <div className="w-16 h-16 bg-brand-red rounded-none flex items-center justify-center mb-6 animate-in zoom-in duration-500 delay-300 fill-mode-both">
                 <Check className="w-8 h-8 text-white" strokeWidth={3} />
               </div>

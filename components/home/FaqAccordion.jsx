@@ -15,7 +15,7 @@ export default function FaqAccordion() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+    <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-24 items-start">
         
         {/* Sticky Left Column */}

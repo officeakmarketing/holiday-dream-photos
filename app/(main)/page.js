@@ -37,7 +37,7 @@ export default function Home() {
       
       <Testimonials />
       
-      <div className="py-16 md:py-20 bg-brand-light">
+      <div className="bg-brand-light border-t border-brand-dark/5">
         <FaqAccordion />
       </div>
       

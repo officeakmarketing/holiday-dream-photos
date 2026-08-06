@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import Lottie from "lottie-react";
+import { Check, Mail, Phone, MapPin, Loader2, Calendar } from "lucide-react";
 import Image from "next/image";
-import santaSleigh from "../../public/animations/santa sleigh.json";
-import { Sparkles, Check } from "lucide-react";
 
 const EnquireForm = React.memo(function EnquireForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -64,11 +62,7 @@ const EnquireForm = React.memo(function EnquireForm() {
 
         {submitted ? (
           <div className="flex flex-col items-center justify-center w-full h-full min-h-[450px] animate-in fade-in duration-1000 relative">
-            <div className="w-80 h-40 mb-2 pointer-events-none absolute top-10">
-              <Lottie animationData={santaSleigh} loop={false} />
-            </div>
-            
-            <div className="mt-32 flex flex-col items-center">
+            <div className="mt-16 flex flex-col items-center">
               <div className="w-20 h-20 bg-brand-red rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(200,16,46,0.3)] mb-8 animate-in zoom-in duration-500 delay-300 fill-mode-both">
                 <Check className="w-10 h-10 text-white" strokeWidth={3} />
               </div>
@@ -113,7 +107,7 @@ const EnquireForm = React.memo(function EnquireForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div>
                 <label htmlFor="event_date" className={labelClass}>Event Date</label>
-                <input id="event_date" required type="date" className={inputClass} />
+                <input id="event_date" required type="date" defaultValue="2026-12-15" className={inputClass} />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4">
                 <div>

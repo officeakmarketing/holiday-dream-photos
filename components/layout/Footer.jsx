@@ -9,7 +9,7 @@ import snowAnimation from "../../public/animations/Let it snow.json";
 
 const Footer = React.memo(function Footer() {
   return (
-    <footer className="w-full bg-brand-light pt-28 lg:pt-36 pb-12 relative overflow-hidden border-t border-brand-dark/10">
+    <footer className="w-full bg-brand-light pt-16 md:pt-28 lg:pt-36 pb-12 relative overflow-hidden border-t border-brand-dark/10">
       
       {/* Background Snow Animation */}
       <div className="hidden md:flex absolute inset-0 w-full h-full opacity-10 pointer-events-none z-10 items-center justify-center filter brightness-0">
@@ -49,7 +49,7 @@ const Footer = React.memo(function Footer() {
           {/* Center Column - Logo */}
           <div className="flex flex-col items-center justify-center">
             <Image src="/images/logo.png" alt="Holiday Dream Photos" width={256} height={80} className="w-auto h-16 md:h-20 object-contain mb-8 drop-shadow-sm" />
-            <p className="text-brand-dark/70 font-heading italic text-xl text-center">
+            <p className="text-brand-dark/70 font-heading italic text-xl text-center mb-8">
               "Creating unhurried, magical memories"
             </p>
           </div>

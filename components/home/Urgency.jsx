@@ -9,10 +9,6 @@ export default function Urgency() {
       
       {/* Warm Glowing Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4d4d]/30 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] opacity-10 pointer-events-none">
-        <Image src="/images/hero_wreath.png" alt="Wreath" fill className="object-contain" />
-      </div>
-     
 
       <div className="max-w-[1200px] mx-auto px-0 sm:px-6 lg:px-12 relative z-10 flex items-center justify-center">
         

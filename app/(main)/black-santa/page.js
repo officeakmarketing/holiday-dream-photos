@@ -44,40 +44,40 @@ export default async function BlackSantaPage() {
     <div className="bg-brand-light min-h-screen pb-32">
       
       {/* Editorial Hero Layout */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pt-32 lg:pt-48 pb-24">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 items-center">
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 pt-24 lg:pt-32 pb-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center">
           
           {/* Right Side (visually left): Elegant Typography */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-center order-2 lg:order-1">
-            <span className="text-gray-400 uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
+          <div className="w-full lg:flex-[1.2] flex flex-col justify-center order-2 lg:order-1">
+            <span className="text-gray-400 uppercase tracking-[0.3em] text-[10px] lg:text-xs font-semibold mb-4 block">
               {data.hero.tagline}
             </span>
-            <h1 className="font-heading text-6xl lg:text-[6rem] text-brand-dark mb-10 leading-none tracking-tight">
+            <h1 className="font-heading text-5xl lg:text-6xl 2xl:text-[5.5rem] text-brand-dark mb-6 leading-none tracking-tight">
               The Home of the <br/><span className="italic text-brand-red">Black Santa</span>
             </h1>
-            <p className="text-gray-500 text-lg font-light leading-[1.8] mb-16 max-w-xl">
+            <p className="text-gray-500 text-base lg:text-lg font-light leading-[1.6] mb-8 max-w-xl">
               {data.hero.description}
             </p>
 
-            <div className="mb-16">
-              <h2 className="font-heading text-3xl text-brand-dark mb-6">{data.philosophy.headline}</h2>
-              <p className="text-gray-500 font-light leading-relaxed max-w-xl">
-                {data.philosophy.description}
-              </p>
-            </div>
-
-            <div>
+            <div className="mb-12">
               <Link 
                 href="/book-now" 
-                className="inline-block bg-brand-red text-white px-12 py-5 text-xs font-bold uppercase tracking-widest hover:bg-[#a30d25] transition-colors"
+                className="inline-block bg-brand-red text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#a30d25] transition-colors shadow-lg hover:shadow-xl"
               >
                 Reserve Black Santa
               </Link>
             </div>
+
+            <div className="mb-0">
+              <h2 className="font-heading text-2xl lg:text-3xl text-brand-dark mb-4">{data.philosophy.headline}</h2>
+              <p className="text-gray-500 text-sm lg:text-base font-light leading-relaxed max-w-xl">
+                {data.philosophy.description}
+              </p>
+            </div>
           </div>
           
           {/* Left Side (visually right): Unconstrained Photography */}
-          <div className="w-full lg:w-[45%] order-1 lg:order-2">
+          <div className="w-full lg:flex-[0.8] order-1 lg:order-2">
             <div className="w-full aspect-[4/5] relative bg-white">
               <Image 
                 src={data.hero.imageUrl}
@@ -93,7 +93,8 @@ export default async function BlackSantaPage() {
       </section>
 
       {/* Package Section - Editorial Text Style */}
-      <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-24 border-t border-gray-200">
+      {/* GLOBAL RULE: Package sections stay hidden until client confirms package names, inclusions, and pricing. */}
+      <section className="hidden max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-12 border-t border-gray-200">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
           
           {/* Blank space for alignment */}

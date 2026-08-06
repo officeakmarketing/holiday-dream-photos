@@ -74,7 +74,7 @@ const Nav = React.memo(function Nav() {
                   width={150}
                   height={56}
                   priority
-                  className={`transition-all duration-700 object-contain w-auto ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-14'} ${!scrolled && isDarkHeader ? 'brightness-0 invert' : ''}`}
+                  className={`transition-all duration-700 object-contain w-auto ${scrolled ? 'h-9 md:h-12' : 'h-10 sm:h-12 md:h-14'} ${!scrolled && isDarkHeader ? 'brightness-0 invert' : ''}`}
                 />
               </Link>
 

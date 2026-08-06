@@ -27,13 +27,13 @@ export default function PrivateEventsPage() {
         description="Corporate parties. Private gatherings. Community celebrations. We bring a premium Santa experience directly to you."
         imageSrc="/images/background3.jpg"
         imageAlt="Private Events"
-        className="pt-32 pb-16 md:pt-40 md:pb-16"
+        className="pt-32 pb-16 md:pt-32 md:pb-12"
       />
 
       {/* SECTION 2: WHO THIS IS FOR (CINEMATIC BENTO GRID) */}
-      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20">
         
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-10 md:mb-14">
           <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 block">
             Exclusive Experiences
           </span>
@@ -115,14 +115,14 @@ export default function PrivateEventsPage() {
       </section>
 
       {/* SECTION 3: ENQUIRY FORM */}
-      <section className="py-16 md:py-24 bg-white border-t border-brand-dark/10 relative">
+      <section className="py-10 md:py-16 bg-white border-t border-brand-dark/10 relative">
         {/* Subtle background decoration */}
         <div className="absolute top-0 right-0 w-full max-w-xl h-full opacity-5 pointer-events-none hidden lg:block overflow-hidden">
            <Image src="/images/hero_wreath.png" alt="" fill sizes="(max-width: 1024px) 0vw, 33vw" className="object-cover -translate-y-1/4 translate-x-1/4 scale-150" />
         </div>
 
-        <div className="px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-10">
-          <div className="text-center mb-12 md:mb-16">
+        <div className="px-0 md:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-10">
+          <div className="text-center mb-8 md:mb-12">
             <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-4 block">
               Book Your Event
             </span>

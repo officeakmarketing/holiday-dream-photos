@@ -19,14 +19,15 @@ export default function HiringPage() {
         description="We are always looking for exceptional Santas and support staff who believe that every family deserves a truly magical Christmas experience."
         imageSrc="/images/traditional-santa.jpg"
         imageAlt="Holiday Dream Photos Team"
-        className="pt-32 pb-16 md:pt-40 md:pb-16 mb-24 lg:mb-32"
+        className="pt-32 pb-16 md:pt-32 md:pb-12"
         imagePosition="object-top"
+        titleClassName="text-4xl sm:text-5xl md:text-6xl max-w-4xl mx-auto"
       />
 
       {/* SECTION 2: WHAT WE LOOK FOR */}
-      <section className="px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto mb-32">
+      <section className="px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto mb-16 mt-16 lg:mt-24">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-5xl md:text-6xl text-brand-dark mb-4">What We Look For</h2>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4">What We Look For</h2>
           <div className="w-16 h-1 bg-brand-red mx-auto"></div>
         </div>
 
@@ -35,8 +36,8 @@ export default function HiringPage() {
           
           {/* For Santas */}
           <div className="lg:pr-16 xl:pr-24">
-            <h3 className="font-heading text-3xl md:text-4xl text-brand-red mb-8">For Santas</h3>
-            <ul className="space-y-6">
+            <h3 className="font-heading text-3xl md:text-4xl text-brand-red mb-8 text-center lg:text-left">For Santas</h3>
+            <ul className="space-y-6 max-w-lg mx-auto lg:mx-0">
               {[
                 { bold: true, text: "A real, full beard this is a firm requirement and non-negotiable" },
                 { bold: false, text: "A natural warmth and genuine love for working with children" },
@@ -55,8 +56,8 @@ export default function HiringPage() {
 
           {/* For Support Staff */}
           <div className="lg:pl-16 xl:pl-24">
-            <h3 className="font-heading text-3xl md:text-4xl text-brand-dark mb-8">For Support Staff</h3>
-            <ul className="space-y-6">
+            <h3 className="font-heading text-3xl md:text-4xl text-brand-dark mb-8 text-center lg:text-left">For Support Staff</h3>
+            <ul className="space-y-6 max-w-lg mx-auto lg:mx-0">
               {[
                 { text: "A warm, positive energy and excellent communication" },
                 { text: "Reliability and punctuality" },
@@ -76,12 +77,12 @@ export default function HiringPage() {
       </section>
 
       {/* SECTION 3: CTA */}
-      <section className="w-full bg-brand-dark py-24 md:py-32 relative overflow-hidden text-center flex flex-col items-center justify-center">
+      <section className="w-full bg-brand-dark py-10 md:py-12 relative overflow-hidden text-center flex flex-col items-center justify-center">
         {/* Subtle background glow */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-red/10 to-transparent mix-blend-overlay"></div>
         
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
-          <h2 className="font-heading text-5xl md:text-6xl text-white mb-10 leading-tight">
+          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-tight">
             Think you have what it takes?
           </h2>
           

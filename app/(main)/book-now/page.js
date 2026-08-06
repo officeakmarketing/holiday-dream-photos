@@ -18,13 +18,13 @@ export default function BookNowPage() {
         description="Pick your location, choose your time, and pay securely online. Your session is confirmed instantly and a confirmation lands straight in your inbox."
         imageSrc="/images/background.jpg"
         imageAlt="Book Your Session"
-        className="pt-32 pb-32 md:pt-32 md:pb-40"
+        className="min-h-[70vh] flex flex-col justify-center pt-32 pb-16 md:pt-32 md:pb-12"
         overlayOpacity="bg-black/70"
-        titleClassName="text-4xl sm:text-5xl md:text-6xl lg:text-7xl px-2"
+        titleClassName="text-4xl sm:text-5xl md:text-6xl max-w-4xl mx-auto"
       />
 
       {/* SECTION 2: ACUITY WIDGET */}
-      <section className="px-4 sm:px-6 max-w-[1000px] mx-auto w-full relative z-20 -mt-24 md:-mt-40 pb-24">
+      <section className="px-4 sm:px-6 max-w-[1000px] mx-auto w-full relative z-20 py-16 md:py-24">
         
         <BookingWidget />
 
