@@ -2,9 +2,82 @@
 
 import Link from "next/link";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { m } from "framer-motion";
 import Image from "next/image";
+
+const links = [
+  {
+    title: "Edgewater Mall",
+    description: "Biloxi, MS",
+    href: "/locations/edgewater-mall",
+    image: "/images/edgewatermall.png",
+    number: "01"
+  },
+  {
+    title: "Almeda Mall",
+    description: "Houston, TX",
+    href: "/locations/almeda-mall",
+    image: "/images/almedamall.png",
+    number: "02"
+  },
+  {
+    title: "Central Mall",
+    description: "Texarkana, TX",
+    href: "/locations/central-mall",
+    image: "/images/centralmall.png",
+    number: "03"
+  },
+  {
+    title: "Outlets at Little Rock",
+    description: "Little Rock, AR",
+    href: "/locations/outlets-at-little-rock",
+    image: "/images/outletsmall.png",
+    number: "04"
+  },
+  {
+    title: "Omaha Mall",
+    description: "Omaha, NB",
+    href: "/locations/omaha-mall",
+    image: "/images/omahamall.png",
+    number: "05"
+  },
+  {
+    title: "Northtown Mall",
+    description: "Blaine, MN",
+    href: "/locations/northtown-mall",
+    image: "/images/northmall.png",
+    number: "06"
+  },
+  {
+    title: "Clearview Mall",
+    description: "Butler, PA",
+    href: "/locations/clearview-mall",
+    image: "/images/clearviewmall.png",
+    number: "07"
+  },
+  {
+    title: "The Shoppes at Bel Air",
+    description: "Mobile, AL",
+    href: "/locations/shoppes-at-bel-air",
+    image: "/images/belairmall.png",
+    number: "08"
+  },
+  {
+    title: "Private Events",
+    description: "Corporate events and parties.",
+    href: "/private-events",
+    image: "/images/mall1.jpg",
+    number: "09"
+  },
+  {
+    title: "Join the Team",
+    description: "Hiring Santas and elves.",
+    href: "/hiring",
+    image: "/images/mall2.jpg",
+    number: "10"
+  }
+];
 
 const QuickLinks = React.memo(function QuickLinks() {
   const carouselRef = useRef(null);
@@ -35,89 +108,16 @@ const QuickLinks = React.memo(function QuickLinks() {
     }
   }, [isHovering]);
 
-  const handleDragStart = () => {
+  const handleDragStart = useCallback(() => {
     setIsDragging(true);
-  };
+  }, []);
 
-  const handleDragEnd = () => {
+  const handleDragEnd = useCallback(() => {
     // Delay resetting so that onClick handlers catch the dragging state and prevent navigation
     setTimeout(() => {
       setIsDragging(false);
     }, 150);
-  };
-
-  const links = [
-    {
-      title: "Edgewater Mall",
-      description: "Biloxi, MS",
-      href: "/locations/edgewater-mall",
-      image: "/images/edgewatermall.png",
-      number: "01"
-    },
-    {
-      title: "Almeda Mall",
-      description: "Houston, TX",
-      href: "/locations/almeda-mall",
-      image: "/images/almedamall.png",
-      number: "02"
-    },
-    {
-      title: "Central Mall",
-      description: "Texarkana, TX",
-      href: "/locations/central-mall",
-      image: "/images/centralmall.png",
-      number: "03"
-    },
-    {
-      title: "Outlets at Little Rock",
-      description: "Little Rock, AR",
-      href: "/locations/outlets-at-little-rock",
-      image: "/images/outletsmall.png",
-      number: "04"
-    },
-    {
-      title: "Omaha Mall",
-      description: "Omaha, NB",
-      href: "/locations/omaha-mall",
-      image: "/images/omahamall.png",
-      number: "05"
-    },
-    {
-      title: "Northtown Mall",
-      description: "Blaine, MN",
-      href: "/locations/northtown-mall",
-      image: "/images/northmall.png",
-      number: "06"
-    },
-    {
-      title: "Clearview Mall",
-      description: "Butler, PA",
-      href: "/locations/clearview-mall",
-      image: "/images/clearviewmall.png",
-      number: "07"
-    },
-    {
-      title: "The Shoppes at Bel Air",
-      description: "Mobile, AL",
-      href: "/locations/shoppes-at-bel-air",
-      image: "/images/belairmall.png",
-      number: "08"
-    },
-    {
-      title: "Private Events",
-      description: "Corporate events and parties.",
-      href: "/private-events",
-      image: "/images/mall1.jpg",
-      number: "09"
-    },
-    {
-      title: "Join the Team",
-      description: "Hiring Santas and elves.",
-      href: "/hiring",
-      image: "/images/mall2.jpg",
-      number: "10"
-    }
-  ];
+  }, []);
 
   return (
     <section className="py-20 md:py-32 bg-white overflow-hidden border-t border-gray-200">

@@ -9,6 +9,16 @@ import Image from "next/image";
 import Lottie from "lottie-react";
 import christmasLights from "../../public/animations/Coloured Christmas lights.json";
 
+const links = [
+  { name: "Home", href: "/" },
+  { name: "Pick Your Santa", href: "/pick-your-santa" },
+  { name: "Locations", href: "/locations" },
+  { name: "Private Events", href: "/private-events" },
+  { name: "About", href: "/about" },
+  { name: "Hiring", href: "/hiring" },
+  { name: "Contact", href: "/contact" },
+];
+
 const Nav = React.memo(function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -39,16 +49,6 @@ const Nav = React.memo(function Nav() {
       document.body.style.overflow = "";
     }
   }, [mobileMenuOpen]);
-
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "Pick Your Santa", href: "/pick-your-santa" },
-    { name: "Locations", href: "/locations" },
-    { name: "Private Events", href: "/private-events" },
-    { name: "About", href: "/about" },
-    { name: "Hiring", href: "/hiring" },
-    { name: "Contact", href: "/contact" },
-  ];
 
   return (
     <>

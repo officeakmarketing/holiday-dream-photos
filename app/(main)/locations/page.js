@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, CalendarClock } from "lucide-react";
 import Image from "next/image";
+import PageHero from "@/components/ui/PageHero";
 import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata = {
@@ -24,32 +25,14 @@ export default function LocationsPage() {
     <div className="flex flex-col min-h-screen bg-brand-light">
       
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
-        {/* Cinematic Background Image */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image 
-            src="/images/background2.jpg" 
-            alt="Christmas Atmosphere" 
-            fill
-            sizes="(max-width: 1024px) 100vw, 100vw"
-            className="object-cover scale-105"
-          />
-          {/* Clean Transparent Black Overlay */}
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-md">
-            Nationwide Magic
-          </span>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-brand-dark mb-6 md:mb-8 leading-tight drop-shadow-xl text-white">
-            Find Your Nearest Location
-          </h1>
-          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
-            8 locations bringing the magic of Holiday Dream Photos to communities across the USA this Christmas.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="Find Your Nearest Location"
+        subtitle="Nationwide Magic"
+        description="8 locations bringing the magic of Holiday Dream Photos to communities across the USA this Christmas."
+        imageSrc="/images/background2.jpg"
+        imageAlt="Christmas Atmosphere"
+        className="pt-32 pb-16 md:pt-48 md:pb-24"
+      />
 
       {/* SECTION 2: LOCATION CARDS GRID */}
       <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto relative z-20">

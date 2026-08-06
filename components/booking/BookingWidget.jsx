@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import Lottie from "lottie-react";
 
-export default function BookingWidget() {
+const BookingWidget = React.memo(function BookingWidget() {
   return (
     <div className="relative bg-white rounded-3xl shadow-[0_30px_80px_-20px_rgba(17,49,34,0.15)] border border-brand-dark/5 overflow-hidden w-full group min-h-[400px] md:min-h-[450px] flex flex-col mb-8">
       
@@ -64,4 +65,6 @@ export default function BookingWidget() {
       
     </div>
   );
-}
+});
+
+export default BookingWidget;

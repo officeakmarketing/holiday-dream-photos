@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import santaSleigh from "../../public/animations/santa sleigh.json";
@@ -10,14 +10,14 @@ const ContactForm = React.memo(function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
     }, 1500); 
-  };
+  }, []);
 
   const inputClass = "w-full bg-[#f4f4f4] border border-transparent focus:border-brand-red focus:bg-white rounded-none py-4 px-5 text-brand-dark text-base outline-none transition-colors duration-300 placeholder:text-brand-dark/40 hover:bg-[#eaeaea] shadow-none";
   const labelClass = "block text-sm text-brand-dark/80 font-bold mb-2 ml-1";

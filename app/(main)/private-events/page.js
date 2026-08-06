@@ -1,6 +1,7 @@
 import EnquireForm from "@/components/forms/EnquireForm";
 import { Building, Users, School, Home, Store } from "lucide-react";
 import Image from "next/image";
+import PageHero from "@/components/ui/PageHero";
 
 export const metadata = {
   title: 'Private Events | Holiday Dream Photos',
@@ -20,32 +21,14 @@ export default function PrivateEventsPage() {
     <div className="flex flex-col min-h-screen bg-brand-light">
       
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden">
-        {/* Cinematic Background Image */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image 
-            src="/images/background3.jpg" 
-            alt="Private Events" 
-            fill
-            sizes="(max-width: 1024px) 100vw, 100vw"
-            className="object-cover scale-105"
-          />
-          {/* Clean Transparent Black Overlay */}
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 md:mb-6 block drop-shadow-md">
-            Exclusive Experiences
-          </span>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-brand-dark mb-6 md:mb-8 leading-tight drop-shadow-xl text-white">
-            Bring the Christmas Magic to Your Event
-          </h1>
-          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
-            Corporate parties. Private gatherings. Community celebrations. We bring a premium Santa experience directly to you.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="Bring the Christmas Magic to Your Event"
+        subtitle="Exclusive Experiences"
+        description="Corporate parties. Private gatherings. Community celebrations. We bring a premium Santa experience directly to you."
+        imageSrc="/images/background3.jpg"
+        imageAlt="Private Events"
+        className="pt-32 pb-16 md:pt-48 md:pb-24"
+      />
 
       {/* SECTION 2: WHO THIS IS FOR (CINEMATIC BENTO GRID) */}
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full relative z-20">

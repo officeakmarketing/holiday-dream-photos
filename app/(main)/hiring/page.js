@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import PageHero from "@/components/ui/PageHero";
 
 export const metadata = {
   title: 'Join Our Team | Holiday Dream Photos',
@@ -12,32 +13,15 @@ export default function HiringPage() {
     <div className="bg-[#fcfaf9] min-h-screen font-sans">
       
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-black text-center relative overflow-hidden mb-24 lg:mb-32">
-        {/* Cinematic Background Image */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <Image 
-            src="/images/traditional-santa.jpg" 
-            alt="Holiday Dream Photos Team" 
-            fill
-            sizes="(max-width: 1024px) 100vw, 100vw"
-            className="object-cover scale-105 object-top"
-          />
-          {/* Clean Transparent Black Overlay */}
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-brand-red font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 block drop-shadow-md">
-            Careers
-          </span>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl text-white mb-6 md:mb-8 leading-tight drop-shadow-xl">
-            Join the Holiday Dream Photos Team
-          </h1>
-          <p className="text-white/80 font-light text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-md px-4">
-            We are always looking for exceptional Santas and support staff who believe that every family deserves a truly magical Christmas experience.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="Join the Holiday Dream Photos Team"
+        subtitle="Careers"
+        description="We are always looking for exceptional Santas and support staff who believe that every family deserves a truly magical Christmas experience."
+        imageSrc="/images/traditional-santa.jpg"
+        imageAlt="Holiday Dream Photos Team"
+        className="pt-32 pb-16 md:pt-48 md:pb-24 mb-24 lg:mb-32"
+        imagePosition="object-top"
+      />
 
       {/* SECTION 2: WHAT WE LOOK FOR */}
       <section className="px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto mb-32">
