@@ -157,23 +157,15 @@ export default function OurSantasPage() {
 
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-20">
           
-          {/* Polaroid Graphic */}
+          {/* Image Graphic */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-end perspective-1000">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-700 ease-out drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] bg-white p-3 sm:p-4 pb-12 sm:pb-16 rounded-sm shadow-2xl z-10 group">
-              {/* Tape Effect */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-white/40 backdrop-blur-md rotate-2 z-20 shadow-sm border border-white/20"></div>
-              
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-700 ease-out drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] z-10 group rounded-xl">
               <Image 
                 src="/images/nick-cannon-polaroid.png"
                 alt="Nick Cannon with Black Santa"
                 fill
                 className="object-contain transition-transform duration-700 group-hover:scale-105"
               />
-              
-              {/* Signature/Note on Polaroid */}
-              <div className="absolute bottom-4 sm:bottom-5 left-0 w-full text-center">
-                <span className="font-heading italic text-brand-dark/70 text-xl sm:text-2xl">Nick Cannon</span>
-              </div>
             </div>
           </div>
 
