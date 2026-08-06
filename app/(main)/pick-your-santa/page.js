@@ -12,7 +12,7 @@ export default function OurSantasPage() {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* ABOVE THE FOLD FULL-SCREEN CONTAINER */}
-      <div className="flex flex-col h-[100svh] lg:h-auto lg:min-h-0 pb-4 lg:pb-24">
+      <div className="flex flex-col h-[100svh] pb-4 lg:pb-12 min-h-[600px]">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
         <section className="pt-28 md:pt-40 pb-2 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
@@ -34,7 +34,7 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-6 lg:gap-12 flex-1 min-h-0">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:h-auto lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-0 border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -82,7 +82,7 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:h-auto lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-0 border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">

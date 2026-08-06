@@ -31,7 +31,7 @@ export default function LocationsPage() {
         description="8 locations bringing the magic of Holiday Dream Photos to communities across the USA this Christmas."
         imageSrc="/images/background2.jpg"
         imageAlt="Christmas Atmosphere"
-        className="pt-32 pb-16 md:pt-48 md:pb-24"
+        className="pt-32 pb-16 md:pt-40 md:pb-16"
       />
 
       {/* SECTION 2: LOCATION CARDS GRID */}

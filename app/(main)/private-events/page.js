@@ -27,7 +27,7 @@ export default function PrivateEventsPage() {
         description="Corporate parties. Private gatherings. Community celebrations. We bring a premium Santa experience directly to you."
         imageSrc="/images/background3.jpg"
         imageAlt="Private Events"
-        className="pt-32 pb-16 md:pt-48 md:pb-24"
+        className="pt-32 pb-16 md:pt-40 md:pb-16"
       />
 
       {/* SECTION 2: WHO THIS IS FOR (CINEMATIC BENTO GRID) */}

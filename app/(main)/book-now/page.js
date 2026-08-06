@@ -18,7 +18,7 @@ export default function BookNowPage() {
         description="Pick your location, choose your time, and pay securely online. Your session is confirmed instantly and a confirmation lands straight in your inbox."
         imageSrc="/images/background.jpg"
         imageAlt="Book Your Session"
-        className="pt-32 pb-32 md:pt-48 md:pb-56"
+        className="pt-32 pb-32 md:pt-32 md:pb-40"
         overlayOpacity="bg-black/70"
         titleClassName="text-4xl sm:text-5xl md:text-6xl lg:text-7xl px-2"
       />

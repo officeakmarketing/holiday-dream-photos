@@ -18,7 +18,7 @@ export default function ContactPage() {
         description="Questions about booking, locations, private events, or anything else get in touch and we will get back to you within 24 hours."
         imageSrc="/images/traditional-santa.jpg"
         imageAlt="Contact Holiday Dream Photos"
-        className="pt-32 pb-16 md:pt-40 md:pb-20 mb-12 lg:mb-16"
+        className="pt-32 pb-16 md:pt-32 md:pb-12 mb-12 lg:mb-16"
         imageOpacity="opacity-70"
       />
 

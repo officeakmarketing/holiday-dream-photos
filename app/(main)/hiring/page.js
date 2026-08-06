@@ -19,7 +19,7 @@ export default function HiringPage() {
         description="We are always looking for exceptional Santas and support staff who believe that every family deserves a truly magical Christmas experience."
         imageSrc="/images/traditional-santa.jpg"
         imageAlt="Holiday Dream Photos Team"
-        className="pt-32 pb-16 md:pt-48 md:pb-24 mb-24 lg:mb-32"
+        className="pt-32 pb-16 md:pt-40 md:pb-16 mb-24 lg:mb-32"
         imagePosition="object-top"
       />
 
