@@ -12,7 +12,7 @@ export default function OurSantasPage() {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* ABOVE THE FOLD FULL-SCREEN CONTAINER */}
-      <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-16 lg:pb-24">
+      <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-4 lg:pb-24">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
         <section className="pt-24 md:pt-32 pb-2 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
@@ -28,7 +28,7 @@ export default function OurSantasPage() {
       </section>
 
       {/* SECTION 2: THE TWO CARDS */}
-      <section className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-12 flex-1 flex flex-col pb-8 lg:pb-12">
+      <section className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-12 flex-1 flex flex-col pb-4 lg:pb-12">
         
         {/* Unified Responsive Grid (Cinematic Split Screen on Mobile, Side-by-Side on Desktop) */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 flex-1 h-full">
