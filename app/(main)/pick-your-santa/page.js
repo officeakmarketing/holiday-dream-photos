@@ -15,7 +15,7 @@ export default function OurSantasPage() {
       <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-16 lg:pb-24">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
-        <section className="pt-28 md:pt-32 pb-4 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
+        <section className="pt-24 md:pt-32 pb-2 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
         <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-[10px] md:text-sm mb-3 md:mb-4">
           Families travel from across the country.
         </p>
@@ -66,8 +66,8 @@ export default function OurSantasPage() {
                 </h2>
                 
                 {/* Description */}
-                <div className="mb-4 lg:mb-8 hidden sm:block">
-                  <p className="text-white/80 lg:text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed font-light line-clamp-2 lg:line-clamp-none">
+                <div className="mb-3 lg:mb-8">
+                  <p className="text-white/80 lg:text-white/90 text-[11px] sm:text-sm lg:text-base leading-snug lg:leading-relaxed font-light line-clamp-2 sm:line-clamp-none">
                     Every detail of the Christmas magic your family knows and loves delivered at the highest standard. Warm, festive, and filled with wonder.
                   </p>
                 </div>
@@ -120,8 +120,8 @@ export default function OurSantasPage() {
                 </h2>
                 
                 {/* Description */}
-                <div className="mb-4 lg:mb-8 hidden sm:block">
-                  <p className="text-white/80 lg:text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed font-light line-clamp-2 lg:line-clamp-none">
+                <div className="mb-3 lg:mb-8">
+                  <p className="text-white/80 lg:text-white/90 text-[11px] sm:text-sm lg:text-base leading-snug lg:leading-relaxed font-light line-clamp-2 sm:line-clamp-none">
                     Representation matters. The same premium photography and enchanting atmosphere with a Santa who looks like your family.
                   </p>
                 </div>
