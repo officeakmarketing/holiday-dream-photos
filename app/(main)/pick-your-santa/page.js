@@ -158,8 +158,8 @@ export default function OurSantasPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-20">
           
           {/* Image Graphic */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end perspective-1000">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-700 ease-out drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] z-10 group rounded-xl">
+          <div className="w-full md:w-1/2 flex justify-center perspective-1000">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 transition-all duration-700 ease-out drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] z-10 group rounded-xl">
               <Image 
                 src="/images/nick-cannon-polaroid.png"
                 alt="Nick Cannon with Black Santa"
