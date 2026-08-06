@@ -12,17 +12,17 @@ export default function OurSantasPage() {
   return (
     <div className="bg-brand-light min-h-screen">
       {/* ABOVE THE FOLD FULL-SCREEN CONTAINER */}
-      <div className="flex flex-col h-[100svh] pb-4 lg:pb-12 min-h-[600px]">
+      <div className="flex flex-col h-[100svh] pb-4 lg:pb-8 min-h-[700px]">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
-        <section className="pt-28 md:pt-40 pb-2 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
-        <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-xs md:text-sm mt-2 mb-4 md:mb-8">
+        <section className="pt-28 lg:pt-32 pb-2 lg:pb-6 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
+        <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-xs md:text-sm mt-2 mb-2 lg:mb-4">
           Families travel from across the country.
         </p>
-        <h1 className="font-heading text-4xl md:text-6xl font-medium text-brand-dark leading-none mb-2 md:mb-4">
+        <h1 className="font-heading text-4xl lg:text-5xl font-medium text-brand-dark leading-none mb-2 lg:mb-4">
           Pick Your Santa
         </h1>
-        <p className="text-brand-dark/80 text-xs md:text-lg font-light leading-snug max-w-2xl mx-auto px-2">
+        <p className="text-brand-dark/80 text-xs md:text-base font-light leading-snug max-w-2xl mx-auto px-2">
           Two premium experiences. One unforgettable standard. Choose the magic that feels right for your family.
         </p>
       </section>
@@ -34,7 +34,7 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-6 lg:gap-12 flex-1 min-h-0">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-0 border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-[250px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -82,7 +82,7 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-0 border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end flex-1 min-h-[160px] lg:min-h-[250px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
