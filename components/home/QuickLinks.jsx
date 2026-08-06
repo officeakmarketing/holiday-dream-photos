@@ -51,28 +51,28 @@ const QuickLinks = React.memo(function QuickLinks() {
       title: "Edgewater Mall",
       description: "Biloxi, MS",
       href: "/locations/edgewater-mall",
-      image: "/images/mall1.jpg",
+      image: "/images/edgewater.png",
       number: "01"
     },
     {
       title: "Almeda Mall",
       description: "Houston, TX",
       href: "/locations/almeda-mall",
-      image: "/images/mall2.jpg",
+      image: "/images/almeda.png",
       number: "02"
     },
     {
       title: "Central Mall",
       description: "Texarkana, TX",
       href: "/locations/central-mall",
-      image: "/images/mall1.jpg",
+      image: "/images/centralmall.png",
       number: "03"
     },
     {
       title: "Outlets at Little Rock",
       description: "Little Rock, AR",
       href: "/locations/outlets-at-little-rock",
-      image: "/images/mall2.jpg",
+      image: "/images/outlets.png",
       number: "04"
     },
     {
@@ -86,7 +86,7 @@ const QuickLinks = React.memo(function QuickLinks() {
       title: "Northtown Mall",
       description: "Blaine, MN",
       href: "/locations/northtown-mall",
-      image: "/images/mall2.jpg",
+      image: "/images/northmall.png",
       number: "06"
     },
     {

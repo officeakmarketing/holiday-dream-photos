@@ -45,7 +45,7 @@ export default function BrandIntro() {
             {/* Main Image 1 (Mall 1) */}
             <div className="absolute top-[10%] left-0 w-[60%] h-[60%] rounded-sm overflow-hidden shadow-2xl z-10 border-4 border-white">
               <Image
-                src="/images/mall1.jpg"
+                src="/images/edgewater.png"
                 alt="Premium Mall Setup"
                 fill
                 className="object-cover"
@@ -55,7 +55,7 @@ export default function BrandIntro() {
             {/* Main Image 2 (Mall 2) */}
             <div className="absolute bottom-[5%] right-[5%] w-[55%] h-[65%] rounded-sm overflow-hidden shadow-2xl z-20 border-4 border-white">
               <Image
-                src="/images/mall2.jpg"
+                src="/images/centralmall.png"
                 alt="Holiday Experience Setup"
                 fill
                 className="object-cover"

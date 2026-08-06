@@ -9,14 +9,14 @@ export const metadata = {
 };
 
 const locations = [
-  { id: 1, mall: "Edgewater Mall", city: "Biloxi", state: "MS" },
-  { id: 2, mall: "Almeda Mall", city: "Houston", state: "TX" },
-  { id: 3, mall: "Central Mall", city: "Texarkana", state: "TX" },
-  { id: 4, mall: "Outlets at Little Rock", city: "Little Rock", state: "AR" },
-  { id: 5, mall: "Omaha Mall", city: "Omaha", state: "NE" },
-  { id: 6, mall: "Northtown Mall", city: "Blaine", state: "MN" },
-  { id: 7, mall: "Clearview Mall", city: "Butler", state: "PA" },
-  { id: 8, mall: "The Shoppes at Bel Air", city: "Mobile", state: "AL" },
+  { id: 1, mall: "Edgewater Mall", city: "Biloxi", state: "MS", image: "/images/edgewater.png" },
+  { id: 2, mall: "Almeda Mall", city: "Houston", state: "TX", image: "/images/almeda.png" },
+  { id: 3, mall: "Central Mall", city: "Texarkana", state: "TX", image: "/images/centralmall.png" },
+  { id: 4, mall: "Outlets at Little Rock", city: "Little Rock", state: "AR", image: "/images/outlets.png" },
+  { id: 5, mall: "Omaha Mall", city: "Omaha", state: "NE", image: "/images/mall1.jpg" },
+  { id: 6, mall: "Northtown Mall", city: "Blaine", state: "MN", image: "/images/northmall.png" },
+  { id: 7, mall: "Clearview Mall", city: "Butler", state: "PA", image: "/images/mall1.jpg" },
+  { id: 8, mall: "The Shoppes at Bel Air", city: "Mobile", state: "AL", image: "/images/mall2.jpg" },
 ];
 
 export default function LocationsPage() {
@@ -63,7 +63,7 @@ export default function LocationsPage() {
               {/* Card Header (Cinematic Image Area) */}
               <div className="h-48 md:h-56 2xl:h-64 bg-brand-dark relative overflow-hidden">
                 <Image 
-                  src={`/images/mall${loc.id % 2 === 0 ? '2' : '1'}.jpg`}
+                  src={loc.image}
                   alt={`${loc.mall} location`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

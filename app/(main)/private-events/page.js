@@ -72,7 +72,7 @@ export default function PrivateEventsPage() {
             { 
               title: "Community events & neighbourhood gatherings", 
               tag: "Community", 
-              image: "/images/mall1.jpg",
+              image: "/images/gallery-1.jpg",
               span: "lg:col-span-5",
               height: "h-80 lg:h-[400px]"
             },
@@ -93,7 +93,7 @@ export default function PrivateEventsPage() {
             { 
               title: "Brand activations & retail experiences", 
               tag: "Commercial", 
-              image: "/images/mall2.jpg",
+              image: "/images/almeda.png",
               span: "lg:col-span-4",
               height: "h-80 lg:h-[450px]"
             }

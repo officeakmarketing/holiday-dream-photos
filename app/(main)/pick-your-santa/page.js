@@ -181,7 +181,7 @@ export default function OurSantasPage() {
                 Even <span className="italic text-brand-red">Nick</span> came to experience the magic.
               </h3>
               <p className="text-brand-light/70 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-lg mx-auto md:mx-0 mb-8">
-                Families travel from all over to experience the premium quality and authentic joy of our Black Santa sessions. Join the countless families—and a few familiar faces—who have made Holiday Dream Photos their holiday tradition.
+                Families travel from all over to experience the premium quality and authentic joy of our Black Santa sessions. Join the countless families and a few familiar faces who have made Holiday Dream Photos their holiday tradition.
               </p>
 
               {/* Decorative Line */}
