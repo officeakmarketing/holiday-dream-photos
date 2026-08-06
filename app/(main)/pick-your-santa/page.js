@@ -34,7 +34,7 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 flex-1 h-full">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative flex-1 bg-brand-dark flex flex-col justify-end lg:min-h-[600px] hover:-translate-y-1 lg:hover:-translate-y-2 lg:hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)]">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative flex-1 bg-brand-dark flex flex-col justify-end lg:min-h-[600px] hover:-translate-y-1 lg:hover:-translate-y-2 lg:hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -45,32 +45,29 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-[2000ms] group-hover:scale-105" 
               />
-              {/* Subtle bottom gradient just to ensure the panel has a base */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-50"></div>
+              {/* Responsive Gradient Overlay: Full blend on mobile, subtle on desktop */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-95 lg:opacity-40 lg:from-black/50 lg:via-transparent"></div>
             </div>
 
-            {/* Inner Floating Panel */}
-            <div className="relative z-10 m-2 sm:m-4 lg:m-6 p-4 sm:p-6 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-black/50 group-hover:border-white/20">
+            {/* Inner Content Container */}
+            <div className="relative z-10 p-5 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20">
               
-              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block">
+              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block drop-shadow-md">
                 The Classic Choice
               </span>
               
-              {/* Delicate Accent Line */}
               <div className="w-8 lg:w-12 h-[1px] bg-white/20 mb-2 sm:mb-3 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
 
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none drop-shadow-lg">
                 Traditional Santa
               </h2>
               
-              {/* Description */}
               <div className="mb-4 sm:mb-6 lg:mb-8">
-                <p className="text-white/70 text-[10px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light">
+                <p className="text-white/80 lg:text-white/70 text-[11px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light">
                   Every detail of the Christmas magic your family knows and loves delivered at the highest standard. Warm, festive, and filled with wonder.
                 </p>
               </div>
-              
-              {/* ENGINEER NOTE: Hidden until client confirms pricing */}
+
               <div className="hidden">
                 [PLACEHOLDER: Package names and prices — client providing next week.]
               </div>
@@ -85,7 +82,7 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative flex-1 bg-brand-dark flex flex-col justify-end lg:min-h-[600px] hover:-translate-y-1 lg:hover:-translate-y-2 lg:hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)]">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative flex-1 bg-brand-dark flex flex-col justify-end lg:min-h-[600px] hover:-translate-y-1 lg:hover:-translate-y-2 lg:hover:shadow-[0_40px_80px_rgba(0,0,0,0.3)] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -96,39 +93,29 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[50%_15%] transition-transform duration-[2000ms] group-hover:scale-105" 
               />
-              {/* Subtle bottom gradient just to ensure the panel has a base */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-50"></div>
+              {/* Responsive Gradient Overlay: Full blend on mobile, subtle on desktop */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-95 lg:opacity-40 lg:from-black/50 lg:via-transparent"></div>
             </div>
 
-            {/* Inner Floating Panel */}
-            <div className="relative z-10 m-2 sm:m-4 lg:m-6 p-4 sm:p-6 lg:p-8 rounded-[1rem] lg:rounded-[1.5rem] bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-black/50 group-hover:border-white/20 flex flex-col">
+            {/* Inner Content Container */}
+            <div className="relative z-10 p-5 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20 flex flex-col">
               
-              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block">
+              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[8px] sm:text-[9px] lg:text-[10px] mb-2 block drop-shadow-md">
                 The Inclusive Choice
               </span>
               
-              {/* Delicate Accent Line */}
               <div className="w-8 lg:w-12 h-[1px] bg-white/20 mb-2 sm:mb-3 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
 
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none drop-shadow-lg">
                 Black Santa
               </h2>
               
-              {/* Description */}
-              <div className="mb-4 sm:mb-6 lg:mb-6">
-                <p className="text-white/70 text-[10px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light">
+              <div className="mb-4 sm:mb-6 lg:mb-8">
+                <p className="text-white/80 lg:text-white/70 text-[11px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light">
                   Representation matters. The same premium photography and enchanting atmosphere with a Santa who looks like your family.
                 </p>
               </div>
-
-              {/* Desktop-only Polaroid Image */}
-              <div className="hidden lg:block mb-6 w-24 h-24 lg:w-28 lg:h-28 relative rounded-sm overflow-hidden bg-white p-1.5 shadow-xl -rotate-2 hover:rotate-0 transition-transform flex-shrink-0">
-                <div className="relative w-full h-full border border-gray-100">
-                  <Image src="/images/nick-cannon-polaroid.png" fill className="object-cover" alt="Nick Cannon with Black Santa" />
-                </div>
-              </div>
               
-              {/* ENGINEER NOTE: Hidden until client confirms pricing */}
               <div className="hidden">
                 [PLACEHOLDER: Package names and prices — client providing next week.]
               </div>
