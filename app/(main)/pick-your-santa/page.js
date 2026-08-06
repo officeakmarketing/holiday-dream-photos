@@ -15,7 +15,7 @@ export default function OurSantasPage() {
       <div className="flex flex-col min-h-[100svh] lg:min-h-0 pb-4 lg:pb-24">
         
         {/* SECTION 1: ENTRY HOOK & HEADLINE */}
-        <section className="pt-24 md:pt-32 pb-4 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
+        <section className="pt-36 md:pt-40 pb-4 md:pb-8 px-4 max-w-4xl mx-auto text-center flex flex-col justify-center shrink-0">
         <p className="text-brand-red font-bold uppercase tracking-[0.1em] text-xs md:text-sm mt-2 mb-2 md:mb-4">
           Families travel from across the country.
         </p>
