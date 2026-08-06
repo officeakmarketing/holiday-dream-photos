@@ -87,7 +87,7 @@ export default function OurSantasPage() {
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
               <Image 
-                src="/images/black-santa.jpg" 
+                src="/images/nick-cannon-clean.png" 
                 alt="Black Santa" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
