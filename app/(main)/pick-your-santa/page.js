@@ -34,7 +34,7 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 lg:flex-1 lg:h-full">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[280px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[200px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -50,19 +50,19 @@ export default function OurSantasPage() {
             </div>
 
             {/* Inner Content Container */}
-            <div className="relative z-10 p-4 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20 flex flex-col justify-end">
+            <div className="relative z-10 p-3 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20 flex flex-col justify-end">
               
-              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[9px] sm:text-[9px] lg:text-[10px] mb-2 block drop-shadow-md">
+              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[9px] sm:text-[9px] lg:text-[10px] mb-1 sm:mb-2 block drop-shadow-md">
                 The Classic Choice
               </span>
               
-              <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-2 lg:mb-4"></div>
+              <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-1 sm:mb-2 lg:mb-4"></div>
 
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none drop-shadow-lg">
+              <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white mb-1 sm:mb-2 lg:mb-4 leading-none drop-shadow-lg">
                 Traditional Santa
               </h2>
               
-              <div className="mb-3 lg:mb-8">
+              <div className="mb-2 sm:mb-3 lg:mb-8">
                 <p className="text-white/90 lg:text-white/70 text-[11px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light line-clamp-2 lg:line-clamp-none">
                   Every detail of the Christmas magic your family knows and loves delivered at the highest standard. Warm, festive, and filled with wonder.
                 </p>
@@ -74,7 +74,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full inline-flex items-center justify-center bg-[#c71e32] text-white py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
+                className="w-full inline-flex items-center justify-center bg-[#c71e32] text-white py-2 sm:py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
               >
                 Book Traditional
               </Link>
@@ -82,7 +82,7 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[280px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
+          <div className="rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 group relative bg-brand-dark flex flex-col justify-end h-[200px] sm:h-[320px] lg:h-auto lg:flex-1 lg:min-h-[600px] border border-black/5">
             
             {/* Cinematic Image Background (Always absolute) */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -98,19 +98,19 @@ export default function OurSantasPage() {
             </div>
 
             {/* Inner Content Container */}
-            <div className="relative z-10 p-4 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20 flex flex-col justify-end">
+            <div className="relative z-10 p-3 sm:p-6 lg:m-6 lg:p-8 lg:rounded-[1.5rem] lg:bg-black/40 lg:backdrop-blur-md lg:border lg:border-white/10 lg:shadow-2xl transition-all duration-500 lg:group-hover:bg-black/50 lg:group-hover:border-white/20 flex flex-col justify-end">
               
-              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[9px] sm:text-[9px] lg:text-[10px] mb-2 block drop-shadow-md">
+              <span className="text-[#d82b3d] font-bold uppercase tracking-[0.2em] text-[9px] sm:text-[9px] lg:text-[10px] mb-1 sm:mb-2 block drop-shadow-md">
                 The Inclusive Choice
               </span>
               
-              <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-2 lg:mb-4"></div>
+              <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-1 sm:mb-2 lg:mb-4"></div>
 
-              <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-none drop-shadow-lg">
+              <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white mb-1 sm:mb-2 lg:mb-4 leading-none drop-shadow-lg">
                 Black Santa
               </h2>
               
-              <div className="mb-3 lg:mb-8">
+              <div className="mb-2 sm:mb-3 lg:mb-8">
                 <p className="text-white/90 lg:text-white/70 text-[11px] sm:text-xs lg:text-[13px] leading-snug lg:leading-relaxed font-light line-clamp-2 lg:line-clamp-none">
                   Representation matters. The same premium photography and enchanting atmosphere with a Santa who looks like your family.
                 </p>
@@ -122,7 +122,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full mt-auto inline-flex items-center justify-center bg-[#c71e32] text-white py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
+                className="w-full mt-auto inline-flex items-center justify-center bg-[#c71e32] text-white py-2 sm:py-3 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#c71e32] transition-colors duration-300 rounded-md lg:rounded-lg shadow-lg shrink-0"
               >
                 Book Black Santa
               </Link>
