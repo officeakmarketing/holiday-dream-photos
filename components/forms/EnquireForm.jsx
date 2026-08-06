@@ -55,7 +55,7 @@ const EnquireForm = React.memo(function EnquireForm() {
       </div>
 
       {/* RIGHT COLUMN: THE FORM */}
-      <div className="w-full lg:w-7/12 p-8 md:p-12 lg:p-16 relative z-20 bg-gradient-to-b from-brand-light/30 to-white">
+      <div className="w-full lg:w-7/12 p-5 sm:p-8 md:p-12 lg:p-16 relative z-20 bg-gradient-to-b from-brand-light/30 to-white">
         
         {/* Top accent line (only visible on mobile, since layout changes on desktop) */}
         <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-red lg:hidden"></div>
@@ -115,7 +115,7 @@ const EnquireForm = React.memo(function EnquireForm() {
                 <label htmlFor="event_date" className={labelClass}>Event Date</label>
                 <input id="event_date" required type="date" className={inputClass} />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4">
                 <div>
                   <label htmlFor="guests" className={labelClass}>Guests</label>
                   <input required type="number" id="guests" min="1" className={inputClass} placeholder="150" />
