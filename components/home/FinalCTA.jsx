@@ -9,7 +9,7 @@ export default function FinalCTA({
   ctaLink = "/book-now"
 }) {
   return (
-    <section className="py-12 md:py-16 relative overflow-hidden flex items-center justify-center text-center md:text-left">
+    <section className="py-10 sm:py-12 md:py-16 relative overflow-hidden flex items-center justify-center text-center md:text-left">
       {/* High-End CSS Gradient Background */}
       <div className="absolute inset-0 w-full h-full z-0 bg-[#050a08] overflow-hidden">
         {/* Central glowing radial spotlight */}
@@ -23,14 +23,14 @@ export default function FinalCTA({
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNDBoNDBWMEgwek0zOSAzOUgxVjFoMzh6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')] opacity-40 mix-blend-overlay pointer-events-none" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-16">
         
         <div className="flex-1 max-w-2xl">
           <FadeIn
             y={30}
             duration={0.8}
             delay={0.1}
-            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-brand-light tracking-tight leading-[1.2] md:leading-[1.1] mb-4 drop-shadow-xl"
+            className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-light tracking-tight leading-[1.25] md:leading-[1.1] mb-3 sm:mb-4 drop-shadow-xl max-w-sm sm:max-w-none mx-auto md:mx-0"
             as="h2"
           >
             {headline}
@@ -40,7 +40,7 @@ export default function FinalCTA({
             y={30}
             duration={0.8}
             delay={0.2}
-            className="text-brand-light/80 font-light text-base sm:text-lg leading-relaxed drop-shadow-md"
+            className="text-brand-light/80 font-light text-sm sm:text-base lg:text-lg leading-relaxed drop-shadow-md"
             as="p"
           >
             {body}
@@ -56,12 +56,12 @@ export default function FinalCTA({
         >
           <Link 
             href={ctaLink}
-            className="inline-flex items-center justify-center gap-2 md:gap-4 bg-brand-red text-white px-6 py-4 md:px-12 md:py-6 rounded-sm text-xs md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] group w-full sm:w-auto text-center"
+            className="inline-flex items-center justify-center gap-2 md:gap-4 bg-brand-red text-white px-5 sm:px-6 py-4 md:px-12 md:py-6 rounded-md md:rounded-sm text-[11px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] group w-full sm:w-auto text-center"
           >
             {ctaText}
-            <ArrowRight size={18} className="w-4 h-4 md:w-[18px] md:h-[18px] group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" />
+            <ArrowRight size={16} className="w-4 h-4 md:w-[18px] md:h-[18px] group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" />
           </Link>
-          <p className="text-white/50 text-[10px] sm:text-xs font-light italic tracking-wide uppercase text-center md:text-right px-4">
+          <p className="text-white/50 text-[9px] sm:text-[10px] md:text-xs font-light italic tracking-wide uppercase text-center md:text-right px-4">
             Slots fill up fast. Reserve yours before it is too late.
           </p>
         </FadeIn>

@@ -63,7 +63,7 @@ const CountdownBanner = React.memo(function CountdownBanner() {
   if (!mounted) return null; // Avoid hydration mismatch
 
   return (
-    <section className="relative w-full bg-brand-red py-10 md:py-12 overflow-hidden shadow-inner">
+    <section className="relative w-full bg-brand-red py-6 md:py-12 overflow-hidden shadow-inner">
       
       {/* Background Image Overlay */}
       <div 
@@ -74,53 +74,53 @@ const CountdownBanner = React.memo(function CountdownBanner() {
       {/* Heavy black overlay to match ProblemIntro */}
       <div className="absolute inset-0 bg-black/80"></div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-around gap-10 md:gap-4">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-around gap-5 md:gap-4">
         
         {/* Title */}
-        <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white font-medium text-center md:text-left leading-tight drop-shadow-md">
+        <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl text-white font-medium text-center md:text-left leading-tight drop-shadow-md">
           Countdown to <br className="hidden md:block" />
           <span className="italic">Christmas</span>
         </h2>
 
         {/* Countdown Blocks */}
-        <div className="flex items-center gap-2 sm:gap-4 lg:gap-6 mt-4 md:mt-0">
+        <div className="flex items-center gap-3 sm:gap-4 lg:gap-6 mt-1 md:mt-0">
           
           {/* Days */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.days} /></span>
+            <div className="w-10 h-10 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-md sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className="text-xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.days} /></span>
             </div>
-            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Days</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[10px] sm:text-sm lg:text-base mt-1 sm:mt-2 drop-shadow-sm">Days</span>
           </div>
 
-          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-xl sm:text-3xl lg:text-4xl -mt-5 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Hours */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.hours} /></span>
+            <div className="w-10 h-10 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-md sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className="text-xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.hours} /></span>
             </div>
-            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Hours</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[10px] sm:text-sm lg:text-base mt-1 sm:mt-2 drop-shadow-sm">Hours</span>
           </div>
 
-          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-xl sm:text-3xl lg:text-4xl -mt-5 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Minutes */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-              <span className="text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.minutes} /></span>
+            <div className="w-10 h-10 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-md sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className="text-xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.minutes} /></span>
             </div>
-            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Minutes</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[10px] sm:text-sm lg:text-base mt-1 sm:mt-2 drop-shadow-sm">Minutes</span>
           </div>
 
-          <span className="text-white font-heading text-2xl sm:text-3xl lg:text-4xl -mt-6 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
+          <span className="text-white font-heading text-xl sm:text-3xl lg:text-4xl -mt-5 sm:-mt-8 lg:-mt-10 font-bold opacity-90 drop-shadow-sm">:</span>
 
           {/* Seconds */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-              <span className=" text-3xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.seconds} /></span>
+            <div className="w-10 h-10 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-brand-light rounded-md sm:rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              <span className="text-xl sm:text-5xl font-bold text-brand-red "><AnimatedNumber value={timeLeft.seconds} /></span>
             </div>
-            <span className="text-white font-heading italic font-semibold sm:font-medium text-[13px] sm:text-sm lg:text-base mt-2 drop-shadow-sm">Seconds</span>
+            <span className="text-white font-heading italic font-semibold sm:font-medium text-[10px] sm:text-sm lg:text-base mt-1 sm:mt-2 drop-shadow-sm">Seconds</span>
           </div>
 
         </div>

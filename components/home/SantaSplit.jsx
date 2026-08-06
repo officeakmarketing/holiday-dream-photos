@@ -5,8 +5,8 @@ import SantaCard from "./SantaCard";
 export default function SantaSplit() {
   return (
     <section className="relative w-full bg-black overflow-hidden">
-      {/* The Split Container: Stacked on mobile, side-by-side on desktop */}
-      <div className="w-full flex flex-col lg:flex-row h-auto lg:h-[90vh]">
+      {/* The Split Container: Stacked on mobile, side-by-side on tablet/desktop */}
+      <div className="w-full flex flex-col md:flex-row h-auto md:h-[60vh] lg:h-[90vh] md:min-h-[500px]">
         
         {/* Traditional Santa */}
         <SantaCard 

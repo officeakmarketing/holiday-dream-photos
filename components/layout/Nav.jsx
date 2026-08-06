@@ -134,17 +134,9 @@ const Nav = React.memo(function Nav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] bg-brand-light flex flex-col lg:flex-row overflow-y-auto overflow-x-hidden"
           >
-            {/* Christmas Lights spanning full width of the overlay */}
-            <div className="absolute top-[-10px] left-0 w-full overflow-hidden flex items-start justify-center pointer-events-none opacity-80 z-20">
-              <Lottie 
-                animationData={christmasLights} 
-                loop={true} 
-                className="w-full min-w-[1200px] md:min-w-[2000px] max-w-none drop-shadow-2xl"
-              />
-            </div>
 
             {/* Left Panel: Graphic (Desktop Only) */}
             <div className="hidden lg:flex w-full lg:w-1/2 lg:h-screen bg-brand-dark relative flex-col justify-between p-6 sm:p-12 order-2 lg:order-1 min-h-[400px] lg:min-h-0">

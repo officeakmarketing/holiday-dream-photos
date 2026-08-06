@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -34,10 +34,10 @@ export default function OurSantasPage() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 flex-1 h-full">
           
           {/* Traditional Santa Card */}
-          <div className="rounded-xl overflow-hidden flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 group relative flex-1 lg:flex-auto lg:h-[55vh] 2xl:h-[65vh] lg:min-h-[500px] lg:max-h-[750px] border border-black/5 lg:hover:-translate-y-2 lg:hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
+          <div className="rounded-xl overflow-hidden flex flex-col lg:block shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 group relative flex-1 bg-brand-dark lg:h-[55vh] 2xl:h-[65vh] lg:min-h-[500px] lg:max-h-[750px] border border-black/5 lg:hover:-translate-y-2 lg:hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
             
-            {/* Cinematic Image Background */}
-            <div className="absolute inset-0 w-full h-full bg-brand-dark z-0">
+            {/* Cinematic Image Background (Fixed height on mobile, absolute on desktop) */}
+            <div className="relative w-full h-[280px] sm:h-[350px] lg:absolute lg:inset-0 lg:h-full z-0">
               <Image 
                 src="/images/traditional-santa.jpg" 
                 alt="Traditional Santa" 
@@ -45,29 +45,29 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
               />
-              {/* Rich Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>
+              {/* Desktop-only Gradient Overlay */}
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>
             </div>
 
-            {/* Content Container */}
-            <div className="flex flex-col flex-1 items-start justify-end p-0 lg:p-8 relative z-10 h-full w-full">
+            {/* Content Container (Below on mobile, absolute on desktop) */}
+            <div className="relative z-10 w-full flex flex-col items-start px-6 pt-8 pb-10 sm:px-8 lg:absolute lg:inset-0 lg:justify-end lg:p-8 lg:pt-0">
               
-              {/* Always-Visible Panel (Simple Overlay on Mobile, Glass on Desktop) */}
-              <div className="w-full text-left transition-all duration-500 bg-black/40 lg:backdrop-blur-xl lg:bg-black/30 p-5 lg:p-8 lg:rounded-2xl lg:border lg:border-white/20 lg:shadow-lg lg:group-hover:bg-black/40 lg:group-hover:border-white/30">
-                <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[8px] lg:text-[11px] mb-1 lg:mb-2 block drop-shadow-md">
+              {/* Always-Visible Panel */}
+              <div className="w-full text-left transition-all duration-500 bg-transparent lg:backdrop-blur-xl lg:bg-black/30 lg:p-8 lg:rounded-2xl lg:border lg:border-white/20 lg:shadow-lg lg:group-hover:bg-black/40 lg:group-hover:border-white/30 flex flex-col">
+                <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] lg:text-[11px] mb-2 block drop-shadow-md">
                   The Classic Choice
                 </span>
                 
                 {/* Delicate Accent Line */}
-                <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-2 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
+                <div className="w-10 lg:w-12 h-[1px] bg-white/30 mb-3 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
 
-                <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-tight drop-shadow-lg">
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-3 lg:mb-4 leading-tight drop-shadow-lg">
                   Traditional Santa
                 </h2>
                 
-                {/* Description (Always Visible) */}
-                <div className="mb-4 lg:mb-8">
-                  <p className="text-white/80 lg:text-white/90 text-[10px] lg:text-sm leading-[1.5] lg:leading-relaxed line-clamp-2 lg:line-clamp-none font-light">
+                {/* Description */}
+                <div className="mb-8 lg:mb-8">
+                  <p className="text-white/80 lg:text-white/90 text-sm sm:text-base leading-relaxed font-light">
                     Every detail of the Christmas magic your family knows and loves delivered at the highest standard. Warm, festive, and filled with wonder.
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full inline-flex items-center justify-center bg-brand-red text-white py-3.5 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-dark transition-all duration-300 rounded-md shadow-[0_0_15px_rgba(200,30,30,0.5)] lg:shadow-[0_0_20px_rgba(200,30,30,0.4)] lg:hover:shadow-[0_0_25px_rgba(17,49,34,0.6)]"
+                className="w-full inline-flex items-center justify-center bg-brand-red text-white py-4 lg:py-4 text-[11px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-red transition-all duration-300 rounded-md shadow-none lg:shadow-[0_0_20px_rgba(200,30,30,0.4)] mt-auto"
               >
                 Book <span className="inline">&nbsp;Traditional</span>
               </Link>
@@ -88,10 +88,10 @@ export default function OurSantasPage() {
           </div>
 
           {/* Black Santa Card */}
-          <div className="rounded-xl overflow-hidden flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 group relative flex-1 lg:flex-auto lg:h-[55vh] 2xl:h-[65vh] lg:min-h-[500px] lg:max-h-[750px] border border-black/5 lg:hover:-translate-y-2 lg:hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
+          <div className="rounded-xl overflow-hidden flex flex-col lg:block shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 group relative flex-1 bg-brand-dark lg:h-[55vh] 2xl:h-[65vh] lg:min-h-[500px] lg:max-h-[750px] border border-black/5 lg:hover:-translate-y-2 lg:hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
             
             {/* Cinematic Image Background */}
-            <div className="absolute inset-0 w-full h-full bg-brand-dark z-0">
+            <div className="relative w-full h-[280px] sm:h-[350px] lg:absolute lg:inset-0 lg:h-full z-0">
               <Image 
                 src="/images/black-santa.jpg" 
                 alt="Black Santa" 
@@ -99,36 +99,36 @@ export default function OurSantasPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[50%_15%] transition-transform duration-[1500ms] group-hover:scale-105 opacity-90 group-hover:opacity-100" 
               />
-              {/* Rich Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>
+              {/* Desktop-only Gradient Overlay */}
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:via-black/50 transition-colors duration-700"></div>
             </div>
 
             {/* Content Container */}
-            <div className="flex flex-col flex-1 items-start justify-end p-0 lg:p-8 relative z-10 h-full w-full">
+            <div className="relative z-10 w-full flex flex-col items-start px-6 pt-8 pb-10 sm:px-8 lg:absolute lg:inset-0 lg:justify-end lg:p-8 lg:pt-0">
               
-              {/* Always-Visible Panel (Simple Overlay on Mobile, Glass on Desktop) */}
-              <div className="w-full text-left transition-all duration-500 bg-black/40 lg:backdrop-blur-xl lg:bg-black/30 p-5 lg:p-8 lg:rounded-2xl lg:border lg:border-white/20 lg:shadow-lg lg:group-hover:bg-black/40 lg:group-hover:border-white/30">
-                <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[8px] lg:text-[11px] mb-1 lg:mb-2 block drop-shadow-md">
+              {/* Always-Visible Panel */}
+              <div className="w-full text-left transition-all duration-500 bg-transparent lg:backdrop-blur-xl lg:bg-black/30 lg:p-8 lg:rounded-2xl lg:border lg:border-white/20 lg:shadow-lg lg:group-hover:bg-black/40 lg:group-hover:border-white/30 flex flex-col">
+                <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] lg:text-[11px] mb-2 block drop-shadow-md">
                   The Inclusive Choice
                 </span>
 
                 {/* Delicate Accent Line */}
-                <div className="w-8 lg:w-12 h-[1px] bg-white/30 mb-2 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
+                <div className="w-10 lg:w-12 h-[1px] bg-white/30 mb-3 lg:mb-4 transition-all duration-500 group-hover:w-16"></div>
 
-                <h2 className="font-heading text-xl sm:text-3xl lg:text-5xl text-white mb-2 lg:mb-4 leading-tight drop-shadow-lg">
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white mb-3 lg:mb-4 leading-tight drop-shadow-lg">
                   Black Santa
                 </h2>
                 
-                {/* Description (Always Visible) */}
-                <div className="mb-4 lg:mb-6">
-                  <p className="text-white/80 lg:text-white/90 text-[10px] lg:text-sm leading-[1.5] lg:leading-relaxed line-clamp-2 lg:line-clamp-none font-light">
+                {/* Description */}
+                <div className="mb-6 lg:mb-6">
+                  <p className="text-white/80 lg:text-white/90 text-sm sm:text-base leading-relaxed font-light">
                     Representation matters. The same premium photography and enchanting atmosphere with a Santa who looks like your family.
                   </p>
                 </div>
                 
                 {/* Social Proof: Nick Cannon Polaroid */}
-                <div className="w-full mb-6">
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                <div className="w-full mb-8">
+                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 drop-shadow-xl hover:scale-105 transition-transform duration-300">
                     <Image 
                       src="/images/nick-cannon-polaroid.png"
                       alt="Nick Cannon with Black Santa"
@@ -145,7 +145,7 @@ export default function OurSantasPage() {
 
               <Link 
                 href="/book-now" 
-                className="w-full inline-flex items-center justify-center bg-brand-red text-white py-3.5 lg:py-4 text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-dark transition-all duration-300 rounded-md shadow-[0_0_15px_rgba(200,30,30,0.5)] lg:shadow-[0_0_20px_rgba(200,30,30,0.4)] lg:hover:shadow-[0_0_25px_rgba(17,49,34,0.6)]"
+                className="w-full inline-flex items-center justify-center bg-brand-red text-white py-4 lg:py-4 text-[11px] lg:text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-red transition-all duration-300 rounded-md shadow-none lg:shadow-[0_0_20px_rgba(200,30,30,0.4)] mt-auto"
               >
                 Book <span className="inline">&nbsp;Black Santa</span>
               </Link>
@@ -161,25 +161,55 @@ export default function OurSantasPage() {
         {/* Subtle background element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
         
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
-          <h3 className="font-heading text-3xl sm:text-4xl md:text-5xl text-brand-dark mb-4 md:mb-6">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <h3 className="text-center font-heading text-3xl sm:text-4xl md:text-5xl text-brand-dark mb-10 md:mb-12">
             What people are saying
           </h3>
           
-          <div className="relative flex flex-col items-center max-w-3xl mx-auto px-2 sm:px-6">
-            <Quote className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-brand-gold/40 mb-2 md:mb-4" />
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-brand-dark leading-relaxed font-heading italic mb-6 md:mb-8 relative z-10 drop-shadow-sm">
-              "Holiday Dream Photos continues to exceed our expectations every holiday season. Their Black Santa is truly special. Families travel from all over just to take photos with him. It is more than just photos, it is a magical experience for the community."
-            </p>
-            <p className="text-brand-red font-bold uppercase tracking-[0.2em] text-[10px] sm:text-xs">
-              Baldwin Hills Crenshaw Shopping Center
-            </p>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            
+            {/* Testimonial 1 */}
+            <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+              <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
+              <div className="flex justify-center gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-brand-dark fill-brand-dark" />
+                ))}
+              </div>
+              <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
+                "Holiday Dream Photos continues to exceed our expectations every holiday season. Their Black Santa is truly special. Families travel from all over just to take photos with him. It is more than just photos, it is a magical experience for the community."
+              </p>
+              <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
+                <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
+                  Baldwin Hills Crenshaw Shopping Center
+                </span>
+                <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
+                  Verified Partner
+                </span>
+              </div>
+            </div>
 
-          {/* ENGINEER NOTE: Hidden family testimonials pending content */}
-          <div className="hidden">
-            <p>[PLACEHOLDER: Family testimonial 1]</p>
-            <p>[PLACEHOLDER: Family testimonial 2]</p>
+            {/* Testimonial 2 (Placeholder) */}
+            <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
+              <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
+              <div className="flex justify-center gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-brand-dark fill-brand-dark" />
+                ))}
+              </div>
+              <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
+                "[PLACEHOLDER: Pending new family testimonial from client. This layout is designed to perfectly fit your 2 total testimonials side-by-side.]"
+              </p>
+              <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
+                <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
+                  [Family Name]
+                </span>
+                <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
+                  [Location]
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
