@@ -3,74 +3,9 @@
 import StaggerContainer from "../animations/StaggerContainer";
 import FadeInItem from "../animations/FadeInItem";
 import LocationCard from "./LocationCard";
+import { locationsData as locations } from "@/lib/locationsData";
 
 export default function LocationsStrip() {
-  const locations = [
-    { 
-      name: "Edgewater Mall", 
-      city: "Biloxi, MS",
-      address: "2600 Beach Blvd, Biloxi, MS 39531",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/edgewatermall.png"
-    },
-    { 
-      name: "Almeda Mall", 
-      city: "Houston, TX",
-      address: "12200 Gulf Fwy, Houston, TX 77034",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Black Santa"],
-      image: "/images/almedamall.png"
-    },
-    { 
-      name: "Central Mall", 
-      city: "Texarkana, TX",
-      address: "2400 Richmond Rd, Texarkana, TX 75503",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/centralmall.png"
-    },
-    { 
-      name: "Outlets at Little Rock", 
-      city: "Little Rock, AR",
-      address: "11201 Bass Pro Pkwy, Little Rock, AR 72210",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/outletsmall.png"
-    },
-    { 
-      name: "Omaha Mall", 
-      city: "Omaha, NE",
-      address: "10000 California St, Omaha, NE 68114",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/omahamall.png"
-    },
-    { 
-      name: "Northtown Mall", 
-      city: "Blaine, MN",
-      address: "398 Northtown Dr, Blaine, MN 55434",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/northmall.png"
-    },
-    { 
-      name: "Clearview Mall", 
-      city: "Butler, PA",
-      address: "101 Clearview Cir, Butler, PA 16001",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/clearviewmall.png"
-    },
-    { 
-      name: "The Shoppes at Bel Air", 
-      city: "Mobile, AL",
-      address: "3299 Bel Air Mall, Mobile, AL 36606",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/belairmall.png"
-    },
-  ];
 
   return (
     <section className="py-12 md:py-16 bg-brand-light relative border-t border-brand-dark/5">
@@ -89,22 +24,31 @@ export default function LocationsStrip() {
           </p>
         </div>
 
-        {/* Full Grid */}
         <StaggerContainer 
           staggerChildren={0.1}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
         >
           {locations.map((loc, idx) => (
             <FadeInItem 
               key={idx}
               duration={0.5}
               y={20}
-              className="h-full"
+              className={`h-full lg:col-span-2 2xl:col-span-1 ${idx === 6 ? 'lg:col-start-2 2xl:col-start-auto' : ''}`}
             >
               <LocationCard loc={loc} />
             </FadeInItem>
           ))}
         </StaggerContainer>
+
+        {/* Global Disclaimer */}
+        <div className="mt-12 md:mt-16 text-center border-t border-brand-dark/10 pt-8 max-w-3xl mx-auto">
+          <p className="text-brand-dark font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-2">
+            NO PERSONAL PHOTOGRAPHY ALLOWED
+          </p>
+          <p className="italic text-brand-red text-xl md:text-3xl font-heading leading-tight">
+            Thank you for helping us keep the magic!
+          </p>
+        </div>
 
       </div>
     </section>

@@ -35,4 +35,19 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Force pointer cursor on all interactive elements globally */
+  button, 
+  a, 
+  [role="button"] {
+    cursor: pointer;
+  }
+  
+  /* Preserve not-allowed cursors for disabled states */
+  button:disabled,
+  button.cursor-not-allowed,
+  a.cursor-not-allowed,
+  [disabled] {
+    cursor: not-allowed !important;
+  }
 }

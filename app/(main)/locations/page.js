@@ -10,80 +10,7 @@ export const metadata = {
   description: 'Find a Holiday Dream Photos premium Santa experience near you. 8 locations nationwide.',
 };
 
-const locations = [
-    { 
-      id: 1,
-      name: "Edgewater Mall", 
-      city: "Biloxi, MS",
-      address: "2600 Beach Blvd, Biloxi, MS 39531",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/edgewatermall.png"
-    },
-    { 
-      id: 2,
-      name: "Almeda Mall", 
-      city: "Houston, TX",
-      address: "12200 Gulf Fwy, Houston, TX 77034",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Black Santa"],
-      image: "/images/almedamall.png"
-    },
-    { 
-      id: 3,
-      name: "Central Mall", 
-      city: "Texarkana, TX",
-      address: "2400 Richmond Rd, Texarkana, TX 75503",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/centralmall.png"
-    },
-    { 
-      id: 4,
-      name: "Outlets at Little Rock", 
-      city: "Little Rock, AR",
-      address: "11201 Bass Pro Pkwy, Little Rock, AR 72210",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/outletsmall.png"
-    },
-    { 
-      id: 5,
-      name: "Omaha Mall", 
-      city: "Omaha, NE",
-      address: "10000 California St, Omaha, NE 68114",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/omahamall.png"
-    },
-    { 
-      id: 6,
-      name: "Northtown Mall", 
-      city: "Blaine, MN",
-      address: "398 Northtown Dr, Blaine, MN 55434",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/northmall.png"
-    },
-    { 
-      id: 7,
-      name: "Clearview Mall", 
-      city: "Butler, PA",
-      address: "101 Clearview Cir, Butler, PA 16001",
-      dates: "Nov 24 - Dec 24",
-      experiences: ["Traditional"],
-      image: "/images/clearviewmall.png"
-    },
-    { 
-      id: 8,
-      name: "The Shoppes at Bel Air", 
-      city: "Mobile, AL",
-      address: "3299 Bel Air Mall, Mobile, AL 36606",
-      dates: "Nov 17 - Dec 24",
-      experiences: ["Traditional", "Black Santa"],
-      image: "/images/belairmall.png"
-    },
-];
+import { locationsData as locations } from "@/lib/locationsData";
 
 export default function LocationsPage() {
   return (
@@ -100,18 +27,31 @@ export default function LocationsPage() {
       />
 
       {/* SECTION 2: LOCATION CARDS GRID */}
-      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto relative z-20">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-12 w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
-          {locations.map((loc) => (
-            <div key={loc.id} className="h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
+          {locations.map((loc, idx) => (
+            <div 
+              key={loc.id} 
+              className={`h-full lg:col-span-2 2xl:col-span-1 ${idx === 6 ? 'lg:col-start-2 2xl:col-start-auto' : ''}`}
+            >
               <LocationCard loc={loc} />
             </div>
           ))}
         </div>
+
+        {/* Global Disclaimer */}
+        <div className="mt-12 md:mt-16 text-center border-t border-brand-dark/10 pt-8 max-w-3xl mx-auto">
+          <p className="text-brand-dark font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-2">
+            NO PERSONAL PHOTOGRAPHY ALLOWED
+          </p>
+          <p className="italic text-brand-red text-xl md:text-3xl font-heading leading-tight">
+            Thank you for helping us keep the magic!
+          </p>
+        </div>
       </section>
 
-      {/* SECTION 3: FINAL CTA */}
+      {/* SECTION 4: FINAL CTA */}
       <div className="mt-8 md:mt-16">
         <FinalCTA 
           headline={<>The most <span className="italic text-brand-red">magical</span> time of the year is approaching.</>}
