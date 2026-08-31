@@ -24,7 +24,7 @@ export default function LocationCard({ loc }) {
 
   return (
     <>
-      <div className="bg-[#fdfbf9] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-brand-dark/10 hover:-translate-y-1">
+      <div className="bg-[#fdfbf9] rounded-lg md:rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-brand-dark/10 hover:-translate-y-1">
         {/* Image Area */}
         <div className="h-48 md:h-56 bg-brand-light relative shrink-0 overflow-hidden">
           <Image 

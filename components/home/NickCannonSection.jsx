@@ -29,7 +29,7 @@ export default function NickCannonSection() {
           <FadeIn
             y={40}
             duration={0.8}
-            className="flex flex-col relative px-4 py-6 sm:p-12 lg:p-16 text-center rounded-[2rem] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100/60 transition-all duration-500 w-full hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]"
+            className="flex flex-col relative px-4 py-6 sm:p-12 lg:p-16 text-center rounded-2xl md:rounded-3xl bg-white shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100/60 transition-all duration-500 w-full hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]"
           >
             {/* Massive Elegant Quote Mark */}
             <Quote className="hidden sm:block absolute top-8 left-8 lg:top-12 lg:left-12 w-12 h-12 lg:w-16 lg:h-16 text-brand-dark/5 fill-current rotate-180" />

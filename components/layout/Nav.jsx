@@ -229,7 +229,7 @@ const Nav = React.memo(function Nav() {
                         <Link
                           href={link.href}
                           onClick={() => setTimeout(() => setMobileMenuOpen(false), 200)}
-                          className={`font-heading text-[clamp(1.75rem,5vh,3.5rem)] transition-all duration-500 tracking-tight leading-none block w-full relative z-10 ${
+                          className={`font-heading text-[clamp(1.5rem,4vh,3rem)] transition-all duration-500 tracking-tight leading-none block w-full relative z-10 ${
                             isActive 
                               ? 'text-brand-red translate-x-4 sm:translate-x-6' 
                               : 'text-brand-dark hover:text-brand-red hover:translate-x-4 sm:hover:translate-x-6'

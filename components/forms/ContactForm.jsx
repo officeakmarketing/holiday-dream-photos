@@ -38,33 +38,27 @@ const ContactForm = React.memo(function ContactForm() {
 
           <div className="space-y-8 mt-auto">
             
-            <div className="flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                <Mail className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex items-start gap-4">
+              <Mail className="w-5 h-5 text-white/50 mt-1" />
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Email Us</p>
-                <p className="text-sm font-medium">hello@holidaydreamphotos.com</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Email Us</p>
+                <p className="text-sm font-light">Info@holidaydreamphotos.com</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                <Phone className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex items-start gap-4">
+              <Phone className="w-5 h-5 text-white/50 mt-1" />
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Call Us</p>
-                <p className="text-sm font-medium">1-800-555-0199</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Call Us</p>
+                <p className="text-sm font-light">678-325-1232</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex items-start gap-4">
+              <MapPin className="w-5 h-5 text-white/50 mt-1" />
               <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 mb-1">Locations</p>
-                <p className="text-sm font-medium">8 premium venues nationwide</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Locations</p>
+                <p className="text-sm font-light">8 premium venues nationwide</p>
               </div>
             </div>
 

@@ -59,7 +59,7 @@ export default function HowItWorks() {
           {steps.map((step, idx) => (
             <FadeInItem 
               key={idx}
-              className={`flex flex-col items-center text-center px-4 py-6 sm:px-6 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${step.bgColor} rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 max-w-[280px] sm:max-w-[340px] md:max-w-none mx-auto w-full`}
+              className={`flex flex-col items-center text-center px-4 py-6 sm:px-6 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${step.bgColor} rounded-xl md:rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 max-w-[280px] sm:max-w-[340px] md:max-w-none mx-auto w-full`}
             >
               {/* Unique Step Number Badge */}
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white/5 border border-white/40 flex items-center justify-center mb-3 sm:mb-6 md:mb-8 font-heading text-xl sm:text-2xl md:text-4xl text-white group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">

@@ -146,7 +146,7 @@ export default function OurSantasPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
-            {/* Testimonial 1 */}
+            {/* Testimonial 1 - Traditional Santa */}
             <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
               <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
               <div className="flex justify-center gap-1 mb-5">
@@ -155,19 +155,19 @@ export default function OurSantasPage() {
                 ))}
               </div>
               <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
-                "Holiday Dream Photos continues to exceed our expectations every holiday season. Their Black Santa is truly special. Families travel from all over just to take photos with him. It is more than just photos, it is a magical experience for the community."
+                "We have done the mall Santa experience every year for the last five years and nothing has come close to Holiday Dream Photos. The setup was beautiful, the photographer was incredible, and our daughter actually believed. The photos came out better than anything we have ever had. We are already booked for next year."
               </p>
               <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
                 <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
-                  Baldwin Hills Crenshaw Shopping Center
+                  Marcus T
                 </span>
                 <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
-                  Verified Partner
+                  Traditional Santa
                 </span>
               </div>
             </div>
 
-            {/* Testimonial 2 (Placeholder) */}
+            {/* Testimonial 2 - Black Santa */}
             <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
               <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
               <div className="flex justify-center gap-1 mb-5">
@@ -176,14 +176,14 @@ export default function OurSantasPage() {
                 ))}
               </div>
               <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
-                "[PLACEHOLDER: Pending new family testimonial from client. This layout is designed to perfectly fit your 2 total testimonials side-by-side.]"
+                "Holiday Dream Photos did something I did not think was possible, they made my whole family want to take a Christmas photo together. My husband never joins in. This year he was the one suggesting we book early. The Black Santa experience was genuine, warm, and absolutely magical. We are telling everyone we know."
               </p>
               <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
                 <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
-                  [Family Name]
+                  Keisha
                 </span>
                 <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
-                  [Location]
+                  Black Santa
                 </span>
               </div>
             </div>
