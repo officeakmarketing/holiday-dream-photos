@@ -42,7 +42,7 @@ export default function HiringApplication() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNDBoNDBWMEgwek0zOSAzOUgxVjFoMzh6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')] opacity-40 mix-blend-overlay pointer-events-none" />
       </div>
       
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="relative z-10 w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* STEP 1: INITIAL CTA */}
         {step === "initial" && (
@@ -82,7 +82,7 @@ export default function HiringApplication() {
             
             <StaggerContainer 
               staggerChildren={0.1}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12 max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1800px] mx-auto"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
             >
               {locationsData.map((loc, idx) => (
                 <FadeInItem 

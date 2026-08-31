@@ -9,13 +9,7 @@ const testimonials = [
     name: "Marcus T",
     subtitle: "Traditional Santa",
     stars: 5,
-  },
-  {
-    id: 2,
-    quote: "Seeing my son's face when he met the Black Santa for the first time is something I will never forget. He grabbed my hand and whispered 'Mama, Santa looks like us.' That moment alone was worth everything.",
-    name: "Danielle",
-    subtitle: "Black Santa",
-    stars: 5,
+    span: "md:col-span-2 lg:col-span-2"
   },
   {
     id: 3,
@@ -23,13 +17,7 @@ const testimonials = [
     name: "Jennifer",
     subtitle: "Traditional Santa",
     stars: 5,
-  },
-  {
-    id: 4,
-    quote: "Holiday Dream Photos did something I did not think was possible, they made my whole family want to take a Christmas photo together. My husband never joins in. This year he was the one suggesting we book early. The Black Santa experience was genuine, warm, and absolutely magical. We are telling everyone we know.",
-    name: "Keisha",
-    subtitle: "Black Santa",
-    stars: 5,
+    span: "md:col-span-1 lg:col-span-1"
   },
   {
     id: 5,
@@ -37,6 +25,23 @@ const testimonials = [
     name: "Sarah",
     subtitle: "Traditional Santa, Blaine MN",
     stars: 5,
+    span: "md:col-span-1 lg:col-span-1"
+  },
+  {
+    id: 4,
+    quote: "Holiday Dream Photos did something I did not think was possible, they made my whole family want to take a Christmas photo together. My husband never joins in. This year he was the one suggesting we book early. The Black Santa experience was genuine, warm, and absolutely magical. We are telling everyone we know.",
+    name: "Keisha",
+    subtitle: "Black Santa",
+    stars: 5,
+    span: "md:col-span-2 lg:col-span-2"
+  },
+  {
+    id: 2,
+    quote: "Seeing my son's face when he met the Black Santa for the first time is something I will never forget. He grabbed my hand and whispered 'Mama, Santa looks like us.' That moment alone was worth everything.",
+    name: "Danielle",
+    subtitle: "Black Santa",
+    stars: 5,
+    span: "md:col-span-2 lg:col-span-2"
   },
   {
     id: 6,
@@ -44,6 +49,7 @@ const testimonials = [
     name: "Trevon and Aisha",
     subtitle: "Black Santa",
     stars: 5,
+    span: "md:col-span-1 lg:col-span-1"
   }
 ];
 
@@ -71,15 +77,15 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Masonry Grid for Testimonials */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        {/* Bento Grid for Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto items-stretch">
           {testimonials.map((t, index) => (
             <FadeIn
               key={t.id}
               y={40}
               duration={0.8}
               delay={index * 0.1}
-              className="flex flex-col relative p-8 sm:p-10 mb-6 md:mb-8 rounded-2xl md:rounded-3xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100/80 transition-all duration-500 w-full hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] break-inside-avoid"
+              className={`flex flex-col h-full relative p-8 sm:p-10 rounded-2xl md:rounded-3xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100/80 transition-all duration-500 w-full hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] ${t.span}`}
             >
               <Quote className="absolute top-6 left-6 w-8 h-8 text-brand-dark/5 fill-current rotate-180" />
 
