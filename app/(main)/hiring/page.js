@@ -3,6 +3,8 @@ import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 
+import HiringApplication from "@/components/forms/HiringApplication";
+
 export const metadata = {
   title: 'Join Our Team | Holiday Dream Photos',
   description: 'Join the Holiday Dream Photos team as a real-bearded Santa or support staff.',
@@ -76,29 +78,8 @@ export default function HiringPage() {
         </div>
       </section>
 
-      {/* SECTION 3: CTA */}
-      <section className="w-full bg-brand-dark py-10 md:py-12 relative overflow-hidden text-center flex flex-col items-center justify-center">
-        {/* Subtle background glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-red/10 to-transparent mix-blend-overlay"></div>
-        
-        <div className="relative z-10 px-4 max-w-4xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-white mb-6 leading-tight">
-            Think you have what it takes?
-          </h2>
-          
-          <a 
-            href="#" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-red text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-brand-red transition-all duration-300 shadow-[0_15px_30px_rgba(200,16,46,0.2)] hover:shadow-[0_20px_40px_rgba(200,16,46,0.3)]"
-          >
-            Apply Now
-          </a>
-          <p className="text-[10px] text-white/40 mt-6 uppercase tracking-[0.3em]">
-            Links to external application portal
-          </p>
-        </div>
-      </section>
+      {/* SECTION 3: INTERACTIVE APPLICATION FLOW */}
+      <HiringApplication />
 
     </div>
   );

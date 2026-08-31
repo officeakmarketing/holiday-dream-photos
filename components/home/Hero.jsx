@@ -37,7 +37,7 @@ export default function Hero() {
         <StaggerContainer
           className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-[50%]"
         >
-          <FadeInItem as="h1" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-brand-dark leading-tight mb-6 tracking-tight">
+          <FadeInItem as="h1" className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-dark leading-tight mb-6 tracking-tight">
             The Santa Experience <br />
             <span className="text-brand-red italic font-light">Your Family Will Never Forget</span>
           </FadeInItem>

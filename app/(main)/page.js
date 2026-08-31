@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import HeroMobile from "@/components/home/HeroMobile";
 import CountdownBanner from "@/components/home/CountdownBanner";
 import ProblemIntro from "@/components/home/ProblemIntro";
 import SolutionIntro from "@/components/home/SolutionIntro";
@@ -19,28 +20,34 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div className="hidden lg:block">
+        <Hero />
+      </div>
+
+      <div className="block lg:hidden">
+        <HeroMobile />
+      </div>
       <CountdownBanner />
 
       <ProblemIntro />
       <SolutionIntro />
       <SantaSplit />
       <NickCannonSection />
-      
+
       {/* Middle Block: Logistics, Trust, and Scarcity */}
       <HowItWorks />
       <LocationsStrip />
       <Urgency />
-      
+
       {/* Ending Block: The Requested Sequence */}
       {/* <FinalCTA /> */}
-      
+
       <Testimonials />
-      
-      <div className="bg-brand-light border-t border-brand-dark/5">
+
+      <div className="bg-[#050a08] border-t border-white/5">
         <FaqAccordion />
       </div>
-      
+
       <FinalCTA />
     </>
   );

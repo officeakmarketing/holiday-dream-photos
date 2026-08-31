@@ -78,7 +78,7 @@ const Footer = React.memo(function Footer() {
               &copy; {new Date().getFullYear()} Holiday Dream Photos. All rights reserved.
             </p>
             <p className="text-brand-dark/70 text-xs font-medium text-center md:text-left">
-              Powered by <a href="https://akmarketing.agency/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors underline decoration-brand-dark/20 underline-offset-4 hover:decoration-brand-red font-semibold">AK Marketing</a>
+              Powered by <a href="https://akenterprises.io/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors underline decoration-brand-dark/20 underline-offset-4 hover:decoration-brand-red font-semibold">AK Enterprises</a>
             </p>
           </div>
           <div className="flex gap-6 mt-2 md:mt-0">

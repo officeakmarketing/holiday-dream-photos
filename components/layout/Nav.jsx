@@ -155,8 +155,11 @@ const Nav = React.memo(function Nav() {
                  </h2>
                </div>
                
-               <div className="relative z-10 hidden lg:block mt-8">
-                 <p className="text-[10px] text-brand-light/60 font-semibold tracking-[0.2em] uppercase">Holiday Dream Photos &copy; {new Date().getFullYear()}</p>
+               <div className="relative z-10 hidden lg:flex flex-col gap-3 mt-8">
+                 <a href="mailto:info@holidaydreamphotos.com" className="text-brand-light/80 hover:text-brand-light transition-colors text-xs font-medium tracking-wide">
+                   Info@holidaydreamphotos.com
+                 </a>
+                 <p className="text-[10px] text-brand-light/40 font-semibold tracking-[0.2em] uppercase">Holiday Dream Photos &copy; {new Date().getFullYear()}</p>
                </div>
             </div>
 
@@ -173,24 +176,7 @@ const Nav = React.memo(function Nav() {
                   </Link>
                 </div>
 
-                {/* Desktop Top Header (CTA & Socials - Hidden on 2xl) */}
-                <div className="hidden lg:flex 2xl:hidden flex-1 items-center justify-start gap-8 lg:px-4">
-                  <Link
-                    href="/book-now"
-                    onClick={() => setTimeout(() => setMobileMenuOpen(false), 200)}
-                    className="inline-block bg-brand-red text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] px-6 py-3.5 hover:bg-brand-dark transition-colors rounded-sm"
-                  >
-                    Book Your Session
-                  </Link>
-                  <div className="flex gap-4">
-                    <a href="https://www.instagram.com/holidaydreamphotos" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="https://www.facebook.com/holidaydreamphotos" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-dark/20 flex items-center justify-center text-brand-dark hover:border-brand-red hover:bg-brand-red hover:text-white transition-all duration-300">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                  </div>
-                </div>
+
 
                 {/* Close Button */}
                 <button
@@ -246,13 +232,13 @@ const Nav = React.memo(function Nav() {
                 </m.div>
               </div>
 
-              {/* Footer CTA & Socials (Mobile & 2xl screens) */}
+              {/* Footer CTA & Socials (Visible on all screens) */}
               <m.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="w-full flex lg:hidden 2xl:flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-brand-dark/10 pt-6 mt-6 shrink-0 gap-6"
+                className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-brand-dark/10 pt-6 mt-6 shrink-0 gap-6"
               >
                 <Link
                   href="/book-now"

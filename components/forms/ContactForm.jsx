@@ -42,7 +42,7 @@ const ContactForm = React.memo(function ContactForm() {
               <Mail className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Email Us</p>
-                <p className="text-sm font-light">Info@holidaydreamphotos.com</p>
+                <a href="mailto:info@holidaydreamphotos.com" className="text-sm font-light hover:text-brand-red transition-colors">Info@holidaydreamphotos.com</a>
               </div>
             </div>
             
@@ -50,7 +50,7 @@ const ContactForm = React.memo(function ContactForm() {
               <Phone className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Call Us</p>
-                <p className="text-sm font-light">678-325-1232</p>
+                <a href="tel:678-325-1232" className="text-sm font-light hover:text-brand-red transition-colors">678-325-1232</a>
               </div>
             </div>
 
