@@ -10,9 +10,6 @@ import Urgency from "@/components/home/Urgency";
 import LocationsStrip from "@/components/home/LocationsStrip";
 import FinalCTA from "@/components/home/FinalCTA";
 import FaqAccordion from "@/components/home/FaqAccordion";
-import FaqAccordionVar1 from "@/components/home/FaqAccordionVar1";
-import FaqAccordionVar2 from "@/components/home/FaqAccordionVar2";
-import FaqAccordionVar3 from "@/components/home/FaqAccordionVar3";
 import Testimonials from "@/components/home/Testimonials";
 
 export const metadata = {
@@ -47,11 +44,7 @@ export default function Home() {
 
       <Testimonials />
 
-      {/* FAQ Variations - Uncomment the one you want to test! */}
-      {/* <FaqAccordion /> */}
-      <FaqAccordionVar1 />
-      {/* <FaqAccordionVar2 /> */}
-      {/* <FaqAccordionVar3 /> */}
+      <FaqAccordion />
 
       <FinalCTA />
     </>
