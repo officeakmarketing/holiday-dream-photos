@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import TrustBar from "./TrustBar";
 import FadeIn from "../animations/FadeIn";
@@ -48,9 +49,9 @@ export default function Hero() {
           </FadeInItem>
 
           <FadeInItem className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto">
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-brand-red text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-brand-red-dark transition-colors rounded-sm shadow-sm">
+            <Link href="/book-now" className="w-full sm:w-auto px-8 py-3.5 bg-brand-red text-white font-semibold text-xs tracking-[0.2em] uppercase hover:bg-brand-red-dark transition-colors rounded-sm shadow-sm inline-block text-center">
               Book Your Session Now
-            </button>
+            </Link>
           </FadeInItem>
         </StaggerContainer>
       </div>

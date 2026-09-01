@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
           }
         `}} />
       </head>
-      <body className="flex flex-col min-h-screen font-sans bg-brand-light text-brand-dark">
+      <body suppressHydrationWarning className="flex flex-col min-h-screen font-sans bg-brand-light text-brand-dark">
         <AnimationProvider>
           <SmoothScroll>
           <Nav />

@@ -174,8 +174,8 @@ export default function HiringApplication() {
 
                 <div>
                   <label className="block text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.15em] mb-2">Role Applying For *</label>
-                  <select required className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm appearance-none">
-                    <option value="" disabled selected className="text-brand-dark">Select a role...</option>
+                  <select required defaultValue="" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm appearance-none">
+                    <option value="" disabled className="text-brand-dark">Select a role...</option>
                     <option value="santa" className="text-brand-dark">Santa (Real Beard Required)</option>
                     <option value="support" className="text-brand-dark">Support Staff</option>
                   </select>

@@ -3,11 +3,13 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import christmasLights from "../../public/animations/Coloured Christmas lights.json";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const links = [
   { name: "Home", href: "/" },
@@ -19,10 +21,16 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-const Nav = React.memo(function Nav() {
+export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Handle scroll state with Framer Motion (optimized, runs outside React render loop)
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50);
+  });
 
   // Check if we are on a page with a dark hero section
   const isDarkHeader = pathname === '/locations' || pathname === '/private-events' || pathname === '/book-now' || pathname === '/hiring' || pathname === '/contact';
@@ -31,15 +39,6 @@ const Nav = React.memo(function Nav() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
-
-  // Handle scroll state
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Prevent scrolling when full screen menu is open
   useEffect(() => {
@@ -55,13 +54,23 @@ const Nav = React.memo(function Nav() {
 
       <div className="fixed top-0 w-full z-40">
         {/* Christmas Lights Decoration */}
-        <div className={`absolute left-0 w-full overflow-hidden pointer-events-none z-50 h-24 md:h-32 flex items-start justify-center transition-all duration-700 ease-in-out ${scrolled ? 'opacity-0 -translate-y-10 invisible' : 'opacity-90 -translate-y-0 visible -mt-2 md:-mt-4'}`}>
-          <Lottie 
-            animationData={christmasLights} 
-            loop={true} 
-            className="w-full min-w-[1200px] md:min-w-[2000px] max-w-none drop-shadow-md"
-          />
-        </div>
+        <AnimatePresence>
+          {!scrolled && (
+            <m.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 0.9, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
+              className="absolute left-0 w-full overflow-hidden pointer-events-none z-50 h-24 md:h-32 flex items-start justify-center -mt-2 md:-mt-4"
+            >
+              <Lottie 
+                animationData={christmasLights} 
+                loop={true} 
+                className="w-full min-w-[1200px] md:min-w-[2000px] max-w-none drop-shadow-md"
+              />
+            </m.div>
+          )}
+        </AnimatePresence>
         <nav className={`w-full transition-all duration-700 ease-in-out border-b ${scrolled ? 'bg-white/90 backdrop-blur-lg border-gray-200/50 py-3 shadow-sm' : 'bg-transparent border-transparent py-6'}`}>
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative">
             <div className="flex items-center justify-between transition-all duration-500 relative z-10">
@@ -281,6 +290,4 @@ const Nav = React.memo(function Nav() {
       </AnimatePresence>
     </>
   );
-});
-
-export default Nav;
+}

@@ -1,4 +1,4 @@
-"use client";
+
 
 import StaggerContainer from "../animations/StaggerContainer";
 import FadeInItem from "../animations/FadeInItem";
