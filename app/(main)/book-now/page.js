@@ -31,7 +31,7 @@ export default function BookNowPage() {
         {/* Below Widget Text */}
         <div className="text-center bg-white p-6 md:p-8 rounded-xl border border-brand-dark/5 shadow-md max-w-3xl mx-auto">
           <p className="text-sm md:text-base text-brand-dark/80 font-light">
-            Questions about your booking? Contact us at <a href="mailto:[email]" className="text-brand-red font-bold hover:underline transition-all">[email]</a> and we will get back to you within 24 hours.
+            Questions about your booking? Contact us at <a href="mailto:info@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">info@holidaydreamphotos.com</a> and we will get back to you within 24 hours.
           </p>
         </div>
 

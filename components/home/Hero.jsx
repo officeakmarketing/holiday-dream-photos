@@ -38,8 +38,8 @@ export default function Hero() {
           className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-[50%]"
         >
           <FadeInItem as="h1" className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-dark leading-tight mb-6 tracking-tight">
-            The Santa Experience <br />
-            <span className="text-brand-red italic font-light">Your Family Will Never Forget</span>
+            Most Santa photos end up in a drawer. <br />
+            <span className="text-brand-red italic font-light">Here is why yours will end up on the wall.</span>
           </FadeInItem>
 
           <FadeInItem as="p" className="text-base text-gray-600 max-w-md mb-8 leading-relaxed">

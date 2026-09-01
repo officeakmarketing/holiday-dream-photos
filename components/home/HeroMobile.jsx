@@ -16,10 +16,10 @@ export default function HeroMobile() {
           
           <FadeInItem as="h1" className="flex flex-col items-center w-full">
             <span className="font-heading text-[2.25rem] leading-[1.15] font-medium text-brand-dark tracking-tight">
-              The Santa<br/>Experience
+              Most Santa photos<br/>end up in a drawer.
             </span>
             <span className="font-heading text-[2.25rem] leading-[1.15] text-brand-red italic font-light mt-1">
-              Your Family Will<br/>Never Forget
+              Here is why yours<br/>will end up on the wall.
             </span>
           </FadeInItem>
 
