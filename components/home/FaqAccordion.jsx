@@ -6,7 +6,7 @@ export default function FaqAccordion() {
     },
     {
       question: "How do I receive my photos?",
-      answer: "Your photos are delivered digitally to the email address you provide at booking within 48 hours of your session. Print-ready resolution included. No chasing required."
+      answer: "Your photos are delivered via QR code and can be scanned and downloaded immediately on site after your session. No waiting, no emails your memories are ready the moment your session ends."
     },
     {
       question: "What is included in a session?",
@@ -14,7 +14,7 @@ export default function FaqAccordion() {
     },
     {
       question: "Which locations offer both experiences?",
-      answer: "Most locations offer both Traditional Santa and Black Santa experiences. Almeda Mall, Omaha Mall, and Clearview Mall currently feature one experience only. Check your nearest location on the Locations page for the full breakdown."
+      answer: "Currently, Edgewater Mall in Biloxi, MS is the only location offering both Traditional Santa and Black Santa experiences. All other locations are dedicated to a single, premium experience. Check your nearest location on the Locations page for the full breakdown."
     },
     {
       question: "What if my child is nervous or needs extra time?",
@@ -27,6 +27,10 @@ export default function FaqAccordion() {
     {
       question: "Can we bring props or wear matching outfits?",
       answer: "Absolutely. Matching pyjamas, Christmas sweaters, family colours, bring whatever makes the moment feel like yours. The more personal the better."
+    },
+    {
+      question: "Do you offer Pet Night sessions?",
+      answer: "Pet Night is back and this year, reservations are required. A reservation fee applies. Secure your pet's spot in advance as spaces are strictly limited."
     },
     {
       question: "What is your cancellation policy?",

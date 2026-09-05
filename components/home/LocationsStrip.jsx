@@ -20,7 +20,7 @@ export default function LocationsStrip() {
             Find Your Nearest Santa
           </h2>
           <p className="text-brand-dark/70 font-light text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            We are bringing the magic of Holiday Dream Photos to 8 premium locations across the country this Christmas.
+            We are bringing the magic of Holiday Dream Photos to 9 premium locations across the country this Christmas.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function LocationsStrip() {
               key={idx}
               duration={0.5}
               y={20}
-              className={`h-full lg:col-span-2 2xl:col-span-1 ${idx === 6 ? 'lg:col-start-2 2xl:col-start-auto' : ''}`}
+              className="h-full lg:col-span-2 2xl:col-span-1"
             >
               <LocationCard loc={loc} />
             </FadeInItem>

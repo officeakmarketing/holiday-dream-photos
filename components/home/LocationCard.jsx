@@ -132,7 +132,7 @@ export default function LocationCard({ loc }) {
               </div>
 
               {/* Bento Grid */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-3 lg:gap-4">
+              <div className={`grid grid-cols-2 ${!loc.pricing.frames || loc.pricing.frames.length === 0 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} lg:grid-rows-2 gap-3 lg:gap-4`}>
                 
                 {/* 1. Rudolph (Hero Package) */}
                 <div className="col-span-2 lg:col-span-1 lg:row-span-2 bg-brand-red text-white rounded-xl p-5 flex flex-col justify-center relative overflow-hidden shadow-inner">
@@ -167,7 +167,7 @@ export default function LocationCard({ loc }) {
                 </div>
 
                 {/* 3. Dasher */}
-                <div className="col-span-1 bg-white rounded-xl p-4 lg:p-5 border border-brand-dark/10 shadow-sm flex flex-col justify-center text-center lg:text-left">
+                <div className={`col-span-1 bg-white rounded-xl p-4 lg:p-5 border border-brand-dark/10 shadow-sm flex flex-col justify-center text-center lg:text-left ${!loc.pricing.frames || loc.pricing.frames.length === 0 ? 'lg:col-start-2 lg:row-start-2' : ''}`}>
                   <ImageIcon className="w-4 h-4 lg:w-5 lg:h-5 text-brand-red/70 mx-auto lg:mx-0 mb-1.5" />
                   <h3 className="font-heading text-lg lg:text-xl text-brand-dark uppercase tracking-wide mb-0.5">{loc.pricing.packages[2].name}</h3>
                   <span className="font-heading text-2xl lg:text-3xl text-brand-red mb-2">{loc.pricing.packages[2].price}</span>
@@ -206,17 +206,19 @@ export default function LocationCard({ loc }) {
                 </div>
 
                 {/* 5. Frames */}
-                <div className="col-span-2 lg:col-span-2 bg-white rounded-xl p-4 lg:p-5 border border-brand-dark/10 shadow-sm flex flex-col justify-center">
-                  <h3 className="font-heading text-sm lg:text-base tracking-widest text-brand-dark uppercase mb-2 lg:mb-3 border-b border-brand-dark/10 pb-1.5 text-center lg:text-left">Frames</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 lg:gap-y-2">
-                    {loc.pricing.frames.map((frame, idx) => (
-                      <div key={idx} className="flex justify-between items-center text-[10px] lg:text-[11px]">
-                        <span className="font-bold text-brand-dark/80 uppercase truncate pr-2">{frame.name}</span>
-                        <span className="font-heading text-brand-red text-xs lg:text-sm shrink-0">{frame.price}</span>
-                      </div>
-                    ))}
+                {loc.pricing.frames && loc.pricing.frames.length > 0 && (
+                  <div className="col-span-2 lg:col-span-2 bg-white rounded-xl p-4 lg:p-5 border border-brand-dark/10 shadow-sm flex flex-col justify-center">
+                    <h3 className="font-heading text-sm lg:text-base tracking-widest text-brand-dark uppercase mb-2 lg:mb-3 border-b border-brand-dark/10 pb-1.5 text-center lg:text-left">Frames</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 lg:gap-y-2">
+                      {loc.pricing.frames.map((frame, idx) => (
+                        <div key={idx} className="flex justify-between items-center text-[10px] lg:text-[11px]">
+                          <span className="font-bold text-brand-dark/80 uppercase truncate pr-2">{frame.name}</span>
+                          <span className="font-heading text-brand-red text-xs lg:text-sm shrink-0">{frame.price}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
               </div>
             </div>
@@ -307,6 +309,11 @@ export default function LocationCard({ loc }) {
                             <div key={i} className="flex flex-col text-xs lg:text-sm bg-brand-red/5 p-3 rounded-lg border border-brand-red/10 text-center lg:text-left">
                               <span className="font-bold text-brand-red mb-0.5">{se.date}</span>
                               <span className="font-medium text-brand-dark/80">{se.event}</span>
+                              {se.event.toLowerCase().includes('pet night') && (
+                                <span className="text-[10px] text-brand-red mt-1.5 leading-tight italic border-t border-brand-red/10 pt-1.5">
+                                  Pet Night is back — and this year, reservations are required. A reservation fee applies. Secure your pet's spot in advance as spaces are strictly limited.
+                                </span>
+                              )}
                             </div>
                           ))}
                         </div>

@@ -7,7 +7,7 @@ import LocationCard from "@/components/home/LocationCard";
 
 export const metadata = {
   title: 'Locations | Holiday Dream Photos',
-  description: 'Find a Holiday Dream Photos premium Santa experience near you. 8 locations nationwide.',
+  description: 'Find a Holiday Dream Photos premium Santa experience near you. 9 locations nationwide.',
 };
 
 import { locationsData as locations } from "@/lib/locationsData";
@@ -20,7 +20,7 @@ export default function LocationsPage() {
       <PageHero 
         title="Find Your Nearest Location"
         subtitle="Nationwide Magic"
-        description="8 locations bringing the magic of Holiday Dream Photos to communities across the USA this Christmas."
+        description="9 locations bringing the magic of Holiday Dream Photos to communities across the USA this Christmas."
         imageSrc="/images/background2.jpg"
         imageAlt="Christmas Atmosphere"
         className="pt-32 pb-16 md:pt-32 md:pb-12"
@@ -33,7 +33,7 @@ export default function LocationsPage() {
           {locations.map((loc, idx) => (
             <div 
               key={loc.id} 
-              className={`h-full lg:col-span-2 2xl:col-span-1 ${idx === 6 ? 'lg:col-start-2 2xl:col-start-auto' : ''}`}
+              className="h-full lg:col-span-2 2xl:col-span-1"
             >
               <LocationCard loc={loc} />
             </div>
@@ -55,7 +55,7 @@ export default function LocationsPage() {
       <div className="mt-8 md:mt-16">
         <FinalCTA 
           headline={<>The most <span className="italic text-brand-red">magical</span> time of the year is approaching.</>}
-          body="Schedules for all 8 nationwide locations will be officially confirmed starting 15 August. Check back soon to secure your family's spot."
+          body="Schedules for all 9 nationwide locations will be officially confirmed starting 15 August. Check back soon to secure your family's spot."
           ctaText="Contact Us"
           ctaLink="/contact"
         />
