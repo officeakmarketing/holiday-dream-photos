@@ -26,7 +26,7 @@ export default function LocationCard({ loc }) {
     <>
       <div className="bg-[#fdfbf9] rounded-lg md:rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-brand-dark/10 hover:-translate-y-1">
         {/* Image Area */}
-        <div className="h-48 md:h-56 bg-brand-light relative shrink-0 overflow-hidden">
+        <div className="h-40 sm:h-48 md:h-56 bg-brand-light relative shrink-0 overflow-hidden">
           <Image 
             src={loc.image} 
             alt={`${loc.name} location`} 
@@ -37,7 +37,7 @@ export default function LocationCard({ loc }) {
         </div>
 
         {/* Body Area */}
-        <div className="p-6 md:p-8 flex flex-col flex-1 bg-transparent relative">
+        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-transparent relative">
           
           <div className="mb-6">
             <span className="text-brand-red font-bold uppercase tracking-[0.1em] text-[10px] block mb-2">
@@ -75,7 +75,7 @@ export default function LocationCard({ loc }) {
             {loc.pricing && (
               <button 
                 onClick={() => setIsOpen(true)}
-                className="w-full flex items-center justify-center bg-brand-red text-white hover:bg-brand-red/90 px-6 py-4 rounded-lg text-xs font-bold uppercase tracking-[0.1em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full flex items-center justify-center bg-brand-red text-white hover:bg-brand-red/90 px-4 sm:px-6 py-3 sm:py-4 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 View Packages & Pricing
               </button>
@@ -84,12 +84,12 @@ export default function LocationCard({ loc }) {
             {loc.schedule ? (
               <button 
                 onClick={() => setIsScheduleOpen(true)}
-                className="w-full flex items-center justify-center bg-brand-dark text-white hover:bg-brand-dark/90 px-6 py-4 rounded-lg text-xs font-bold uppercase tracking-[0.1em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full flex items-center justify-center bg-brand-dark text-white hover:bg-brand-dark/90 px-4 sm:px-6 py-3 sm:py-4 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 Book Now
               </button>
             ) : (
-              <button className="w-full flex items-center justify-center bg-brand-dark text-white px-6 py-4 rounded-lg text-xs font-bold uppercase tracking-[0.1em] transition-colors border border-transparent cursor-not-allowed opacity-60 hover:opacity-100">
+              <button className="w-full flex items-center justify-center bg-brand-dark text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] transition-colors border border-transparent cursor-not-allowed opacity-60 hover:opacity-100">
                 <span>Schedule Coming Soon</span>
               </button>
             )}

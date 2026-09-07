@@ -1,4 +1,5 @@
 import FinalCTA from "@/components/home/FinalCTA";
+import ChimesBackground from "@/components/animations/ChimesBackground";
 
 export const metadata = {
   title: 'Privacy Policy | Holiday Dream Photos',
@@ -7,8 +8,11 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-[#fcfaf9] min-h-screen font-sans">
-      <section className="px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto pt-32 lg:pt-40 mb-20 lg:mb-32">
+    <div className="bg-[#fcfaf9] min-h-screen font-sans relative overflow-hidden">
+      
+      <ChimesBackground />
+
+      <section className="px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto pt-32 lg:pt-40 mb-20 lg:mb-32 relative z-10">
         
         <div className="mb-16">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.2] tracking-tight mb-6">

@@ -5,10 +5,7 @@ import FadeIn from "../animations/FadeIn";
 export default function NickCannonSection() {
   return (
     <section className="py-16 md:py-24 bg-brand-light relative overflow-hidden">
-      {/* Decorative Wreath Backgrounds */}
-      <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] opacity-[0.03] pointer-events-none z-0">
-        <Image src="/images/hero_wreath.png" alt="Wreath" fill className="object-contain" />
-      </div>
+
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         

@@ -36,7 +36,7 @@ export default function SolutionIntro() {
     <section className="py-12 md:py-20 bg-brand-light relative overflow-hidden">
       
       {/* Decorative Wreath Background */}
-      <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-[0.05] md:opacity-[0.20] pointer-events-none z-0">
+      <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-30 md:opacity-40 pointer-events-none z-0 translate-x-1/4 -translate-y-1/4 scale-125">
         <Image
           src="/images/hero_wreath.png"
           alt="Decorative Wreath"
@@ -44,7 +44,7 @@ export default function SolutionIntro() {
           className="object-contain"
         />
       </div>
-      <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-[0.05] md:opacity-[0.20] pointer-events-none z-0 rotate-180">
+      <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-30 md:opacity-40 pointer-events-none z-0 rotate-180 -translate-x-1/4 translate-y-1/4 scale-125">
         <Image
           src="/images/hero_wreath.png"
           alt="Decorative Wreath"
@@ -80,7 +80,7 @@ export default function SolutionIntro() {
               key={idx}
               duration={0.7}
               y={30}
-              className={`flex flex-col items-center text-center px-4 py-6 sm:px-6 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${col.bgColor} rounded-xl md:rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 max-w-[280px] sm:max-w-[340px] md:max-w-none mx-auto w-full`}
+              className={`flex flex-col items-center text-center px-4 py-8 sm:px-6 sm:py-8 md:px-6 md:py-12 lg:px-10 lg:py-14 ${col.bgColor} rounded-xl md:rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 max-w-[340px] sm:max-w-[400px] md:max-w-none mx-auto w-full`}
             >
               {/* Icon in a white circle */}
               <div className={`w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md flex items-center justify-center mb-3 sm:mb-6 md:mb-8 ${col.iconColor} transition-transform duration-500 group-hover:scale-110`}>

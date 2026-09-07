@@ -5,7 +5,7 @@ import FadeIn from "../animations/FadeIn";
 
 export default function Urgency() {
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#c8102e] via-[#a30b24] to-[#7a0619]">
+    <section className="py-10 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#c8102e] via-[#a30b24] to-[#7a0619]">
       
       {/* Warm Glowing Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#ff4d4d]/30 rounded-full blur-[100px] pointer-events-none" />
@@ -23,25 +23,25 @@ export default function Urgency() {
           
           <div className="text-center relative z-10">
             
-            <div className="inline-flex items-center gap-3 mb-8">
-              <div className="w-12 h-[1px] bg-brand-red"></div>
-              <span className="text-brand-red font-bold uppercase tracking-[0.4em] text-xs">
+            <div className="inline-flex items-center gap-3 mb-6 md:mb-8">
+              <div className="w-8 md:w-12 h-[1px] bg-brand-red"></div>
+              <span className="text-brand-red font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs">
                 Important Notice
               </span>
-              <div className="w-12 h-[1px] bg-brand-red"></div>
+              <div className="w-8 md:w-12 h-[1px] bg-brand-red"></div>
             </div>
             
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-brand-dark tracking-tight leading-[1.1] mb-4 md:mb-6 drop-shadow-sm">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-brand-dark tracking-tight leading-[1.1] mb-2 md:mb-6 drop-shadow-sm">
               The calendar <br className="hidden md:block"/>fills up fast.
             </h2>
-            <h3 className="font-heading text-xl md:text-2xl lg:text-3xl italic text-brand-red mb-8">
+            <h3 className="font-heading text-xl md:text-2xl lg:text-3xl italic text-brand-red mb-4 md:mb-8">
               Every year families miss out.
             </h3>
-            <p className="text-brand-dark/80 font-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-6 px-4 md:px-0">
+            <p className="text-brand-dark/80 font-light text-sm md:text-lg leading-relaxed max-w-2xl mx-auto mb-4 md:mb-6 px-4 md:px-0">
               We operate across 8 locations with a limited number of sessions available each day. Once a slot is gone, it is gone.
             </p>
             
-            <p className="font-bold text-brand-dark text-lg md:text-xl mb-10 tracking-wide uppercase px-4 md:px-0">
+            <p className="font-bold text-brand-dark text-sm md:text-xl mb-6 md:mb-10 tracking-wide uppercase px-4 md:px-0">
               Do not let your family miss out this Christmas.
             </p>
             <Link 

@@ -3,6 +3,8 @@ import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import FinalCTA from "@/components/home/FinalCTA";
+import ChimesMirrored from "@/components/animations/ChimesMirrored";
+
 export const metadata = {
   title: 'Pick Your Santa | Holiday Dream Photos',
   description: 'Two premium experiences. One unforgettable standard. Choose between our Traditional and Black Santa experiences.',
@@ -136,8 +138,12 @@ export default function OurSantasPage() {
 
       {/* SECTION 3: SHARED SOCIAL PROOF */}
       <section className="bg-white pt-8 pb-16 lg:pt-10 lg:pb-20 border-t border-brand-dark/10 relative overflow-hidden">
+        
+        {/* Mirrored Chimes */}
+        <ChimesMirrored />
+
         {/* Subtle background element */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-brand-gold/5 rounded-full blur-3xl pointer-events-none z-0"></div>
         
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <h3 className="text-center font-heading text-3xl sm:text-4xl md:text-5xl text-brand-dark mb-10 md:mb-12">
@@ -147,42 +153,42 @@ export default function OurSantasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
             {/* Testimonial 1 - Traditional Santa */}
-            <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
-              <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
-              <div className="flex justify-center gap-1 mb-5">
+            <div className="flex flex-col relative p-10 lg:p-12 text-center rounded-3xl bg-[#fcfaf9] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-black/[0.03] border-t-4 border-t-[#c71e32] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+              <Quote className="absolute top-6 left-6 w-10 h-10 text-[#c71e32]/10 fill-[#c71e32]/5 rotate-180" />
+              <div className="flex justify-center gap-1.5 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-brand-dark fill-brand-dark" />
+                  <Star key={i} className="w-5 h-5 text-[#c71e32] fill-[#c71e32]" />
                 ))}
               </div>
-              <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
+              <p className="text-brand-dark/90 font-light text-base lg:text-lg leading-relaxed mb-8 flex-1 italic drop-shadow-sm">
                 "We have done the mall Santa experience every year for the last five years and nothing has come close to Holiday Dream Photos. The setup was beautiful, the photographer was incredible, and our daughter actually believed. The photos came out better than anything we have ever had. We are already booked for next year."
               </p>
-              <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
-                <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
+              <div className="flex flex-col items-center justify-center mt-auto pt-6 border-t border-brand-dark/5">
+                <span className="font-bold text-brand-dark uppercase tracking-[0.2em] text-[10px] lg:text-xs mb-1.5">
                   Marcus T
                 </span>
-                <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
+                <span className="text-[#c71e32] text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-bold opacity-80">
                   Traditional Santa
                 </span>
               </div>
             </div>
 
             {/* Testimonial 2 - Black Santa */}
-            <div className="flex flex-col relative p-8 lg:p-10 text-center rounded-2xl bg-brand-light shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-brand-dark/5 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
-              <Quote className="absolute top-4 left-4 w-6 h-6 text-brand-gold/20" />
-              <div className="flex justify-center gap-1 mb-5">
+            <div className="flex flex-col relative p-10 lg:p-12 text-center rounded-3xl bg-[#fcfaf9] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-black/[0.03] border-t-4 border-t-[#c71e32] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+              <Quote className="absolute top-6 left-6 w-10 h-10 text-[#c71e32]/10 fill-[#c71e32]/5 rotate-180" />
+              <div className="flex justify-center gap-1.5 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-brand-dark fill-brand-dark" />
+                  <Star key={i} className="w-5 h-5 text-[#c71e32] fill-[#c71e32]" />
                 ))}
               </div>
-              <p className="text-brand-dark/80 font-light text-sm lg:text-base leading-relaxed mb-8 flex-1 italic">
+              <p className="text-brand-dark/90 font-light text-base lg:text-lg leading-relaxed mb-8 flex-1 italic drop-shadow-sm">
                 "Holiday Dream Photos did something I did not think was possible, they made my whole family want to take a Christmas photo together. My husband never joins in. This year he was the one suggesting we book early. The Black Santa experience was genuine, warm, and absolutely magical. We are telling everyone we know."
               </p>
-              <div className="flex flex-col items-center justify-center mt-auto pt-5 border-t border-brand-dark/10">
-                <span className="font-bold text-brand-dark uppercase tracking-[0.15em] text-[9px] lg:text-[10px] mb-1">
+              <div className="flex flex-col items-center justify-center mt-auto pt-6 border-t border-brand-dark/5">
+                <span className="font-bold text-brand-dark uppercase tracking-[0.2em] text-[10px] lg:text-xs mb-1.5">
                   Keisha
                 </span>
-                <span className="text-brand-red text-[8px] uppercase tracking-[0.3em] font-bold">
+                <span className="text-[#c71e32] text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-bold opacity-80">
                   Black Santa
                 </span>
               </div>

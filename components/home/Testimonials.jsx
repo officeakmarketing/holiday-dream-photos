@@ -58,8 +58,21 @@ export default function Testimonials() {
     <section className="py-20 md:py-32 bg-brand-light relative overflow-hidden">
       
       {/* Decorative Wreath Backgrounds */}
-      <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] opacity-[0.03] pointer-events-none z-0">
-        <Image src="/images/hero_wreath.png" alt="Wreath" fill className="object-contain" />
+      <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-30 md:opacity-40 pointer-events-none z-0 translate-x-1/4 -translate-y-1/4 scale-125">
+        <Image
+          src="/images/hero_wreath.png"
+          alt="Decorative Wreath"
+          fill
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute bottom-0 left-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-30 md:opacity-40 pointer-events-none z-0 rotate-180 -translate-x-1/4 translate-y-1/4 scale-125">
+        <Image
+          src="/images/hero_wreath.png"
+          alt="Decorative Wreath"
+          fill
+          className="object-contain"
+        />
       </div>
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
@@ -85,25 +98,25 @@ export default function Testimonials() {
               y={40}
               duration={0.8}
               delay={index * 0.1}
-              className={`flex flex-col h-full relative p-8 sm:p-10 rounded-2xl md:rounded-3xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100/80 transition-all duration-500 w-full hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] ${t.span}`}
+              className={`flex flex-col relative p-8 sm:p-10 lg:p-12 text-center rounded-3xl bg-[#fcfaf9] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-black/[0.03] border-t-4 border-t-[#c71e32] hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 w-full h-full ${t.span}`}
             >
-              <Quote className="absolute top-6 left-6 w-8 h-8 text-brand-dark/5 fill-current rotate-180" />
+              <Quote className="absolute top-6 left-6 w-8 h-8 sm:w-10 sm:h-10 text-[#c71e32]/10 fill-[#c71e32]/5 rotate-180" />
 
-              <div className="flex gap-1 mb-6 relative z-10">
+              <div className="flex justify-center gap-1.5 mb-6 relative z-10">
                 {[...Array(t.stars)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-brand-dark fill-brand-dark" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#c71e32] fill-[#c71e32]" />
                 ))}
               </div>
 
-              <p className="text-brand-dark/90 font-light text-lg sm:text-xl leading-[1.7] mb-8 relative z-10">
+              <p className="text-brand-dark/90 font-light text-base sm:text-lg leading-relaxed mb-8 relative z-10 flex-1 italic drop-shadow-sm">
                 "{t.quote}"
               </p>
 
-              <div className="flex flex-col mt-auto relative z-10 pt-6 border-t border-brand-dark/5">
-                <span className="font-bold text-brand-dark uppercase tracking-[0.2em] text-xs mb-1">
+              <div className="flex flex-col items-center justify-center mt-auto relative z-10 pt-6 border-t border-brand-dark/5">
+                <span className="font-bold text-brand-dark uppercase tracking-[0.2em] text-[10px] lg:text-xs mb-1.5">
                   {t.name}
                 </span>
-                <span className="text-brand-red text-[10px] uppercase tracking-[0.3em] font-bold">
+                <span className="text-[#c71e32] text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-bold opacity-80">
                   {t.subtitle}
                 </span>
               </div>

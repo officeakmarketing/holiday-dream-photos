@@ -1,4 +1,5 @@
 import FinalCTA from "@/components/home/FinalCTA";
+import ChimesBackground from "@/components/animations/ChimesBackground";
 
 export const metadata = {
   title: 'Terms of Service | Holiday Dream Photos',
@@ -7,8 +8,11 @@ export const metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <div className="bg-[#fcfaf9] min-h-screen font-sans">
-      <section className="px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto pt-32 lg:pt-40 mb-20 lg:mb-32">
+    <div className="bg-[#fcfaf9] min-h-screen font-sans relative overflow-hidden">
+      
+      <ChimesBackground />
+
+      <section className="px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto pt-32 lg:pt-40 mb-20 lg:mb-32 relative z-10">
         
         <div className="mb-16">
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.2] tracking-tight mb-6">
@@ -59,14 +63,14 @@ export default function TermsOfServicePage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">6. Personal photography and recording policy</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              Personal photography, video recording, and live streaming are strictly prohibited during sessions. This policy exists to protect the quality of your professional photographs, maintain the integrity of the experience for all families, and respect the privacy of other guests. Violation of this policy may result in the immediate termination of your session without refund. Professional photographs will be delivered digitally within 48 hours of your session.
+              Personal photography, video recording, and live streaming are strictly prohibited during sessions. This policy exists to protect the quality of your professional photographs, maintain the integrity of the experience for all families, and respect the privacy of other guests. Violation of this policy may result in the immediate termination of your session without refund. Professional photographs will be delivered via QR code immediately after your session.
             </p>
           </div>
 
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">7. Photo delivery</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              Your photos will be delivered to the email address provided at booking within 48 hours of your session. If you have not received your photos within 72 hours please contact us immediately at <a href="mailto:Info@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">Info@holidaydreamphotos.com</a>. Photos are delivered at print-ready resolution. Holiday Dream Photos is not responsible for non-delivery caused by an incorrect email address provided at booking. It is your responsibility to ensure your email address is entered correctly at the time of booking.
+              Your photos are delivered via QR code and can be scanned and downloaded immediately on site after your session. Photos are delivered at print-ready resolution. No waiting, no emails your memories are ready the moment your session ends.
             </p>
           </div>
 

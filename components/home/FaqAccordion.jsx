@@ -10,7 +10,7 @@ export default function FaqAccordion() {
     },
     {
       question: "What is included in a session?",
-      answer: "Each session includes professional photography with premium lighting and equipment, your choice of Traditional or Black Santa experience, and digital delivery of your photos within 48 hours at print-ready resolution. Full package details and pricing are available at your chosen location."
+      answer: "Each session includes professional photography with premium lighting and equipment, your choice of Traditional or Black Santa experience, and immediate digital delivery of your photos via QR code at print-ready resolution. Full package details and pricing are available at your chosen location."
     },
     {
       question: "Which locations offer both experiences?",
