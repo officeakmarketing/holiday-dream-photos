@@ -4,9 +4,9 @@ import SantaCard from "./SantaCard";
 
 export default function SantaSplit() {
   return (
-    <section className="relative w-full bg-black overflow-hidden">
-      {/* The Split Container: Stacked on mobile, side-by-side on tablet/desktop */}
-      <div className="w-full flex flex-col md:flex-row h-auto md:h-[60vh] lg:h-[90vh] md:min-h-[500px]">
+    <section className="relative w-full bg-brand-light py-16 md:py-24 overflow-hidden border-t border-brand-dark/5">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 flex-1 min-h-0">
         
         {/* Traditional Santa */}
         <SantaCard 
@@ -30,6 +30,7 @@ export default function SantaSplit() {
           imagePosition="object-[50%_15%]"
         />
 
+        </div>
       </div>
     </section>
   );
