@@ -25,7 +25,7 @@ export default function HeroMobile() {
 
           <FadeInItem as="p" className="text-[16px] text-brand-dark/70 font-light mt-8 mb-10 leading-[1.6]">
             Professional photography. Two magical<br/>
-            experiences. Now at 8 locations across<br/>
+            experiences. Now at 9 locations across<br/>
             the USA this Christmas season.
           </FadeInItem>
 

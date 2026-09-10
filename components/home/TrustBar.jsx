@@ -15,7 +15,7 @@ export default function TrustBar() {
           
           <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-1 lg:gap-3 w-full lg:w-auto min-w-0 px-0.5">
             <MapPin className="w-5 h-5 lg:w-6 lg:h-6 text-white shrink-0 mx-auto lg:mx-0 mb-1 lg:mb-0" />
-            <span className="text-[6px] sm:text-[8px] lg:text-xs font-bold uppercase tracking-tighter lg:tracking-widest text-white whitespace-normal lg:whitespace-nowrap leading-[1.1] break-words w-full min-w-0">8 Locations</span>
+            <span className="text-[6px] sm:text-[8px] lg:text-xs font-bold uppercase tracking-tighter lg:tracking-widest text-white whitespace-normal lg:whitespace-nowrap leading-[1.1] break-words w-full min-w-0">9 Locations</span>
           </div>
           
           <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-1 lg:gap-3 w-full lg:w-auto min-w-0 px-0.5">

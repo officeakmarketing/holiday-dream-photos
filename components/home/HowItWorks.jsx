@@ -18,7 +18,7 @@ export default function HowItWorks() {
     {
       number: "2",
       title: "Pick Your Location & Time",
-      text: "8 locations across the USA. Mississippi, Texas, Arkansas, Nebraska, Minnesota, Pennsylvania, and Alabama. Morning, afternoon, and evening slots throughout the holiday season.",
+      text: "9 locations across the USA. Georgia, Mississippi, Texas, Arkansas, Nebraska, Minnesota, Pennsylvania, and Alabama. Morning, afternoon, and evening slots throughout the holiday season.",
       bgColor: "bg-brand-dark",
       textColor: "text-white",
       iconColor: "text-brand-dark",

@@ -38,7 +38,7 @@ export default function Urgency() {
               Every year families miss out.
             </h3>
             <p className="text-brand-dark/80 font-light text-sm md:text-lg leading-relaxed max-w-2xl mx-auto mb-4 md:mb-6 px-4 md:px-0">
-              We operate across 8 locations with a limited number of sessions available each day. Once a slot is gone, it is gone.
+              We operate across 9 locations with a limited number of sessions available each day. Once a slot is gone, it is gone.
             </p>
             
             <p className="font-bold text-brand-dark text-sm md:text-xl mb-6 md:mb-10 tracking-wide uppercase px-4 md:px-0">

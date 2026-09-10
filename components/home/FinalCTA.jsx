@@ -4,7 +4,7 @@ import FadeIn from "../animations/FadeIn";
 
 export default function FinalCTA({
   headline = <>Give your family a <span className="italic text-brand-red">Christmas memory</span> that lasts forever.</>,
-  body = "Premium Santa photography. Two magical experiences. 8 locations nationwide. This is not a standard mall Santa. This is Holiday Dream Photos.",
+  body = "Premium Santa photography. Two magical experiences. 9 locations nationwide. This is not a standard mall Santa. This is Holiday Dream Photos.",
   ctaText = "Book Your Session",
   ctaLink = "/book-now"
 }) {

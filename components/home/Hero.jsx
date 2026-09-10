@@ -44,7 +44,7 @@ export default function Hero() {
           </FadeInItem>
 
           <FadeInItem as="p" className="text-base text-gray-600 max-w-md mb-8 leading-relaxed">
-            Professional photography. Two magical experiences. Now at 8 locations across the USA this
+            Professional photography. Two magical experiences. Now at 9 locations across the USA this
             Christmas season.
           </FadeInItem>
 
