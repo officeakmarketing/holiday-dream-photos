@@ -1,7 +1,5 @@
 
 
-import StaggerContainer from "../animations/StaggerContainer";
-import FadeInItem from "../animations/FadeInItem";
 import LocationCard from "./LocationCard";
 import { locationsData as locations } from "@/lib/locationsData";
 
@@ -24,21 +22,16 @@ export default function LocationsStrip() {
           </p>
         </div>
 
-        <StaggerContainer 
-          staggerChildren={0.1}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 2xl:grid-cols-4 gap-6 md:gap-8 xl:gap-10 2xl:gap-12">
           {locations.map((loc, idx) => (
-            <FadeInItem 
-              key={idx}
-              duration={0.5}
-              y={20}
+            <div 
+              key={loc.id} 
               className="h-full lg:col-span-2 2xl:col-span-1"
             >
               <LocationCard loc={loc} />
-            </FadeInItem>
+            </div>
           ))}
-        </StaggerContainer>
+        </div>
 
         {/* Global Disclaimer */}
         <div className="mt-12 md:mt-16 text-center border-t border-brand-dark/10 pt-8 max-w-3xl mx-auto">

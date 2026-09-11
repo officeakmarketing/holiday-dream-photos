@@ -2,14 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, CalendarDays, X, Gift, Sparkles, Image as ImageIcon } from "lucide-react";
 
 export default function LocationCard({ loc }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen || isScheduleOpen) {
+    if (isOpen) {
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     } else {
@@ -20,7 +20,7 @@ export default function LocationCard({ loc }) {
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     };
-  }, [isOpen, isScheduleOpen]);
+  }, [isOpen]);
 
   return (
     <>
@@ -82,12 +82,12 @@ export default function LocationCard({ loc }) {
             )}
             
             {loc.schedule ? (
-              <button 
-                onClick={() => setIsScheduleOpen(true)}
+              <Link 
+                href={`/book-now${loc.acuityCalendarId ? `?locationId=${loc.acuityCalendarId}` : ''}#booking-section`}
                 className="w-full flex items-center justify-center bg-brand-dark text-white hover:bg-brand-dark/90 px-4 sm:px-6 py-3 sm:py-4 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 Book Now
-              </button>
+              </Link>
             ) : (
               <button className="w-full flex items-center justify-center bg-brand-dark text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] transition-colors border border-transparent cursor-not-allowed opacity-60 hover:opacity-100">
                 <span>Schedule Coming Soon</span>
@@ -226,118 +226,7 @@ export default function LocationCard({ loc }) {
         </div>
       )}
 
-      {/* Schedule & Booking Modal - NO SCROLL */}
-      {isScheduleOpen && loc.schedule && (
-        <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 lg:p-6 overflow-hidden touch-none"
-          data-lenis-prevent="true"
-        >
-          <div 
-            className="absolute inset-0 bg-brand-dark/95 backdrop-blur-md animate-in fade-in duration-300"
-            onClick={() => setIsScheduleOpen(false)}
-          ></div>
-          
-          <div className="bg-[#fdfbf9] rounded-2xl w-full max-w-[800px] max-h-[95vh] relative z-10 shadow-2xl border border-white/10 flex flex-col overflow-hidden animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-300 ease-out">
-            <button 
-              onClick={() => setIsScheduleOpen(false)}
-              className="absolute top-3 right-3 lg:top-5 lg:right-5 w-8 h-8 lg:w-10 lg:h-10 bg-brand-dark/5 hover:bg-brand-dark/10 rounded-full flex items-center justify-center transition-colors z-20"
-            >
-              <X className="w-4 h-4 lg:w-5 lg:h-5 text-brand-dark" />
-            </button>
 
-            <div className="flex flex-col p-6 lg:p-8 overflow-y-auto no-scrollbar w-full h-full">
-              
-              <div className="text-center shrink-0 mb-6 lg:mb-8">
-                <span className="text-brand-red uppercase tracking-[0.2em] text-[9px] lg:text-[11px] font-bold mb-1 block">
-                  {loc.name}
-                </span>
-                <h2 className="font-heading text-2xl lg:text-4xl text-brand-dark mb-2 lg:mb-3">
-                  Schedule & Booking
-                </h2>
-                <div className="w-16 h-1 bg-brand-red/20 mx-auto rounded-full"></div>
-              </div>
-
-              <div className="flex flex-col gap-6 flex-1 min-h-0">
-                
-                {/* Text Schedule Section */}
-                {(loc.schedule.regularHours || loc.schedule.text) && (
-                  <div className="bg-white rounded-xl p-6 lg:p-8 border border-brand-dark/10 shadow-sm text-left flex flex-col lg:flex-row gap-8">
-                    
-                    {/* Fallback for simple text */}
-                    {loc.schedule.text && !loc.schedule.regularHours && (
-                      <div className="flex-1 text-center">
-                        <div className="flex items-center justify-center gap-2 mb-4 border-b border-brand-dark/10 pb-4 max-w-sm mx-auto">
-                          <CalendarDays className="w-5 h-5 text-brand-red" />
-                          <h3 className="font-heading text-lg lg:text-xl tracking-widest text-brand-dark uppercase mt-0.5">Operating Hours</h3>
-                        </div>
-                        <div className="text-brand-dark/80 text-sm lg:text-base leading-relaxed font-medium whitespace-pre-wrap">
-                          {loc.schedule.text}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Structured Regular Hours */}
-                    {loc.schedule.regularHours && (
-                      <div className="flex-1">
-                        <div className="flex items-center justify-center lg:justify-start gap-2 mb-4 border-b border-brand-dark/10 pb-3">
-                          <CalendarDays className="w-5 h-5 text-brand-red" />
-                          <h3 className="font-heading text-lg tracking-widest text-brand-dark uppercase mt-0.5">Standard Hours</h3>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                          {loc.schedule.regularHours.map((rh, i) => (
-                            <div key={i} className="flex justify-between items-start text-xs lg:text-sm border-b border-brand-dark/5 pb-2 last:border-0 pt-1 first:pt-0">
-                              <span className="font-bold text-brand-dark/80">{rh.dates}</span>
-                              <div className="text-right flex flex-col">
-                                <span className="font-medium text-brand-dark">{rh.hours}</span>
-                                {rh.break && <span className="text-[10px] text-brand-dark/50">{rh.break}</span>}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Structured Special Events */}
-                    {loc.schedule.specialEvents && loc.schedule.specialEvents.length > 0 && (
-                      <div className="flex-1 lg:border-l lg:border-brand-dark/10 lg:pl-8">
-                        <div className="flex items-center justify-center lg:justify-start gap-2 mb-4 border-b border-brand-dark/10 pb-3">
-                          <Sparkles className="w-5 h-5 text-brand-red" />
-                          <h3 className="font-heading text-lg tracking-widest text-brand-dark uppercase mt-0.5">Special Events</h3>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                          {loc.schedule.specialEvents.map((se, i) => (
-                            <div key={i} className="flex flex-col text-xs lg:text-sm bg-brand-red/5 p-3 rounded-lg border border-brand-red/10 text-center lg:text-left">
-                              <span className="font-bold text-brand-red mb-0.5">{se.date}</span>
-                              <span className="font-medium text-brand-dark/80">{se.event}</span>
-                              {se.event.toLowerCase().includes('pet night') && (
-                                <span className="text-[10px] text-brand-red mt-1.5 leading-tight italic border-t border-brand-red/10 pt-1.5">
-                                  Pet Night is back — and this year, reservations are required. A reservation fee applies. Secure your pet's spot in advance as spaces are strictly limited.
-                                </span>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                  </div>
-                )}
-
-                {/* Acuity Placeholder */}
-                <div className="bg-white rounded-xl border-2 border-dashed border-brand-dark/20 flex-1 flex flex-col items-center justify-center min-h-[300px] lg:min-h-[400px] p-6 text-center shadow-sm">
-                  <CalendarDays className="w-10 h-10 text-brand-dark/20 mb-4" />
-                  <h4 className="font-heading text-xl text-brand-dark/50 mb-2">Booking Calendar Loading...</h4>
-                  <p className="text-brand-dark/40 text-sm max-w-sm">
-                    This space is perfectly formatted and reserved for the Acuity Scheduling widget embed code.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
