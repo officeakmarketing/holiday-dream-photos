@@ -54,11 +54,10 @@ export default function HiringApplication() {
               Think you have <br className="hidden md:block"/> what it takes?
             </h2>
             <button 
-              onClick={() => setStep("locations")}
-              className="inline-flex items-center gap-3 bg-brand-red text-white px-8 py-5 text-xs md:text-sm font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-red transition-all duration-300 rounded-sm group shadow-2xl border border-brand-red hover:border-white"
+              disabled
+              className="inline-flex items-center gap-3 bg-brand-red/50 text-white/70 px-8 py-5 text-xs md:text-sm font-bold uppercase tracking-[0.2em] rounded-sm shadow-2xl border border-brand-red/50 cursor-not-allowed"
             >
-              Apply Here
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Applications Coming Soon
             </button>
             <p className="text-[10px] text-white/40 mt-8 uppercase tracking-[0.3em] font-light">
               Select your location to begin
