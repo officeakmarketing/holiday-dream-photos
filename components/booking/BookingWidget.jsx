@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 import { locationsData } from "@/lib/locationsData";
 import { MapPin, ChevronRight, Calendar, ArrowLeft } from "lucide-react";
 
@@ -23,7 +24,7 @@ function BookingWidgetInner() {
   // Native Location Selector if no location is chosen
   if (!locationId) {
     return (
-      <div className="relative bg-white rounded-3xl shadow-[0_30px_80px_-20px_rgba(17,49,34,0.15)] border border-brand-dark/5 overflow-hidden w-full group mb-8">
+      <div className="relative bg-white rounded-3xl shadow-[0_30px_80px_-20px_rgba(17,49,34,0.15)] border border-brand-dark/5 overflow-hidden w-full mb-8">
         <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-red z-20"></div>
         <div className="p-8 md:p-12">
           <div className="text-center mb-10">
@@ -36,20 +37,40 @@ function BookingWidgetInner() {
               <Link 
                 key={loc.id}
                 href={`?locationId=${loc.acuityCalendarId}#booking-section`}
-                className="group flex flex-col p-5 rounded-2xl border border-brand-dark/10 hover:border-brand-red/30 bg-[#fdfbf9] hover:bg-brand-red/5 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                className="group flex flex-col rounded-2xl bg-white border border-brand-dark/10 overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center shrink-0 group-hover:bg-brand-red/20 transition-colors">
-                    <MapPin className="w-5 h-5 text-brand-red" />
+                {/* Location Image */}
+                <div className="relative w-full h-48 overflow-hidden bg-brand-light">
+                  <Image 
+                    src={loc.image}
+                    alt={loc.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  
+                  {/* Floating City Badge */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full text-[9px] font-bold tracking-[0.2em] uppercase text-brand-dark flex items-center gap-1.5 shadow-sm">
+                    <MapPin className="w-3 h-3 text-brand-red" />
+                    {loc.city}
                   </div>
-                  <ChevronRight className="w-5 h-5 text-brand-dark/20 group-hover:text-brand-red transition-colors" />
                 </div>
-                <h3 className="font-heading text-xl text-brand-dark mb-1 group-hover:text-brand-red transition-colors">{loc.name}</h3>
-                <p className="text-sm text-brand-dark/60 font-medium mb-4 flex-1">{loc.city}</p>
-                
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark mt-auto pt-4 border-t border-brand-dark/5 group-hover:border-brand-red/10">
-                  <Calendar className="w-3.5 h-3.5 text-brand-red/70 group-hover:text-brand-red" />
-                  <span>View Schedule</span>
+
+                {/* Content Layer (White Background for Perfect Clarity) */}
+                <div className="p-6 md:p-8 flex flex-col flex-1 relative bg-white">
+                  
+                  <h3 className="font-heading text-xl sm:text-2xl text-brand-dark mb-2 pr-10 leading-tight group-hover:text-brand-red transition-colors duration-300">
+                    {loc.name}
+                  </h3>
+                  <p className="text-brand-dark/60 text-sm font-medium leading-relaxed">
+                    {loc.address}
+                  </p>
+                  
+                  {/* Action Button */}
+                  <div className="absolute right-6 top-6 w-10 h-10 rounded-full bg-brand-light group-hover:bg-brand-red flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md">
+                    <ChevronRight className="w-5 h-5 text-brand-dark/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-0.5" />
+                  </div>
+
                 </div>
               </Link>
             ))}
@@ -60,7 +81,7 @@ function BookingWidgetInner() {
   }
 
   return (
-    <div className="relative bg-white rounded-3xl shadow-[0_30px_80px_-20px_rgba(17,49,34,0.15)] border border-brand-dark/5 overflow-hidden w-full group min-h-[600px] flex flex-col mb-8">
+    <div className="relative bg-white rounded-3xl shadow-[0_30px_80px_-20px_rgba(17,49,34,0.15)] border border-brand-dark/5 overflow-hidden w-full min-h-[600px] flex flex-col mb-8">
       
       {/* Top accent line */}
       <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-red z-20"></div>

@@ -24,7 +24,7 @@ export default function BookNowPage() {
       />
 
       {/* SECTION 2: ACUITY WIDGET */}
-      <section id="booking-section" className="px-4 sm:px-6 max-w-[1000px] mx-auto w-full relative z-20 py-16 md:py-24 scroll-mt-24">
+      <section id="booking-section" className="px-4 sm:px-6 lg:px-12 max-w-[1200px] xl:max-w-[1400px] mx-auto w-full relative z-20 py-16 md:py-24 scroll-mt-24">
         
         <BookingWidget />
 

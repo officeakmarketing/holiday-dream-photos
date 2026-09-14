@@ -187,7 +187,7 @@ export default function Nav() {
 
 
                 {/* Desktop Top Header (CTA & Socials - Hidden on Mobile) */}
-                <div className="hidden lg:flex flex-1 items-center justify-end gap-8 mr-8">
+                <div className="hidden lg:flex flex-1 items-center justify-between gap-8 mr-8 lg:pl-4">
                   <Link
                     href="/book-now"
                     onClick={() => setTimeout(() => setMobileMenuOpen(false), 200)}

@@ -58,7 +58,7 @@ const ContactForm = React.memo(function ContactForm() {
               <MapPin className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Locations</p>
-                <p className="text-sm font-light">8 premium venues nationwide</p>
+                <p className="text-sm font-light">9 premium venues nationwide</p>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ const ContactForm = React.memo(function ContactForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <label htmlFor="phone" className={labelClass}>Phone Number</label>
-                  <input required type="tel" id="phone" className={inputClass} placeholder="(555) 123-4567" />
+                  <input required type="tel" id="phone" defaultValue="+1 " className={inputClass} placeholder="+1 (555) 123-4567" />
                 </div>
                 <div>
                   <label htmlFor="subject" className={labelClass}>Subject</label>
