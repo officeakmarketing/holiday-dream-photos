@@ -50,8 +50,8 @@ export async function POST(req) {
 
     // The Make.com Webhook URL and optional API Key
     // Pulling these from environment variables keeps them secure on the server
-    const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL || "https://hook.us1.make.com/YOUR_WEBHOOK_ID_HERE";
-    const MAKE_API_KEY = process.env.MAKE_API_KEY || ""; 
+    const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL || "https://hook.eu1.make.com/ngjfb2cy4b4et73omrrupxhgyskq2qh9";
+    const MAKE_API_KEY = process.env.MAKE_API_KEY || "mk_live_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"; 
     
     const headers = {
       "Content-Type": "application/json"
