@@ -33,9 +33,6 @@ export const metadata = {
     locale: "en_US",
     siteName: "Holiday Dream Photos",
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 import AnimationProvider from "../components/animations/AnimationProvider";

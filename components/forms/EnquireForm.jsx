@@ -7,15 +7,55 @@ import Image from "next/image";
 const EnquireForm = React.memo(function EnquireForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [minDate, setMinDate] = useState("");
 
-  const handleSubmit = useCallback((e) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1500); 
+  React.useEffect(() => {
+    // Set today's date on the client to avoid Next.js server/client hydration mismatches
+    setMinDate(new Date().toISOString().split('T')[0]);
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    data.source = "private-events";
+
+    // Custom Validation
+    const phoneDigits = data.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setError("Please enter a valid 10-digit phone number.");
+      setLoading(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      setError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/webhook', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) throw new Error("Webhook request failed");
+      
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong while sending your enquiry. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inputClass = "w-full bg-[#f4f4f4] border border-transparent focus:border-brand-red focus:bg-white rounded-none py-4 px-5 text-brand-dark text-base outline-none transition-colors duration-300 placeholder:text-brand-dark/40 hover:bg-[#eaeaea] shadow-none";
   const labelClass = "block text-sm text-brand-dark/80 font-bold mb-2 ml-1";
@@ -74,25 +114,30 @@ const EnquireForm = React.memo(function EnquireForm() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+            {error && (
+              <div className="bg-brand-red/10 border border-brand-red/20 text-brand-red px-4 py-3 text-sm rounded-sm">
+                {error}
+              </div>
+            )}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div>
                 <label htmlFor="name" className={labelClass}>Full Name</label>
-                <input required type="text" id="name" className={inputClass} placeholder="e.g. Jane Doe" />
+                <input required type="text" id="name" name="name" minLength={2} maxLength={50} className={inputClass} placeholder="e.g. Jane Doe" />
               </div>
               <div>
                 <label htmlFor="email" className={labelClass}>Email Address</label>
-                <input required type="email" id="email" className={inputClass} placeholder="jane@example.com" />
+                <input required type="email" id="email" name="email" maxLength={100} className={inputClass} placeholder="jane@example.com" />
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div>
                 <label htmlFor="phone" className={labelClass}>Phone Number</label>
-                <input type="tel" id="phone" className={inputClass} placeholder="(555) 123-4567" />
+                <input required type="tel" id="phone" name="phone" maxLength={15} className={inputClass} placeholder="(555) 123-4567" />
               </div>
               <div>
                 <label htmlFor="event_type" className={labelClass}>Event Type</label>
-                <select id="event_type" required defaultValue="" className={inputClass}>
+                <select id="event_type" name="event_type" required defaultValue="" className={inputClass}>
                   <option value="" disabled>Select an option</option>
                   <option>Corporate Holiday Party</option>
                   <option>Private Family Gathering</option>
@@ -107,23 +152,23 @@ const EnquireForm = React.memo(function EnquireForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div>
                 <label htmlFor="event_date" className={labelClass}>Event Date</label>
-                <input id="event_date" required type="date" defaultValue="2026-12-15" className={inputClass} />
+                <input id="event_date" name="event_date" required type="date" min={minDate} defaultValue="2026-12-15" className={inputClass} />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4">
                 <div>
                   <label htmlFor="guests" className={labelClass}>Guests</label>
-                  <input required type="number" id="guests" min="1" className={inputClass} placeholder="150" />
+                  <input required type="number" id="guests" name="guests" min="1" max="5000" className={inputClass} placeholder="150" />
                 </div>
                 <div>
                   <label htmlFor="location" className={labelClass}>City/State</label>
-                  <input required type="text" id="location" className={inputClass} placeholder="Houston, TX" />
+                  <input required type="text" id="location" name="location" maxLength={100} className={inputClass} placeholder="Houston, TX" />
                 </div>
               </div>
             </div>
 
             <div>
               <label htmlFor="message" className={labelClass}>Event Vision</label>
-              <textarea required id="message" rows="3" className={`${inputClass} resize-none`} placeholder="Tell us a bit about what you are planning..."></textarea>
+              <textarea required id="message" name="message" rows="3" maxLength={800} className={`${inputClass} resize-none`} placeholder="Tell us a bit about what you are planning..."></textarea>
             </div>
 
             <div className="pt-6">
@@ -131,7 +176,7 @@ const EnquireForm = React.memo(function EnquireForm() {
                 {loading ? (
                    <span className="flex items-center gap-3">
                      <span className="w-4 h-4 border-2 border-white/30 rounded-full border-t-white animate-spin"></span>
-                     Transmitting...
+                     Sending...
                    </span>
                 ) : (
                    <span className="flex items-center gap-3">

@@ -6,15 +6,49 @@ import { Check, MapPin, Phone, Mail } from "lucide-react";
 const ContactForm = React.memo(function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     setLoading(true);
-    setTimeout(() => {
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    data.source = "contact-form";
+
+    // Custom Validation
+    const phoneDigits = data.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setError("Please enter a valid 10-digit phone number.");
       setLoading(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      setError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/webhook', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) throw new Error("Webhook request failed");
+      
       setSubmitted(true);
-    }, 1500); 
-  }, []);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong while sending your message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inputClass = "w-full bg-[#f4f4f4] border border-transparent focus:border-brand-red focus:bg-white rounded-none py-4 px-5 text-brand-dark text-base outline-none transition-colors duration-300 placeholder:text-brand-dark/40 hover:bg-[#eaeaea] shadow-none";
   const labelClass = "block text-sm text-brand-dark/80 font-bold mb-2 ml-1";
@@ -100,31 +134,36 @@ const ContactForm = React.memo(function ContactForm() {
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-5">
+              {error && (
+                <div className="bg-brand-red/10 border border-brand-red/20 text-brand-red px-4 py-3 text-sm rounded-sm">
+                  {error}
+                </div>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <label htmlFor="name" className={labelClass}>Full Name</label>
-                  <input required type="text" id="name" className={inputClass} placeholder="e.g. Jane Doe" />
+                  <input required type="text" id="name" name="name" minLength={2} maxLength={50} className={inputClass} placeholder="e.g. Jane Doe" />
                 </div>
                 <div>
                   <label htmlFor="email" className={labelClass}>Email Address</label>
-                  <input required type="email" id="email" className={inputClass} placeholder="jane@example.com" />
+                  <input required type="email" id="email" name="email" maxLength={100} className={inputClass} placeholder="jane@example.com" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <label htmlFor="phone" className={labelClass}>Phone Number</label>
-                  <input required type="tel" id="phone" defaultValue="+1 " className={inputClass} placeholder="+1 (555) 123-4567" />
+                  <input required type="tel" id="phone" name="phone" maxLength={15} defaultValue="+1 " className={inputClass} placeholder="+1 (555) 123-4567" />
                 </div>
                 <div>
                   <label htmlFor="subject" className={labelClass}>Subject</label>
-                  <input required type="text" id="subject" className={inputClass} placeholder="Question about booking" />
+                  <input required type="text" id="subject" name="subject" maxLength={100} className={inputClass} placeholder="Question about booking" />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="message" className={labelClass}>How can we help you?</label>
-                <textarea required id="message" rows="2" className={`${inputClass} resize-none`} placeholder="Tell us a bit about what you need..."></textarea>
+                <textarea required id="message" name="message" rows="2" maxLength={800} className={`${inputClass} resize-none`} placeholder="Tell us a bit about what you need..."></textarea>
               </div>
 
               <div className="pt-2 lg:pt-4">
