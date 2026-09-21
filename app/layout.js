@@ -36,6 +36,7 @@ export const metadata = {
 };
 
 import AnimationProvider from "../components/animations/AnimationProvider";
+import CookieConsent from "../components/ui/CookieConsent";
 
 export default function RootLayout({ children }) {
   return (
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
+          <CookieConsent />
         </SmoothScroll>
         </AnimationProvider>
       </body>
