@@ -5,6 +5,9 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata = {
   title: 'Book Now | Holiday Dream Photos',
   description: 'Pick your location, choose your time, and pay securely online.',
+  alternates: {
+    canonical: 'https://www.holidaydreamphotos.com/book-now',
+  },
 };
 
 export default function BookNowPage() {
