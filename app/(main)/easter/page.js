@@ -1,4 +1,5 @@
 import FinalCTA from "@/components/home/FinalCTA";
+import Link from "next/link";
 
 export const metadata = {
   title: 'Easter Experience | Holiday Dream Photos',
@@ -22,12 +23,12 @@ export default function EasterPage() {
             Introducing the Holiday Dream Photos Easter Experience professional photography, magical moments, and memories your family will keep forever.
           </p>
           
-          <a 
-            href="#"
+          <Link 
+            href="/book-now"
             className="inline-block bg-brand-red text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-dark hover:text-white transition-colors duration-300 rounded-none shadow-none"
           >
             Book Your Easter Session
-          </a>
+          </Link>
         </div>
       </section>
 

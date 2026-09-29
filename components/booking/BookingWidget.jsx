@@ -6,7 +6,7 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { locationsData } from "@/lib/locationsData";
-import { MapPin, ChevronRight, Calendar, ArrowLeft } from "lucide-react";
+import { MapPin, ChevronRight, CalendarDays, ArrowLeft } from "lucide-react";
 
 function BookingWidgetInner() {
   const searchParams = useSearchParams();
@@ -62,9 +62,21 @@ function BookingWidgetInner() {
                   <h3 className="font-heading text-xl sm:text-2xl text-brand-dark mb-2 pr-10 leading-tight group-hover:text-brand-red transition-colors duration-300">
                     {loc.name}
                   </h3>
-                  <p className="text-brand-dark/60 text-sm font-medium leading-relaxed">
-                    {loc.address}
-                  </p>
+                  <div className="flex flex-col gap-3 flex-1 mb-4 mt-2">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-brand-red/5 flex items-center justify-center shrink-0 mt-0.5 border border-brand-red/10 group-hover:bg-brand-red/10 transition-colors duration-300">
+                        <MapPin className="w-4 h-4 text-brand-red" />
+                      </div>
+                      <span className="text-brand-dark/80 text-sm leading-snug font-medium pt-1">{loc.address}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-brand-dark/5 flex items-center justify-center shrink-0 border border-brand-dark/10 group-hover:bg-brand-dark/10 transition-colors duration-300">
+                        <CalendarDays className="w-4 h-4 text-brand-dark/70" />
+                      </div>
+                      <span className="text-brand-dark/80 text-sm font-semibold pt-1">{loc.dates}</span>
+                    </div>
+                  </div>
                   
                   {/* Action Button */}
                   <div className="absolute right-6 top-6 w-10 h-10 rounded-full bg-brand-light group-hover:bg-brand-red flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md">
