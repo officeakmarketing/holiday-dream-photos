@@ -221,6 +221,19 @@ export default function LocationCard({ loc }) {
                 )}
 
               </div>
+
+              {/* Footer Disclaimers */}
+              <div className="mt-4 lg:mt-5 pt-3 lg:pt-4 border-t border-brand-dark/10 flex flex-col items-center justify-center gap-1.5 text-center shrink-0">
+                <p className="text-[10px] lg:text-xs text-brand-dark/60 uppercase tracking-[0.15em] font-bold">
+                  * A $4.95 booking fee applies to all sessions.
+                </p>
+                {loc.pricing.disclaimer && (
+                  <p className="text-[10px] lg:text-xs text-brand-red/80 uppercase tracking-[0.15em] font-bold">
+                    * {loc.pricing.disclaimer}
+                  </p>
+                )}
+              </div>
+
             </div>
           </div>
         </div>
