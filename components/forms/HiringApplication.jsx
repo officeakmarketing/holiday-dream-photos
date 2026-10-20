@@ -7,19 +7,33 @@ import FadeInItem from "../animations/FadeInItem";
 import StaggerContainer from "../animations/StaggerContainer";
 import { ArrowLeft, CheckCircle, ArrowRight } from "lucide-react";
 import { locationsData } from "@/lib/locationsData";
+import { validateSubmission } from "@/lib/spamFilter";
 
 export default function HiringApplication() {
   const [step, setStep] = useState("initial"); // 'initial' | 'locations' | 'form' | 'success'
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLocationSelect = (loc) => {
     setSelectedLocation(loc);
+    setError("");
     setStep("form");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const validation = validateSubmission(data, { isServer: false });
+    if (!validation.isValid) {
+      setError(validation.reason || "Please verify your application details.");
+      return;
+    }
+
     setIsSubmitting(true);
     // Simulate network request
     setTimeout(() => {
@@ -156,19 +170,24 @@ export default function HiringApplication() {
 
             <div className="bg-[#0a110a]/90 backdrop-blur-md shadow-2xl rounded-sm border border-white/10 overflow-hidden p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="bg-brand-red/20 border border-brand-red/40 text-brand-light px-4 py-3 text-xs rounded-sm">
+                    {error}
+                  </div>
+                )}
                 <div>
                   <label className="block text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.15em] mb-2">Full Name *</label>
-                  <input required type="text" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="John Doe" />
+                  <input required name="name" type="text" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="John Doe" />
                 </div>
                 
                 <div>
                   <label className="block text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.15em] mb-2">Email Address *</label>
-                  <input required type="email" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="john@example.com" />
+                  <input required name="email" type="email" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="john@example.com" />
                 </div>
                 
                 <div>
                   <label className="block text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.15em] mb-2">Phone Number *</label>
-                  <input required type="tel" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="(555) 123-4567" />
+                  <input required name="phone" type="tel" className="w-full bg-white/5 border border-white/10 p-3.5 text-brand-light focus:ring-0 focus:border-brand-red transition-colors rounded-sm" placeholder="(555) 123-4567" />
                 </div>
 
                 <div>

@@ -1,12 +1,19 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Check, MapPin, Phone, Mail } from "lucide-react";
+import { validateSubmission } from "@/lib/spamFilter";
 
 const ContactForm = React.memo(function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [renderTs, setRenderTs] = useState(0);
+
+  useEffect(() => {
+    // Record client render timestamp for velocity check
+    setRenderTs(Date.now());
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,17 +24,10 @@ const ContactForm = React.memo(function ContactForm() {
     const data = Object.fromEntries(formData.entries());
     data.source = "contact-form";
 
-    // Custom Validation
-    const phoneDigits = data.phone.replace(/\D/g, '');
-    if (phoneDigits.length < 10) {
-      setError("Please enter a valid 10-digit phone number.");
-      setLoading(false);
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      setError("Please enter a valid email address.");
+    // Validation barrier: Check gibberish, spam patterns, test queries, and honeypot
+    const validation = validateSubmission(data, { isServer: false });
+    if (!validation.isValid) {
+      setError(validation.reason || "Please check your entered details and try again.");
       setLoading(false);
       return;
     }
@@ -39,12 +39,15 @@ const ContactForm = React.memo(function ContactForm() {
         body: JSON.stringify(data)
       });
 
-      if (!response.ok) throw new Error("Webhook request failed");
+      const resJson = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(resJson?.error || "Webhook request failed");
+      }
       
       setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Something went wrong while sending your message. Please try again.");
+      setError(err.message && err.message !== "Webhook request failed" ? err.message : "Something went wrong while sending your message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -134,6 +137,25 @@ const ContactForm = React.memo(function ContactForm() {
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-5">
+              {/* Invisible Honeypot Trap for Automated Bots */}
+              <div 
+                className="opacity-0 absolute -top-[9999px] -left-[9999px] h-0 w-0 pointer-events-none select-none overflow-hidden" 
+                tabIndex="-1" 
+                aria-hidden="true"
+              >
+                <label htmlFor="company_website_hp">Company Website (Leave Empty)</label>
+                <input 
+                  type="text" 
+                  id="company_website_hp" 
+                  name="company_website_hp" 
+                  tabIndex="-1" 
+                  autoComplete="off" 
+                />
+              </div>
+
+              {/* Bot Velocity Check */}
+              <input type="hidden" name="_render_ts" value={renderTs} />
+
               {error && (
                 <div className="bg-brand-red/10 border border-brand-red/20 text-brand-red px-4 py-3 text-sm rounded-sm">
                   {error}

@@ -1,17 +1,18 @@
 import { NextResponse } from "next/server";
+import { validateSubmission } from "@/lib/spamFilter";
 
 export async function POST(request) {
   try {
     const body = await request.json();
     
-    // TODO: Integrate Resend or SendGrid here using the 'body' data
-    // Example with Resend:
-    // await resend.emails.send({
-    //   from: 'onboarding@resend.dev',
-    //   to: body.email,
-    //   subject: 'Private Event Enquiry Received',
-    //   html: '<p>Thank you for your enquiry. We will check our availability for your preferred date and get back to you shortly.</p>'
-    // });
+    // Validate submission through the spam barrier
+    const validation = validateSubmission(body, { isServer: true });
+    if (!validation.isValid) {
+      if (validation.isSpam) {
+        return NextResponse.json({ message: "Successfully submitted private event enquiry." }, { status: 200 });
+      }
+      return NextResponse.json({ error: validation.reason }, { status: 400 });
+    }
 
     console.log("Private Event enquiry received:", body);
 

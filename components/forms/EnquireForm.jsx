@@ -1,18 +1,21 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Check, Mail, Phone, MapPin, Loader2, Calendar } from "lucide-react";
 import Image from "next/image";
+import { validateSubmission } from "@/lib/spamFilter";
 
 const EnquireForm = React.memo(function EnquireForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [minDate, setMinDate] = useState("");
+  const [renderTs, setRenderTs] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Set today's date on the client to avoid Next.js server/client hydration mismatches
     setMinDate(new Date().toISOString().split('T')[0]);
+    setRenderTs(Date.now());
   }, []);
 
   const handleSubmit = async (e) => {
@@ -24,17 +27,10 @@ const EnquireForm = React.memo(function EnquireForm() {
     const data = Object.fromEntries(formData.entries());
     data.source = "private-events";
 
-    // Custom Validation
-    const phoneDigits = data.phone.replace(/\D/g, '');
-    if (phoneDigits.length < 10) {
-      setError("Please enter a valid 10-digit phone number.");
-      setLoading(false);
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      setError("Please enter a valid email address.");
+    // Validation barrier: Check gibberish, spam patterns, test queries, and honeypot
+    const validation = validateSubmission(data, { isServer: false });
+    if (!validation.isValid) {
+      setError(validation.reason || "Please check your entered details and try again.");
       setLoading(false);
       return;
     }
@@ -46,12 +42,15 @@ const EnquireForm = React.memo(function EnquireForm() {
         body: JSON.stringify(data)
       });
 
-      if (!response.ok) throw new Error("Webhook request failed");
+      const resJson = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(resJson?.error || "Webhook request failed");
+      }
       
       setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Something went wrong while sending your enquiry. Please try again.");
+      setError(err.message && err.message !== "Webhook request failed" ? err.message : "Something went wrong while sending your enquiry. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -114,6 +113,25 @@ const EnquireForm = React.memo(function EnquireForm() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+            {/* Invisible Honeypot Trap for Automated Bots */}
+            <div 
+              className="opacity-0 absolute -top-[9999px] -left-[9999px] h-0 w-0 pointer-events-none select-none overflow-hidden" 
+              tabIndex="-1" 
+              aria-hidden="true"
+            >
+              <label htmlFor="company_website_hp">Company Website (Leave Empty)</label>
+              <input 
+                type="text" 
+                id="company_website_hp" 
+                name="company_website_hp" 
+                tabIndex="-1" 
+                autoComplete="off" 
+              />
+            </div>
+
+            {/* Bot Velocity Check */}
+            <input type="hidden" name="_render_ts" value={renderTs} />
+
             {error && (
               <div className="bg-brand-red/10 border border-brand-red/20 text-brand-red px-4 py-3 text-sm rounded-sm">
                 {error}
