@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
-          <CookieConsent />
+          {/* <CookieConsent /> */}
         </SmoothScroll>
         </AnimationProvider>
       </body>
