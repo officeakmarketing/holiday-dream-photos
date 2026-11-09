@@ -77,7 +77,7 @@ export default function TermsOfServicePage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">8. Image and likeness rights</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              By booking a session you acknowledge that professional photographs are taken for your personal use. Holiday Dream Photos will not use images of you or your children for any marketing, advertising, or commercial purpose without your separate explicit written consent obtained at the time of your session. Consent is entirely voluntary. No consent is implied by your booking or attendance. If you have previously provided consent and wish to withdraw it please contact us at <a href="mailto:office@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">office@holidaydreamphotos.com</a>.
+              By booking a session you acknowledge that professional photographs are taken for your personal use. Holiday Dream Photos will not use images of you or your children for any marketing, advertising, or commercial purpose without your separate explicit written consent obtained at the time of your session. Consent is entirely voluntary. No consent is implied by your booking or attendance. If you have previously provided consent and wish to withdraw it please contact us at <a href="mailto:memories@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">memories@holidaydreamphotos.com</a>.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function TermsOfServicePage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">15. Contact</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              For any questions about these terms please contact us at <a href="mailto:office@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">office@holidaydreamphotos.com</a> or call <span className="font-bold text-brand-dark">678-325-1232</span>.
+              For any questions about these terms please contact us at <a href="mailto:memories@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">memories@holidaydreamphotos.com</a> or call <span className="font-bold text-brand-dark">678-325-1232</span>.
             </p>
           </div>
 

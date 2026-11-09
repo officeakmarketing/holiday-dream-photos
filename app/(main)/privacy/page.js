@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">6. Children's privacy — COPPA compliance</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              Holiday Dream Photos provides photography services for families including children. We are committed to protecting the privacy of children in accordance with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information directly from children under the age of 13. All booking information is collected from the parent or guardian completing the booking. If we become aware that we have inadvertently collected personal information from a child under 13 without verifiable parental consent we will delete that information promptly. Parents or guardians who believe their child's information has been collected without consent should contact us immediately at <a href="mailto:office@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">office@holidaydreamphotos.com</a>.
+              Holiday Dream Photos provides photography services for families including children. We are committed to protecting the privacy of children in accordance with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information directly from children under the age of 13. All booking information is collected from the parent or guardian completing the booking. If we become aware that we have inadvertently collected personal information from a child under 13 without verifiable parental consent we will delete that information promptly. Parents or guardians who believe their child's information has been collected without consent should contact us immediately at <a href="mailto:memories@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">memories@holidaydreamphotos.com</a>.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">8. California residents — CCPA rights</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              If you are a California resident you have the right to know what personal information we collect about you and how it is used, request deletion of your personal information, opt out of the sale of your personal information (we do not sell personal information), and not be discriminated against for exercising your privacy rights. To exercise any of these rights please contact us at <a href="mailto:office@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">office@holidaydreamphotos.com</a>.
+              If you are a California resident you have the right to know what personal information we collect about you and how it is used, request deletion of your personal information, opt out of the sale of your personal information (we do not sell personal information), and not be discriminated against for exercising your privacy rights. To exercise any of these rights please contact us at <a href="mailto:memories@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">memories@holidaydreamphotos.com</a>.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
           <div className="flex flex-col gap-3">
             <h2 className="font-heading text-2xl md:text-3xl text-brand-dark">13. Contact</h2>
             <p className="text-brand-dark/80 text-base md:text-lg font-light leading-[1.8]">
-              For any privacy-related questions or to exercise your rights please contact us at <a href="mailto:office@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">office@holidaydreamphotos.com</a> or call <span className="font-bold text-brand-dark">678-325-1232</span>.
+              For any privacy-related questions or to exercise your rights please contact us at <a href="mailto:memories@holidaydreamphotos.com" className="text-brand-red font-bold hover:underline transition-all">memories@holidaydreamphotos.com</a> or call <span className="font-bold text-brand-dark">678-325-1232</span>.
             </p>
           </div>
 
