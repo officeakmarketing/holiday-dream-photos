@@ -165,8 +165,8 @@ export default function Nav() {
                </div>
                
                <div className="relative z-10 hidden lg:flex flex-col gap-3 mt-8">
-                 <a href="mailto:info@holidaydreamphotos.com" className="text-brand-light/80 hover:text-brand-light transition-colors text-xs font-medium tracking-wide">
-                   Info@holidaydreamphotos.com
+                 <a href="mailto:office@holidaydreamphotos.com" className="text-brand-light/80 hover:text-brand-light transition-colors text-xs font-medium tracking-wide">
+                   office@holidaydreamphotos.com
                  </a>
                  <p className="text-[10px] text-brand-light/40 font-semibold tracking-[0.2em] uppercase">Holiday Dream Photos &copy; {new Date().getFullYear()}</p>
                </div>

@@ -79,7 +79,7 @@ const ContactForm = React.memo(function ContactForm() {
               <Mail className="w-5 h-5 text-white/50 mt-1" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50 mb-1">Email Us</p>
-                <a href="mailto:info@holidaydreamphotos.com" className="text-sm font-light hover:text-brand-red transition-colors">Info@holidaydreamphotos.com</a>
+                <a href="mailto:office@holidaydreamphotos.com" className="text-sm font-light hover:text-brand-red transition-colors">office@holidaydreamphotos.com</a>
               </div>
             </div>
             
